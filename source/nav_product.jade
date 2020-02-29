@@ -1,0 +1,193 @@
+extend layout/_layout_products.jade
+
+mixin probox(img,url,name,price,href,store)
+	li.col-xs-6.col-sm-3
+		.probox
+			a.imgbox(href="javascript:;", style=img)
+				.overlay
+					.overlay_icons
+						span.fi.flaticon-heart
+						| 我要收藏
+			h3
+				a(href=url)=name
+			p.pro_price(data-mark="NT$")=price
+			ul.pro_storeinfo.w_bg
+				li
+					block
+				li
+					a(href=href)=store
+
+mixin goga(name,country)
+	label.checkbox-inline(for=name)
+		input(type='checkbox',id=name, name=name, value='')
+		i.fa.fa-check(aria-hidden='true')
+		span=country
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='nav_product.html') 大分類
+			li.active 小分類
+
+block sidenav
+	include include/_pro_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 所有商品
+	.fifbtn.row.clearfix
+		.col-xs-12.col-md-8.col-md-offset-4.col-lg-6.col-lg-offset-6
+			.btn-group.btn-group-justified(role='group', aria-label='...')
+				.btn-group(role='group')
+					button.btn.btn-default(type='button') 最新
+						span.caret.up
+				.btn-group(role='group')
+					button.btn.btn-default.active(type='button') 最熱銷
+						span.caret
+				.btn-group(role='group')
+					button.btn.btn-default(type='button') 價格
+						span.caret
+
+	ul.row.mt20
+		+probox('background-image: url(images/index/1.jpg);','nav_product_detail.html',"2017 冬季必買大衣","2,048","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+
+		+probox('background-image: url(images/index/2.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1,048","nav_product_saler.html","黃金葡萄金光噹")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/5.png);','nav_product_detail.html',"2017 冬季必買大衣","748","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+		+probox('background-image: url(images/index/8.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1000","nav_product_saler.html","噹噹日本代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+
+		+probox('background-image: url(images/index/7.jpg);','nav_product_detail.html',"2017 冬季必買大衣","5,459","nav_product_saler.html","限時代購")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/4.jpg);','nav_product_detail.html',"2017 冬季必買大衣","2,048","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+
+		+probox('background-image: url(images/index/9.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1,048","nav_product_saler.html","黃金葡萄金光噹")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/15.png);','nav_product_detail.html',"2017 冬季必買大衣","748","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+		+probox('background-image: url(images/index/16.gif);','nav_product_detail.html',"2017 冬季必買大衣","1000","nav_product_saler.html","噹噹日本代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+				
+		+probox('background-image: url(images/index/12.gif);','nav_product_detail.html',"2017 冬季必買大衣","5,459","nav_product_saler.html","限時代購")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/13.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1000","nav_product_saler.html","噹噹日本代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+				
+		+probox('background-image: url(images/index/3.jpg);','nav_product_detail.html',"2017 冬季必買大衣","5,459","nav_product_saler.html","限時代購")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+		+probox('background-image: url(images/index/1.jpg);','nav_product_detail.html',"2017 冬季必買大衣","2,048","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+
+		+probox('background-image: url(images/index/2.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1,048","nav_product_saler.html","黃金葡萄金光噹")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/5.png);','nav_product_detail.html',"2017 冬季必買大衣","748","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+		+probox('background-image: url(images/index/8.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1000","nav_product_saler.html","噹噹日本代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+
+		+probox('background-image: url(images/index/7.jpg);','nav_product_detail.html',"2017 冬季必買大衣","5,459","nav_product_saler.html","限時代購")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/4.jpg);','nav_product_detail.html',"2017 冬季必買大衣","2,048","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+
+		+probox('background-image: url(images/index/9.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1,048","nav_product_saler.html","黃金葡萄金光噹")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/15.png);','nav_product_detail.html',"2017 冬季必買大衣","748","nav_product_saler.html","噹噹愛佩佩代購")
+			img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+		+probox('background-image: url(images/index/16.gif);','nav_product_detail.html',"2017 冬季必買大衣","1000","nav_product_saler.html","噹噹日本代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+				
+		+probox('background-image: url(images/index/12.gif);','nav_product_detail.html',"2017 冬季必買大衣","5,459","nav_product_saler.html","限時代購")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		+probox('background-image: url(images/index/13.jpg);','nav_product_detail.html',"2017 冬季必買大衣","1000","nav_product_saler.html","噹噹日本代購")
+			img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+				
+		+probox('background-image: url(images/index/3.jpg);','nav_product_detail.html',"2017 冬季必買大衣","5,459","nav_product_saler.html","限時代購")
+			img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+	ul.pagebox
+		li
+			a.arrow(href='javascript:;')
+				i.fa.fa-angle-double-left(aria-hidden='true')
+		li
+			a.arrow(href='javascript:;')
+				i.fa.fa-angle-left(aria-hidden='true')
+		li.on
+			a(href='javascript:;') 1
+		li
+			a(href='javascript:;') 2
+		li
+			a(href='javascript:;') 3
+		li
+			a(href='javascript:;') 4
+		li
+			a(href='javascript:;') 5
+		li
+			a.arrow(href='javascript:;')
+				i.fa.fa-angle-right(aria-hidden='true')
+		li
+			a.arrow(href='javascript:;')
+				i.fa.fa-angle-double-right(aria-hidden='true')
+
+	//- lightbox 篩選國家
+	#state_check.state_check(style='display: none;max-width:600px;')
+		h2(data-selectable='true') 國家篩選
+		.helpbuy_country
+			ul.store_proinfo
+				li(data-tit='美　洲')
+					+goga('all01','美洲全部')
+					+goga('01','美國')
+					+goga('04','巴西')
+					+goga('02','加拿大')
+					+goga('03','阿根廷')
+					+goga('30','墨西哥')
+				li(data-tit='歐　洲')
+					+goga('all02','歐洲全部')
+					+goga('05','英國')
+					+goga('07','荷蘭')
+					+goga('08','法國')
+					+goga('09','希臘')
+					+goga('10','捷克')
+					+goga('06','義大利')
+					+goga('12','比利時')
+					+goga('14','西班牙')
+					+goga('15','葡萄牙')
+					+goga('11','德國')
+					+goga('13','波蘭')
+					+goga('16','丹麥')
+					+goga('31','瑞士')
+				li(data-tit='亞　洲')
+					+goga('all03','亞洲全部')
+					+goga('17','日本')
+					+goga('18','韓國')
+					+goga('19','泰國')
+					+goga('20','中國')
+					+goga('21','香港')
+					+goga('22','新加坡')
+					+goga('23','印尼')
+					+goga('24','越南')
+					+goga('25','馬來西亞')
+					+goga('26','台灣')
+				li(data-tit='大洋洲')
+					+goga('all04','大洋洲全部')
+					+goga('27','澳洲')
+					+goga('28','紐西蘭')
+				li(data-tit='其　他')
+					+goga('29','其他')

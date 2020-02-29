@@ -1,0 +1,844 @@
+extend layout/_layout_side_l.jade
+
+mixin packs(no,sort,number,kg,whd,paykg,pay,state,other)
+	tr
+		td(class="hidden-md hidden-lg")
+		td
+			form
+				.checkbox
+					label
+						input(type='checkbox',name='all',value='car')
+						i.fa.fa-check(aria-hidden='true')
+		td.hidden-xs=no
+		td=sort
+		td=number
+		td.packtime
+			block
+		td=kg
+		td=whd
+		td=paykg
+		td=pay
+		td=state
+		td=other
+
+mixin packss(no,sort,number,kg,whd,paykg,pay,state,other)
+	tr
+		td(class="hidden-md hidden-lg")
+		td.hidden-xs=no
+		td=sort
+		td=number
+		td.packtime
+			block
+		td=kg
+		td=whd
+		td=paykg
+		td=pay
+		td=state
+		td=other
+
+mixin pack(no,number,kg,whd,paykg,pay,state)
+	tr
+		td(class="hidden-md hidden-lg")
+		td.hidden-xs=no
+		td
+			a.order_link(href="javascript:;", data-toggle="modal", data-target=".package_lightbox")=number
+		td.packtime
+			block
+		td
+			ul.list-unstyled.add_service
+				li 加強包裝
+				li 去除鞋盒
+		td=kg
+		td=whd
+		td=paykg
+		td=pay
+		td
+			a.order_link(data-fancybox='', data-src='#state_timeline', href='javascript:;')=state
+		td
+			a.btn.btn-xs.btn_store(href="javascript:;", data-toggle="modal", data-target=".package_paycheck", role='button') 
+				i.fa.fa-credit-card
+				br
+				|付款
+
+mixin packship(no,number,kg,whd,paykg,sort,state)
+	tr
+		td(class="visible-xs")
+		td.hidden-xs=no
+		td
+			a.order_link(href="javascript:;", data-toggle="modal", data-target=".package_lightbox")=number
+		td.packtime
+			block
+		td=kg
+		td=whd
+		td=paykg
+		td=sort
+		td
+			a.order_link(data-fancybox='', data-src='#state_timeline', href='javascript:;')=state
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 代運包裹管理
+			li.active 我的代運包裹
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 我的代運包裹
+		.bonus.keep.packagebox
+			.transtalkbox
+				h3.point_title 未處理的包裹
+				a.btn.btn_icons(href='members_trans_package_single.html', role='button') 
+					i.fi.flaticon-cardboard
+					|我要出貨
+				p.package
+					|已選的包裹數量包含
+					span.red
+						|1
+					|個，預計總重量
+					span.red
+						|0.8
+					|Kg
+			.package_tabs
+				//-Nav tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#package_stand_jp', aria-controls='package_stand_jp', role='tab', data-toggle='tab') 日本
+						span.tips
+							|3
+					li(role='presentation')
+						a(href='#package_stand_kr', aria-controls='package_stand_kr', role='tab', data-toggle='tab') 韓國
+					li(role='presentation')
+						a(href='#package_stand_us', aria-controls='package_stand_us', role='tab', data-toggle='tab') 美國
+						span.tips
+							|10
+				//-Tab panes
+				.tab-content
+					#package_stand_jp.tab-pane.active(role='tabpanel') 
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="hidden-md hidden-lg")
+									th
+										.checkbox
+											label
+												input(type='checkbox')
+												i.fa.fa-check(aria-hidden='true')
+									th.hidden-xs NO
+									th(data-breakpoints='xs') 代理
+										br
+										|編號
+									th 境內快遞單號
+									th(data-breakpoints='xs') 入庫時間
+									th(data-breakpoints='xs') 重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs sm') 收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs sm') 運費
+									th 狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packs('1','00001','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物','123456789')
+									p
+										|2017-10-18
+										small 13:20:57
+								+packs('2','00002','1234567890','2','30.0*15.0*10.0','3','NT1,000','收到貨物','')
+									p
+										|2017-10-16
+										small 20:20:57
+								+packs('3','00003','1234567890','1','30.0*15.0*10.0','1','NT1,000','收到貨物','')
+									p
+										|2017-10-10
+										small 18:20:57
+						.text-center
+							.transtalkbox
+								button.btn.btn_cafe(type='button') 展開全部
+								p.package
+									|共
+									span.red
+										|10
+									|筆
+					#package_stand_kr.tab-pane(role='tabpanel')
+						.no_productinfo
+							p 目前沒有包裹資料哦!
+					#package_stand_us.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="hidden-md hidden-lg")
+									th
+										.checkbox
+											label
+												input(type='checkbox')
+												i.fa.fa-check(aria-hidden='true')
+									th.hidden-xs NO
+									th(data-breakpoints='xs') 代理
+										br
+										|編號
+									th 境內快遞單號
+									th(data-breakpoints='xs') 入庫時間
+									th(data-breakpoints='xs') 重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs sm') 收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs sm') 運費
+									th 狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packs('1','00001','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物','123456789')
+									p
+										|2017-10-18
+										small 09:20:57
+						.text-center
+							.transtalkbox
+								button.btn.btn_cafe(type='button') 展開全部
+								p.package
+									|共
+									span.red
+										|10
+									|筆
+			hr
+			//- 暫存代運單
+			.transtalkbox
+				h3.point_title 暫存代運單
+			.package_tabs
+				//-Nav tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#package_temp_jp', aria-controls='package_temp_jp', role='tab', data-toggle='tab') 日本
+						span.tips
+							|3
+					li(role='presentation')
+						a(href='#package_temp_kr', aria-controls='package_temp_kr', role='tab', data-toggle='tab') 韓國
+					li(role='presentation')
+						a(href='#package_temp_us', aria-controls='package_temp_us', role='tab', data-toggle='tab') 美國
+						span.tips
+							|10
+				//-Tab panes
+				.tab-content
+					#package_temp_jp.tab-pane.active(role='tabpanel') 
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="hidden-md hidden-lg")
+									th.hidden-xs NO
+									th(data-breakpoints='xs') 代理
+										br
+										|編號
+									th 境內快遞單號
+									th(data-breakpoints='xs') 入庫時間
+									th(data-breakpoints='xs') 重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs sm') 收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs sm') 運費
+									th 狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packss('1','00001','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物','123456789')
+									p
+										|2017-10-18
+										small 13:20:57
+								+packss('2','00002','1234567890','2','30.0*15.0*10.0','3','NT1,000','收到貨物','')
+									p
+										|2017-10-16
+										small 20:20:57
+								+packss('3','00003','1234567890','1','30.0*15.0*10.0','1','NT1,000','收到貨物','')
+									p
+										|2017-10-10
+										small 18:20:57
+								+packss('4','00001','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物','123456789')
+									p
+										|2017-10-18
+										small 13:20:57
+								+packss('5','00002','1234567890','2','30.0*15.0*10.0','3','NT1,000','收到貨物','')
+									p
+										|2017-10-16
+										small 20:20:57
+								+packss('6','00003','1234567890','1','30.0*15.0*10.0','1','NT1,000','收到貨物','')
+									p
+										|2017-10-10
+										small 18:20:57
+						.text-center
+							.transtalkbox
+								button.btn.btn_cafe(type='button') 展開全部
+								a.btn.btn_cafe(href="members_trans_package_single.html",role="button") 編輯暫存代運單
+								
+					#package_temp_kr.tab-pane(role='tabpanel')
+						.no_productinfo
+							p 目前沒有包裹資料哦!
+					#package_temp_us.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="hidden-md hidden-lg")
+									th.hidden-xs NO
+									th(data-breakpoints='xs') 代理
+										br
+										|編號
+									th 境內快遞單號
+									th(data-breakpoints='xs') 入庫時間
+									th(data-breakpoints='xs') 重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs sm') 收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs sm') 運費
+									th 狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packss('1','00001','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物','123456789')
+									p
+										|2017-10-18
+										small 09:20:57
+						.text-center
+							.transtalkbox
+								a.btn.btn_cafe(href="members_trans_package_single.html",role="button") 編輯暫存包裹
+
+			hr
+			//- 處理中的包裹
+			.transtalkbox
+				h3.point_title 處理中的包裹
+			.package_tabs
+				//-Nav tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#package_process_jp', aria-controls='package_process_jp', role='tab', data-toggle='tab') 日本
+						span.tips
+							|1
+					li(role='presentation')
+						a(href='#package_process_kr', aria-controls='package_process_kr', role='tab', data-toggle='tab') 韓國
+						span.tips
+							|1
+					li(role='presentation')
+						a(href='#package_process_us', aria-controls='package_process_us', role='tab', data-toggle='tab') 美國
+						span.tips
+							|3
+				//-Tab panes內容
+				.tab-content
+					#package_process_jp.tab-pane.active(role='tabpanel') 
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="hidden-md hidden-lg")
+									th.hidden-xs NO
+									th 流水號
+									th(data-breakpoints='xs') 委託時間
+									th(data-breakpoints='xs sm') 加值服務
+									th(data-breakpoints='xs') 總重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 總體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs') 總收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs sm') 運費
+									th 狀態
+									th 操作
+							tbody
+								+pack('1','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物')
+									p
+										|2017-10-18
+										small 13:20:57
+								+pack('2','1234567890','2','30.0*15.0*10.0','3','NT1,000','收到貨物')
+									p
+										|2017-10-16
+										small 20:20:57
+								+pack('3','1234567890','1','30.0*15.0*10.0','1','NT1,000','收到貨物')
+									p
+										|2017-10-10
+										small 18:20:57
+					#package_process_kr.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="hidden-md hidden-lg")
+									th.hidden-xs NO
+									th 流水號
+									th(data-breakpoints='xs') 委託時間
+									th(data-breakpoints='xs sm') 加值服務
+									th(data-breakpoints='xs') 總重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 總體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs') 總收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs sm') 運費
+									th 狀態
+									th 操作
+							tbody
+								+pack('1','1234567890','加工內容','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物')
+									p
+										|2017-10-18
+										small 13:20:57
+					#package_process_us.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="hidden-md hidden-lg")
+									th.hidden-xs NO
+									th 流水號
+									th(data-breakpoints='xs') 委託時間
+									th(data-breakpoints='xs sm') 加值服務
+									th(data-breakpoints='xs') 總重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 總體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs') 總收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs sm') 運費
+									th 狀態
+									th 操作
+							tbody
+								+pack('1','1234567890','加工內容','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物')
+									p
+										|2017-10-18
+										small 13:20:57
+				
+			hr
+			//- 發貨中的包裹
+			.transtalkbox
+				h3.point_title.plant 發貨中的包裹
+					a( href="images/index/cal001.png", data-type='image', data-fancybox='calendarimg', data-thumb="images/index/cal001.png")
+						p.bub
+							img(src="images/plant-talk.png", alt="")
+						p.cal
+							img(src="images/plant.png", alt="")
+					div(style='display: none;')
+						a(href='images/index/cal002.jpg', data-type='image', data-fancybox='calendarimg', data-thumb="images/index/cal002.jpg")
+			.package_tabs
+				//-Nav tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#package_onship_jp', aria-controls='package_onship_jp', role='tab', data-toggle='tab') 日本
+						span.tips
+							|3
+					li(role='presentation')
+						a(href='#package_onship_kr', aria-controls='package_onship_kr', role='tab', data-toggle='tab') 韓國
+					li(role='presentation')
+						a(href='#package_onship_us', aria-controls='package_onship_us', role='tab', data-toggle='tab') 美國
+				//-Tab panes
+				.tab-content
+					#package_onship_jp.tab-pane.active(role='tabpanel') 
+						table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs")
+									th.hidden-xs NO
+									th 流水號
+									th(data-breakpoints='xs') 完成時間
+									th(data-breakpoints='xs') 總重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 總體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs') 總收費公斤
+										br
+										small (KG)
+									th(data-breakpoints='xs') 台灣派送單號
+									th 狀態
+							tbody
+								+packship('1','1234567890','0.5','30.0*15.0*10.0','1','DHL0007890','安排航班中')
+									p
+										|2017-10-18
+										small 13:20:57
+								+packship('2','1234567890','2','30.0*15.0*10.0','3','DHL0007890','安排航班中')
+									p
+										|2017-10-16
+										small 20:20:57
+								+packship('3','1234567890','1','30.0*15.0*10.0','1','DHL0007890','安排航班中')
+									p
+										|2017-10-10
+										small 18:20:57
+					#package_onship_kr.tab-pane(role='tabpanel')
+						.no_productinfo
+							p 目前沒有包裹資料哦!
+					#package_onship_us.tab-pane(role='tabpanel')
+						.no_productinfo
+							p 目前沒有包裹資料哦!
+							
+block lightbox
+	//- lightbox區塊
+	.modal.fade.package_lightbox(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-lg.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 流水號：1234567890
+				.modal-body
+					p.mi.red.mb20.visible-xs 以下所有表格皆可以左右滑動觀看資料
+					.table-responsive
+						table.table.package_listtb
+							tr
+								th 流水號
+								td(data-th='流水號') 1234567890
+								th 代運單成立時間
+								td(data-th='代運單成立時間') 2017-10-18 18:32:44
+							tr
+								th 收件人
+								td(data-th='客戶姓名') 王大明
+								th 聯絡電話
+								td(data-th='聯絡電話') 04-23598671
+							tr
+								th 收件地址
+								td(data-th='收件地址') 台中市西區五權五街351巷100號10F
+								th 代運單狀態
+								td(data-th='代運單狀態') 代運單完成
+							tr
+								th E-Mail
+								td(data-th='E-Mail') abcde@gmail.com
+								th 代運單完成時間
+								td(data-th='代運單完成時間') 2017-10-18 18:32:44
+							tr
+								th 加值服務
+								td(data-th='加值服務')
+									ul.list-inline.add_service
+										li 加強包裝
+										li 去除鞋盒
+								th 台灣派送單號
+								td(data-th='台灣派送單號') 
+									ul.list-unstyled
+										li DHL123456789
+										li DHL123456789
+							tr
+								th 備註
+								td(colspan='3',data-th='備註') 這裡是顯示代運客戶填的代運單備註
+							tr
+								th 代收國際運費
+								td(data-th='代收國際運費')
+									span.any_price(data-mark="NT$") 800
+								th 加值服務金額
+								td(data-th='加值服務金額') 
+									span.any_price(data-mark="NT$") 1,500
+							tr
+								th 逾期保管費
+								td(data-th='逾期保管費')
+									span.any_price(data-mark="NT$") 800
+								th 關稅
+								td(data-th='關稅')
+									span.any_price(data-mark="NT$") 200
+							tr
+								th 代運費用總計
+									br
+									small (含5%營業稅)
+								td(colspan='3',data-th='代運費用總計(含5%營業稅)')
+									span.any_price.red(data-mark="NT$") 3,200
+					
+					.table-responsive
+						//- 包裹一
+						table.table.package_infotb
+							caption.text-center.red 包裹一
+							thead
+								tr
+									th 流水號
+									th 重量(KG)
+									th 體積
+									th 收費公斤(KG)
+									th 運費
+								tr
+									td HTY180327001_1
+									td(data-th='重量(KG)') 1
+									td(data-th='體積') 30.0*15.0*10.0
+									td(data-th='收費公斤(KG)')  1.5
+									td(data-th='運費')  
+										span.any_price(data-mark="NT$") 1,200
+
+						//- 包裹二
+						table.table.package_infotb
+							caption.text-center.red 包裹二
+							thead
+								tr
+									th 流水號
+									th 重量(KG)
+									th 體積
+									th 收費公斤(KG)
+									th 運費
+								tr
+									td HTY180327001_2
+									td 1
+									td 30.0*15.0*10.0
+									td  1.5
+									td  
+										span.any_price(data-mark="NT$") 1,200
+
+							table.table.package_infotb.thisbox
+								caption.text-center 代運資料
+								thead
+									tr
+										th 代理編號
+										th 境內快遞單號
+										th 入庫時間
+										th 重量
+										th 體積
+										th 收費公斤
+										th 運費
+									tr
+										td(data-th='代理編號') 00001
+										td(data-th='境內快遞單號') HSL0032651
+										td(data-th='入庫時間') 2017-10-18 18:32:44
+										td(data-th='重量') 0.8
+										td(data-th='體積') 30.0*15.0*10.0
+										td(data-th='收費公斤') 1
+										td(data-th='運費')
+											span.any_price(data-mark="NT$") 90
+								tbody
+									tr
+										th(colspan='3') 商品名稱
+										th(colspan='2') 商品網址
+										th 數量
+										th 單價
+											|(
+											span 日幣
+											|)
+									tr
+										td(colspan='3', data-th='商品名稱') XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+										td(colspan='2', data-th='商品網址') 
+											a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+										td(data-th='數量') 1
+										td(data-th='單價(日幣)') 1,268
+									tr
+										td(colspan='3', data-th='商品名稱') 2018 新春福袋大放送，優惠 免收代購費
+										td(colspan='2', data-th='商品網址') 
+											a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+										td(data-th='數量') 1
+										td(data-th='單價(日幣)') 1,268
+									tr
+										td(colspan='3', data-th='商品名稱') 2017 冬季必買大衣
+										td(colspan='2', data-th='商品網址') 
+											a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+										td(data-th='數量') 1
+										td(data-th='單價(日幣)') 1,268
+
+							//- 下一個包裹
+							table.table.package_infotb.thisbox
+								thead
+									tr
+										th 代理編號
+										th 境內快遞單號
+										th 入庫時間
+										th 重量
+										th 體積
+										th 收費公斤
+										th 運費
+									tr
+										td(data-th='代理編號') 00001
+										td(data-th='境內快遞單號') HSL0032651
+										td(data-th='入庫時間') 2017-10-18 18:32:44
+										td(data-th='重量') 0.8
+										td(data-th='體積') 30.0*15.0*10.0
+										td(data-th='收費公斤') 1
+										td(data-th='運費')
+											span.any_price(data-mark="NT$") 90
+								tbody
+									tr
+										th(colspan='3') 商品名稱
+										th(colspan='2') 商品網址
+										th 數量
+										th 單價
+											|(
+											span 日幣
+											|)
+									tr
+										td(colspan='3', data-th='商品名稱') XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+										td(colspan='2', data-th='商品網址') 
+											a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+										td(data-th='數量') 1
+										td(data-th='單價(日幣)') 1,268
+									tr
+										td(colspan='3', data-th='商品名稱') 2018 新春福袋大放送，優惠 免收代購費
+										td(colspan='2', data-th='商品網址') 
+											a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+										td(data-th='數量') 1
+										td(data-th='單價(日幣)') 1,268
+									tr
+										td(colspan='3', data-th='商品名稱') 2017 冬季必買大衣
+										td(colspan='2', data-th='商品網址') 
+											a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+										td(data-th='數量') 1
+										td(data-th='單價(日幣)') 1,268
+						
+					//- .divider-hr					
+					//- .table-responsive
+					//- 	table.table.package_infotb
+					//- 		caption.text-center.red 包裹二
+					//- 		thead
+					//- 			tr
+					//- 				th 重量(KG)
+					//- 				th(colspan='2') 體積
+					//- 				th(colspan='2') 收費公斤(KG)
+					//- 				th(colspan='2') 運費
+					//- 			tr
+					//- 				td 1
+					//- 				td(colspan='2') 30.0*15.0*10.0
+					//- 				td(colspan='2')  1.5
+					//- 				td(colspan='2')  
+					//- 					span.any_price(data-mark="NT$") 1,200
+
+					//- 	table.table.package_infotb.thisbox
+					//- 		caption.text-center 代運資料
+					//- 		thead
+					//- 			tr
+					//- 				th 代理編號
+					//- 				th 境內快遞單號
+					//- 				th 入庫時間
+					//- 				th 重量
+					//- 				th 體積
+					//- 				th 收費公斤
+					//- 				th 運費
+					//- 			tr
+					//- 				td(data-th='代理編號') 00001
+					//- 				td(data-th='境內快遞單號') HSL0032651
+					//- 				td(data-th='入庫時間') 2017-10-18 18:32:44
+					//- 				td(data-th='重量') 0.8
+					//- 				td(data-th='體積') 30.0*15.0*10.0
+					//- 				td(data-th='收費公斤') 1
+					//- 				td(data-th='運費')
+					//- 					span.any_price(data-mark="NT$") 90
+					//- 		tbody
+					//- 			tr
+					//- 				th(colspan='3') 商品名稱
+					//- 				th(colspan='2') 商品網址
+					//- 				th 數量
+					//- 				th 單價
+					//- 					|(
+					//- 					span 日幣
+					//- 					|)
+					//- 			tr
+					//- 				td(colspan='3', data-th='商品名稱') XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+					//- 				td(colspan='2', data-th='商品網址') 
+					//- 					a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+					//- 				td(data-th='數量') 1
+					//- 				td(data-th='單價(日幣)') 1,268
+					//- 			tr
+					//- 				td(colspan='3', data-th='商品名稱') 2018 新春福袋大放送，優惠 免收代購費
+					//- 				td(colspan='2', data-th='商品網址') 
+					//- 					a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+					//- 				td(data-th='數量') 1
+					//- 				td(data-th='單價(日幣)') 1,268
+					//- 			tr
+					//- 				td(colspan='3', data-th='商品名稱') 2017 冬季必買大衣
+					//- 				td(colspan='2', data-th='商品網址') 
+					//- 					a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+					//- 				td(data-th='數量') 1
+					//- 				td(data-th='單價(日幣)') 1,268
+
+	//- lightbox區塊 - 付款
+	.modal.fade.package_paycheck(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 流水號：1234567890
+				.modal-body
+					.row.package_paycheck_box
+						.col-xs-12
+							h3.point_title.mb20 收件資料確認
+							ul.store_proinfo
+								li(data-tit="中文姓名") 王大明
+								li(data-tit="手機號碼") 0912-345678
+								li(data-tit="市內電話") 04-11112222
+								li(data-tit="收件地址") 台中市西屯區台灣大道二段100號4F-7
+							hr
+							h3.point_title.mb20 發票
+							p 使用載具
+							hr
+							h3.point_title.mb20 折扣碼
+							form.form-inline.discount
+								.form-group
+									label.sr-only(for='')
+									input.form-control(type='text', id='', placeholder='輸入折扣碼')
+								button.btn.btn_cafe(type='submit') 使用
+								p.mi.red.small_font 提醒:同一組折扣碼一個賬號只能使用一次
+							hr
+							h3.point_title.mb20 應付金額
+							.package_check
+								ul.store_proinfo
+									li(data-tit="代收國際運費") 
+										span.any_price(data-mark="NT$") 1,800
+									li(data-tit="逾期保管費") 
+										span.any_price(data-mark="NT$") 200
+									li(data-tit="加值服務費") 
+										span.any_price(data-mark="NT$") 150
+									li(data-tit="折扣碼") 
+										span.any_price(data-mark="NT$") -200
+									li(data-tit="營業稅") 
+										span.any_price(data-mark="NT$") 130
+									li(data-tit="應付金額") 
+										span.any_price.red(data-mark="NT$") 2,080
+				.modal-footer
+					button.btn.btn_black(type='submit') 確認付款
+
+
+	//- lightbox timeline
+	#state_timeline.state_timeline(style='display: none;max-width:1200px;')
+		h2(data-selectable='true') 包裹狀態細節
+		.timeline(data-selectable='true')
+			.steps.completed
+				.title 收到貨物
+				.date 2017/12/28 18:38
+			.steps.completed
+				.title 加值理貨中
+				.date 2017/12/29 08:19
+			.steps.completed
+				.title 待繳運費
+				.date 2017/12/30 15:40
+			.steps.current
+				.title 安排航班中
+				.date 2017/12/31 04:27
+			.steps
+				.title 發貨中
+				.date ---
+			.steps
+				.title 飛航中
+				.date ---
+			.steps
+				.title 清關中
+				.date ---
+			.steps
+				.title 查驗中
+				.date ---
+			.steps
+				.title 派送
+				.date ---
+			.steps
+				.title 代運單完成
+				.date ---

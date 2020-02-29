@@ -1,0 +1,89 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 代運地址
+			li.active 美國代運地址
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 美國代運地址
+		hr
+		.members_content
+			h3.nopoint_title 您的美國轉運倉庫地址
+			p.red 您尚未上傳身分證與委託書，請您務必上傳通過驗證才可使用HiClicks代運的服務。
+			h5.mt20.mb10 運送地址請填寫下方住址：
+			.adds_box
+				ul.list-unstyled
+					li 運送地址：7021 NE 79TH Ct. HCLS09038117
+					li 郵遞區號：97218 (City:Portland,State:Oregon)
+					li 電　　話：503-764-9172
+			hr
+			h3.nopoint_title 美國網站收件地址填寫對照表 (僅供參考)
+			p.mi.red.mb10.visible-xs 表格可以左右滑動對照資料
+			.textedit
+				//-這裡是文字編輯器的區塊
+				.table-responsive
+					table.table.table-bordered.table-condensed.adds_table
+						tr
+							th ID
+							td ID
+							td 您的HiClicks ID (HCLS09038117)
+						tr
+							th 姓名
+							td NAME
+							td.red 您的姓名 (前方務必+HCL 範例：HCLWanXinMin)
+						tr
+							th 名
+							td FIRST NAME
+							td HCL+名字外文拼音
+						tr
+							th 姓
+							td LAST NAME
+							td 姓氏外文拼音
+						tr
+							th 城市
+							td CITY
+							td Portland
+						tr
+							th 州
+							td STATE
+							td Oregon (OR)
+						tr
+							th 地址
+							td ADDRESS
+							td 7021 NE 79TH Ct.
+						tr
+							th 郵遞區號
+							td ZIP CODE
+							td 97218
+						tr
+							th 電話號碼
+							td PHONE NUMBER
+							td (503) 764-9172
+						tr
+							th 電子郵件
+							td EMAIL
+							td 您的電子郵件信箱
+			hr
+			h3.nopoint_title 常用美國網站地址填寫範例
+			.store_tabs
+				//-Nav tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#addstext01', aria-controls='addstext01', role='tab', data-toggle='tab') 美國亞馬遜地址填寫範例
+				//-Tab panes
+				.tab-content
+					#addstext01.tab-pane.active(role='tabpanel') 
+						img.img-responsive(src='images/members/text_us01.jpeg',alt='')

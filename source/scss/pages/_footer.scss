@@ -1,0 +1,215 @@
+footer {
+    @include pc-width {
+        margin-top: -300px;
+        position: relative;
+        z-index: 1;
+    }
+    @include spc-width {
+        margin-top: 50px;
+    }
+}
+
+.fo_infobox {
+    background: $footerbg;
+    color: darken($white, 20%);
+    padding: 0 0 20px;
+    a {
+        color: darken($white, 20%);
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.fo_logo {
+    width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.fo_title {
+    font-size: $font-size * 1.1;
+    font-weight: 400;
+    color: lighten($footerbg, 20%);
+    @include phone-width() {
+        padding-left: 20px;
+    }
+}
+
+.fo_compinfo {
+    @include table-up-width() {
+        padding-left: 20px;
+    }
+    @include table-width() {
+        padding-left: 0;
+    }
+    @include phone-width() {
+        width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    li {
+        font-family: "Lato", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif;
+        font-size: $font-size * 0.9;
+        letter-spacing: 1px;
+    }
+}
+
+.fo_nav {
+    display: flex;
+    @include table-up-width() {
+        justify-content: space-around;
+    }
+    @include table-width() {
+        margin: 15px 0;
+    }
+    @include phone-width() {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    >li {
+        text-align: center;
+        @include iphone-s-width() {
+            flex-basis: 50%;
+            margin-bottom: 15px;
+        }
+    }
+    .fo_title {
+        margin-bottom: 10px;
+        font-weight: 400;
+        @include phone-width() {
+            padding-left: 0;
+        }
+    }
+    .fo_compinfo {
+        padding-left: 0;
+        @include phone-width() {
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.fo_navbox {
+    a {
+        position: relative;
+        &:hover:before {
+            content: '';
+            display: inline-block;
+            @extend %triangle;
+            color: $white;
+            font-size: $font-size * 1.5;
+            position: absolute;
+            top: 6px;
+            left: -12px;
+            animation-duration: .5s;
+            animation-fill-mode: both;
+            animation-name: fadeInLeft;
+        }
+    }
+}
+
+.copy_box {
+    font-family: "Meiryo";
+    padding: 5px 0;
+    background: $logored;
+    color: $white;
+    letter-spacing: 1px;
+    a {
+        color: darken($white, 20%);
+        &:hover {
+            color: $white;
+        }
+    }
+    @include table-up-width() {
+        font-size: $font-size * 0.82;
+    }
+    @include phone-width() {
+        @include rem(font-size, 1.2rem);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+#transMath {
+    position: fixed;
+    right: 20px;
+    bottom: 12%;
+    z-index: 99;
+    text-align: center;
+    transition: all .5s ease;
+    @include sphone-width() {
+    		bottom: 18%;
+    }
+    a {
+        display: block;
+        background-color: $footerbg;
+        text-transform: capitalize;
+        transition: all .5s ease;
+        width: 65px;
+        height: 65px;
+        border-radius: 15px;
+        // @include phone-width() {
+        //     width: 40px;
+        //     height: 40px;
+        //     border-radius: 3px;
+        // }
+        &:before {
+            content: url(../images/cal03.png);
+            display: block;
+            padding-top: 7px;
+            // @include phone-width() {
+            //     transform: scale(.6);
+            // }
+        }
+        &:after {
+            content: '運費試算';
+            display: block;
+            color: $white;
+            font-family: '新細明體', serif;
+            position: absolute;
+            font-size: 12px;
+        		font-weight: 100;
+        		bottom: 4px;
+            left: 0;
+            right: 0; 
+            // @include phone-width() {
+            //    font-size: 10px;
+            // 		font-weight: 300;
+            // 		-webkit-transform: scale(0.83);
+            // 		bottom: -2px;
+						// 		left: 0;
+						// 		right: 0; 
+            // }
+            // width: 34px;
+            // height: 43px;
+            // top: 50%;
+            // left: 50%;
+            // transform: translate(-50%, -50%);
+            // -webkit-transform: scale(0.91);
+        }
+        &:hover {
+            background-color: $red;
+        }
+    }
+    &.foo_top {
+        bottom: 56%;
+        @include table-width {
+            bottom: 580px;
+        }
+        @include phone-width {
+            bottom: 880px;
+        }
+    }
+}

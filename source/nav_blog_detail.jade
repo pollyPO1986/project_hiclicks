@@ -1,0 +1,234 @@
+extend layout/_layout_side_r.jade
+
+mixin blog-pro(url,img,name)
+	li
+		a.imgbox(href=url, style=img)
+		a.prolink(href=url)=name
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='nav_blog.html') 開箱文
+			li.active 開箱文標題
+
+block sidenav
+	include include/_blog_de_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 開箱文
+	.blogarea
+		.blogbar
+			h1.blogtitle 不只蔡依林，國內外火辣超模都這樣穿夾衣！
+			ul.blog_media
+				li 
+					p 2017-08-18
+					p 瀏覽人次：
+						span 288
+				li
+					#fb-root
+					.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+						a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+				li 
+					button.btn.btn_store.like(type='button') + 收藏文章
+		.textedit
+			p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過、種操到來的朋種們告我記：市眼之的分何投候士是健力愛，種關離功達來斷告苦他量後來。
+			p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+			p 詩拿市有養式辦因時為政人合當友理從法急為陽第八上。創著之然面。近院然果而年雨，修教而月廣。他著海面終大廣明失現具統的人！
+			img.img-responsive(src='images/blog/text01.jpg')
+			p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+			img.img-responsive(src='images/blog/text02.jpg')
+			p 造物證大男其造好環故、經願保。李上臺化，車才子告我；報成師代接裡可我，小軍天當子醫？飯轉地可實，體著小談媽同不子事用女創得喜，維車漸能、女際它的，年這廠，的地試前人三現景參，開包境成老功那少作？愛子總去間林許辦不天所業在遊一人愛慢我；中近不？著發也般位以！局真道斯以只星好知確程，取己地有只清子東，美人真一廣而加求事我資線個在認用種達的教年跟，美品教，幾生海來不；來力聲無……頭問件了天然子年一人市好，結作術我子不害……天手實於來在。里子國時代處一禮就，利一照放營此子我夜及財，基市經主高文品在。果反間就育球。
+			p 異係兒法，是景我怎師海式四中廣說謝洋為的，品格公復標流信多士臺白曾定族代構有臺統來識熱五北？
+			img.img-responsive(src='images/blog/text03.jpg')
+			p 知飛林。的動立法及受資參上之統關竟天座致面一教上總進哥開線天據部的子。一者為；工驚的。是計你上品、家經地實一獨此的商影中為能各電保更單說辦手信前，空動養，一義向；會種是。
+		ul.blog_media
+			li
+				#fb-root
+				.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+					a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+			li 
+				button.btn.btn_store(type='button') + 收藏文章
+		h3.blogstitle.black 賣家代購商品
+		.blog_products.clearfix
+			ul.blog_pro
+				+blog-pro('#','background-image: url(images/index/4.jpg);','產品名稱01')
+				+blog-pro('#','background-image: url(images/index/7.jpg);','產品名稱02')
+				+blog-pro('#','background-image: url(images/index/13.jpg);','產品名稱03')
+				+blog-pro('#','background-image: url(images/index/4.jpg);','產品名稱04')
+				+blog-pro('#','background-image: url(images/index/products_005.jpg);','產品名稱05')
+			//- 最多5項
+		h3.blogstitle.black.mt30 讀者迴響
+		#fb-root
+		.fb-comments(data-href='https://www.hiclicks.com.tw/', data-width='100%', data-numposts='10', data-mobile='true', data-order-by='reverse_time')
+			
+block lightbox
+	//- lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-sm.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.blue 聯絡賣家
+				.modal-body
+					form.contact_form.saler_form
+						.form-group
+							label(for='')
+								| 問題類型：
+							select.form-control
+								option(value='buyer_product') 商品問題
+								option(value='buyer_trans') 派送問題
+								option(value='buyer_cancel') 取消訂單
+								option(value='buyer_returns') 退貨與退款
+								option(value='buyer_other') 其他問題					
+						.form-group.has-error
+							label(for='')
+								| 訂單編號：
+							input.form-control(type='number', id='', name='', placeholder='請填寫訂單編號，讓我們更快為您處理')
+							p.help-block 編號格式錯誤
+						.form-group
+							label(for='') 
+								span.red *
+								| 問題說明：
+							textarea.form-control(rows='3', placeholder='請務必詳細說明您詢問及反應的問題')
+						.form-group
+							button.btn.btn-block.btn_black(type='submit') 送出
+
+	//- lightbox區塊
+	.modal.fade.helpbuy_forms(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title 填寫代購單
+				.modal-body
+					.helpbuy_tip
+						p 請填寫代購需求，賣家會幫您確認代購金額。
+							br
+							small.mi.red 賣家報價完成後，您可再決定是否委託代購。
+					.helpbuy_salerinfo
+						span.grey 賣家：
+						|噹噹代購小叮噹小舖
+					form.form-horizontal.contact_form.helpbuy_form
+						ul.helpbuy_needs
+							li(data-tit="商品一")
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|代購國家：
+									.col-sm-9
+										select.form-control
+											option(value='helpbuy_jp') 日本
+											option(value='helpbuy_kr') 韓國	
+								.form-group
+									label.col-sm-3.control-label(for='') 
+										span.red *
+										|商品名稱：
+									.col-sm-9
+										input.form-control(type='text', id='', name='', placeholder='')
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|參考連結：
+									.col-sm-9
+										input.form-control(type='text', id='', name='', placeholder='請填入網址')
+								.form-group
+									label.col-sm-3.control-label(for='file_up') 
+										|商品圖片：
+									.col-sm-9
+										.file-loading
+											input#file_up.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png"]')
+										ul.contact_list.mt10.list-unstyled
+											li.red *檔案大小：2MB以下
+											li.red *檔案格式：jpg、jpeg、png
+											li.red *最多可上傳3張圖片
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|規格：
+									.col-sm-9
+										textarea.form-control(rows='1', placeholder='顏色、尺寸、型號...等')
+								.form-group
+									label.col-sm-3.control-label(for='') 
+										span.red *
+										|數量：
+									.col-sm-9
+										input.form-control(type='number', id='', name='', placeholder='')
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|參考價格：
+									.col-sm-9
+										.input-group
+											span.input-group-addon NT$
+											input.form-control(type='number', id='', name='', placeholder='')
+
+						p.text-center.mb30
+							button#addhelplist.btn.btn_store(type='button') 
+								i(class='fa fa-plus')  
+								|  再增加一項商品
+						.form-group
+							label.col-sm-3.control-label(for='')
+								|寄送方式：
+							.col-sm-9
+								select.form-control
+									option(value='') 郵寄
+									option(value='') 宅配
+									option(value='') 店到店
+						.form-group
+							label.col-sm-3.control-label(for='')
+								|備註：
+							.col-sm-9
+								textarea.form-control(rows='3', placeholder='')
+						.form-group
+							.col-sm-offset-3.col-sm-6
+								button.btn.btn-block.btn_black(type='submit') 送出代購單
+
+	//- 代購單
+	.help_li_form
+		li(data-tit="商品二")
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|代購國家：
+				.col-sm-9
+					select.form-control
+						option(value='helpbuy_jp') 日本
+						option(value='helpbuy_kr') 韓國	
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					span.red *
+					|商品名稱：
+				.col-sm-9
+					input.form-control(type='text', id='', name='', placeholder='')
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|參考連結：
+				.col-sm-9
+					input.form-control(type='text', id='', name='', placeholder='請填入網址')
+			.form-group
+				label.col-sm-3.control-label(for='file_up') 
+					|商品圖片：
+				.col-sm-9
+					.file-loading
+						input#file_up.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png"]')
+					ul.contact_list.mt10.list-unstyled
+						li.red *檔案大小：2MB以下
+						li.red *檔案格式：jpg、jpeg、png
+						li.red *最多可上傳3張圖片
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|規格：
+				.col-sm-9
+					textarea.form-control(rows='1', placeholder='顏色、尺寸、型號...等')
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					span.red *
+					|數量：
+				.col-sm-9
+					input.form-control(type='number', id='', name='', placeholder='')
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|參考價格：
+				.col-sm-9
+					.input-group
+						span.input-group-addon NT$
+						input.form-control(type='number', id='', name='', placeholder='')

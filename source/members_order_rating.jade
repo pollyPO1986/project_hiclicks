@@ -1,0 +1,193 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(sort,date,number,title)
+	tr
+		td.visible-xs
+		td.hidden-xs=sort
+		td=date
+		td
+			a.order_link(href="javascript:;", data-toggle="modal", data-target=".serial_number")=number
+		td
+			a(href="nav_product_saler.html")=title
+		td
+			block
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的訂單
+			li.active 評價系統
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 評價系統
+		.bonus.keep
+			table.table.tablestyle.keep_tb.rats(data-toggle-column="first")
+				thead
+					tr
+						th.visible-xs
+						th.hidden-xs NO
+						th 訂單成立日期
+						th 訂單編號
+						th(data-breakpoints='xs') 店家名稱
+						th 給評價
+				tbody
+					+keeptb('1','2017-11-21','123456789','噹噹代購小叮噹小舖')
+						a.order_link(href="members_order_rating_single.html") 給評價
+					+keeptb('2','2017-11-18','123456789','專業日韓代購')
+						a.order_link(href="members_order_rating_single.html") 給評價
+					+keeptb('3','2017-11-02','123456789','噹噹愛佩佩小舖')
+						a.order_link(href="members_order_rating_single.html") 給評價
+					+keeptb('4','2017-10-23','123456789','桃樂絲美國代購')
+						p.red 5分
+					+keeptb('5','2017-10-11','123456789','噹噹代購小叮噹小舖')
+						p.red 4分
+					+keeptb('6','2017-10-01','123456789','噹噹愛佩佩小舖')
+						p.red 5分
+					+keeptb('7','2017-09-30','123456789','噹噹代購小叮噹小舖')
+						a.order_link(href="members_order_rating_single.html") 給評價
+					+keeptb('8','2017-09-24','123456789','專業日韓代購')
+						p.red 5分
+					+keeptb('9','2017-09-08','123456789','噹噹愛佩佩小舖')
+						p.red 3分
+					+keeptb('10','2017-08-28','123456789','桃樂絲美國代購')
+						p.red 5分
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')
+
+block lightbox
+	//- lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-lg.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 訂單編號：1234567890
+				.modal-body
+					p.mi.red.mt10.visible-xs 表格可以左右滑動觀看資料
+					.table-responsive
+						table.table.history
+							tr
+								th 訂單編號
+								td(data-th='訂單編號') 1234567890
+								th 下單時間
+								td(data-th='下單時間') 2017-10-18
+								th 訂購會員
+								td(data-th='訂購會員') 王大明
+								th 訂單狀態
+								td(data-th='訂單狀態') 待付款
+							tr
+								th 付款時間
+								td(data-th='付款時間') 2017-12-28 23:38
+								th 付款期限
+								td(data-th='付款期限') 2017-12-29 23:59
+								th 付款資訊
+								td(colspan="3", data-th='付款資訊') 銀行代碼：005
+									br
+									|虛擬帳戶：5219-8013-4515-3413
+							tr
+								th 出貨時間
+								td(data-th='出貨時間') 2018-01-01 09:52
+								th 取消時間
+								td(data-th='取消時間') ---
+								th 取消原因
+								td(colspan="3", data-th='取消原因') ---
+							tr
+								th 商品金額
+								td(data-th='商品金額') 
+									p.any_price(data-mark="NT$") 4,000
+								th 折扣金額
+								td(data-th='折扣金額') ---
+								th 運費
+								td(data-th='運費') 
+									p.any_price(data-mark="NT$") 250
+								th 總訂單金額
+								td(data-th='總訂單金額') 
+									p.any_price.red(data-mark="NT$") 4,250
+							tr
+								th 付款方式
+								td(data-th='付款方式') 線上刷卡
+								th 運送方式
+								td(data-th='運送方式') 店到店
+								th 包裹單號
+								td(colspan="3", data-th='包裹單號') 1234567890
+							tr
+								th 收貨人
+								td(data-th='收貨人') 王大明
+								th 收貨人電話
+								td(data-th='收貨人電話') 0912-345678
+								th 收件地址
+								td(colspan="3",data-th='收件地址') 7-11 風和門市
+							tr
+								th 備註：
+								td(colspan='7') 送貨前請電聯
+					table.table.history_listtb
+						caption.text-center 商品明細
+						tbody
+							tr
+								td
+									ul.row.history_list_child
+										li.col-sm-3.col-md-2
+											a(href="nav_product_detail.html")
+												.imgbox(style="background-image: url(images/blog/1.jpg);")
+										li.col-sm-5.col-md-7
+											p.store_protitle.now
+												a(href="nav_product_detail.html")
+													|【樂芙夏夏】日本 JOUL'S VERNI ＊甜美香氛＊ 珍珠吊飾超美的香水 護手霜/指緣滋潤霜50g
+											ul.list-inline.cart_proinfo
+												li(data-info='顏色') 金黃色
+												li(data-info='尺寸') XL
+										li.col-sm-2.col-md-2
+											|數量：1
+										li.col-sm-2.col-md-2
+											|單價：
+											span.any_price(data-mark="NT$") 1,000
+							tr
+								td
+									ul.row.history_list_child
+										li.col-sm-3.col-md-2
+											a(href="nav_product_detail.html")
+												.imgbox(style="background-image: url(images/blog/3.jpg);")
+										li.col-sm-5.col-md-7
+											p.store_protitle.wait
+												a(href="nav_product_detail.html") melody 立體造型靠墊毛毯 預購 收納毛毯靠枕 毯子 被子 冷氣毯 紅.趴姿.可捲起收納
+											ul.list-inline.cart_proinfo
+												li(data-info='顏色') 黃色
+												li(data-info='尺寸') M
+										li.col-sm-2.col-md-2
+											|數量：1
+										li.col-sm-2.col-md-2
+											|單價：
+											span.any_price(data-mark="NT$") 1,000

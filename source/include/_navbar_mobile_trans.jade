@@ -1,0 +1,184 @@
+mixin mobi_navs(sub,items)
+	span=sub
+	ul
+		each item in items
+			li
+				a(href="nav_trans.html")=item
+
+mixin mobi_nav(url,name)
+	li
+		a(href=url)=name
+
+mixin mobi_pro_navs(sub,items)
+	span=sub
+	ul
+		each item in items
+			li
+				a(href="nav_product.html")=item
+
+mixin mobi_proinside_navs(items)
+	ul.mh-list
+		each item in items
+			li
+				a(href="nav_trans.html")=item
+
+.hidden-lg
+	.mh-head.Sticky.hiclicksnav
+		span.mh-btns-left
+			a.fa.fa-bars(href='#menu')
+			a.fa.fa-close(href='#mm-0')
+		span.mh-logo
+		span.mh-btns-right
+			a.fa.fa-sign-in(href='topnav_login.html', role="button")
+			a.fa.fa-shopping-bag(href='nav_product_cart.html', role="button")
+	.mh-head
+		form.mh-form
+			.searchbox
+				.input-group
+					.input-group-btn
+						button.btn.btn_search.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+							| 全部 
+							span.caret
+						ul.dropdown-menu
+							li
+								a(href='#') 全部
+							li
+								a(href='#') 商品
+							li
+								a(href='#') 賣家
+							li
+								a(href='#') 開箱文
+					input.form-control(type='text', aria-label='', placeholder='請輸入關鍵字')
+					a.fa.fa-search(href='javascript:;')
+	.mh-head.Sticky
+		+mobi_proinside_navs(['認識HiClicks代運服務','日韓美倉庫簡介','代運流程','代運方式及時效','尺寸限制','代運費用'])
+	nav#menu
+		ul#panel-menu
+			li
+				a(href='index.html') 首頁
+			li
+				span 我要代運
+				ul
+					li
+						+mobi_navs('新手上路',['認識HiClicks代運服務','日韓美倉庫簡介','代運流程','代運方式及時效','尺寸限制','代運費用'])
+					li
+						+mobi_navs('使用教學',['註冊教學','上傳身分證／委託書','包裹管理／繳費','代運進度追蹤'])
+					li
+						+mobi_navs('禁運用品&限制',['禁運用品','食品類限制','美國特殊限制'])
+					li
+						+mobi_navs('日韓提貨服務',['日本東京大阪提貨服務','韓國東大門提貨服務'])
+					li
+						+mobi_navs('費用說明',['收費規則','加值服務','運費試算'])
+					li
+						span 代運公告
+						ul
+							+mobi_nav('nav_trans_news.html','代運公告')
+			li
+				span 所有商品
+				ul
+					li
+						a(href='nav_product.html') 全部商品
+					li
+						a(href='nav_product.html') 最新上架
+					li
+						a(href='nav_product.html') 熱門代購商品
+					li
+						a(href='nav_product.html') 現貨在台
+					li
+						+mobi_pro_navs('商品分類',['美妝保養','女生服飾','男生服飾','鞋品箱包','飾品配件','進口食品','居家用品','3C家電','動漫偶像','運動戶外','醫療保健','文具雜貨','寵物用品','其他'])
+			li
+				a(href='nav_blog.html') 開箱文
+
+			li
+				span 會員專區
+				ul
+					li
+						span 我的會員資料
+						ul
+							+mobi_nav('members_info.html','基本資料')
+							+mobi_nav('members_verify.html','身分驗證')
+							+mobi_nav('members_forget.html','修改密碼')
+							+mobi_nav('javascript:;','登出')
+					li
+						span 訊息信件匣
+						ul
+							li
+								span 站方系統公告
+								ul
+									+mobi_nav('members_email_hiclicks_all.html','平台公告')
+									+mobi_nav('members_email_hiclicks_helpbuy.html','代購公告')
+									+mobi_nav('members_email_hiclicks_trans.html','代運公告')
+									+mobi_nav('members_email_trans.html','代運訊息通知')
+							li
+								span 代購詢價回覆
+								ul
+									+mobi_nav('members_email_helpbuy.html','我的詢價')
+									+mobi_nav('members_email_helpbuy.html','我的報價')
+									+mobi_nav('members_email.html','訊息通知')
+					li
+						span 我的訂單
+						ul
+							+mobi_nav('members_order_history.html','購買清單')
+							+mobi_nav('members_order_rating.html','評價系統')
+					li
+						span 代運地址
+						ul
+							+mobi_nav('members_trans_add_jp.html','日本倉庫')
+							+mobi_nav('members_trans_add_kr.html','韓國倉庫')
+							+mobi_nav('members_trans_add_us.html','美國倉庫')
+					li
+						span 代運包裹管理
+						ul
+							+mobi_nav('members_trans_package.html','我的代運包裹')
+							+mobi_nav('members_trans_package_history.html','歷史代運單')
+					li
+						span 店家資料管理
+						ul
+							+mobi_nav('members_store_edit.html','關於賣場')
+							+mobi_nav('members_store_ecpay.html','金流設定')
+					li
+						span 賣場商品管理
+						ul
+							+mobi_nav('members_store_product_list.html','商品上架')
+							+mobi_nav('members_store_ship_list.html','物流設定')
+					li
+						span 賣場訂單管理
+						ul
+							+mobi_nav('members_store_order.html','訂單管理')
+					li
+						span 行銷專區
+						ul
+							+mobi_nav('members_marketing_list.html','站方行銷活動')
+							+mobi_nav('members_marketing_customlist.html','已報名的活動')
+					li
+						span 我的Hi 幣
+						ul
+							+mobi_nav('members_bonus_list.html','Hi 幣紀錄')
+							+mobi_nav('members_bonus_gift.html','Hi 幣兌換區')
+							+mobi_nav('members_bonus_history.html','兌換紀錄')
+							+mobi_nav('members_textedit.html','使用規則')
+					li
+						span 我的開箱文
+						ul
+							+mobi_nav('members_blog_edit.html','新增開箱文')
+							+mobi_nav('members_blog_list.html','管理開箱文')
+					li
+						span 我的收藏管理
+						ul
+							+mobi_nav('members_keep_store.html','收藏店家')
+							+mobi_nav('members_keep_products.html','收藏商品')
+							+mobi_nav('members_keep_writer.html','收藏作者')
+							+mobi_nav('members_keep_blog.html','收藏開箱文')
+
+	.newsbar.mobilenews
+		ul
+			li
+				a(href="nav_trans_newsdetail.html") 公告訊息在這裡~歐嗨唷~
+			li
+				a(href="nav_trans_newsdetail.html") 公告訊息在這裡~歐嗨唷~歐嗨唷~歐嗨唷~歐嗨唷~
+			li
+				a(href="nav_trans_newsdetail.html") 消息公告02
+			li
+				a(href="nav_trans_newsdetail.html") 消息公告03
+			li
+				a(href="nav_trans_newsdetail.html") 消息公告04

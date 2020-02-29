@@ -1,0 +1,80 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(date,title)
+	tr
+		td
+			.checkbox
+				label
+					input(type='checkbox')
+					i.fa.fa-check(aria-hidden='true')
+		td=date
+		td
+			a(href="members_email_feedback.html",class!=attributes.class)=title
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 訊息信件匣
+			li.active 訊息通知
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 訊息通知
+		.bonus.keep
+			button.btn.btn_cafe(type='submit') 
+				i.fa.fa-trash-o
+				|  刪除
+			table.table.tablestyle.keep_tb.email(data-toggle-column="first")
+				thead
+					tr
+						th
+							.checkbox
+								label
+									input(type='checkbox')
+									i.fa.fa-check(aria-hidden='true')
+						th 日期
+						th 標題
+				tbody
+					+keeptb('2017-11-21','【聯絡賣家】請問何時會出貨??')
+					+keeptb('2017-11-18','【取消訂單】買家：HSLA123456 提出取消訂單需求')
+					+keeptb('2017-11-02','【聯絡賣家】您好，請問我可以更改運送方式嗎?')
+					+keeptb('2017-10-23','【聯絡賣家】請問何時會出貨??')
+					+keeptb('2017-10-11','訂單編號：123456789 已超過出貨天數')
+					+keeptb('2017-10-01','訂單編號：123456789 已超過出貨天數')
+					+keeptb('2017-09-30','【取消訂單】買家：HSLA123456 提出取消訂單需求')
+					+keeptb('2017-09-24','【聯絡賣家】請問何時會出貨??')
+					+keeptb('2017-09-08','【取消訂單】買家：HSLA123456 提出取消訂單需求')
+					+keeptb('2017-08-28','【取消訂單】買家：HSLA123456 提出取消訂單需求')
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')

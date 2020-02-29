@@ -1,0 +1,232 @@
+extend layout/_layout_side_r.jade
+
+mixin search(url,img,name)
+	li
+		.search_data
+			a.searchimg(href=url)
+				.imgbox(style=img)
+			.search_datainfo
+				h3
+					a(href=url)=name
+				block
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li.active 搜尋列表
+
+block sidenav
+	include include/_blog_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 搜尋列表
+	.sidebox.blogs.mb30.hidden-md.hidden-lg
+		.side_title
+			h4.blog_newstit 活動公告
+		hr
+		.side_content
+			ul.blog_news
+				+side_news('#','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+				+side_news('#','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+				+side_news('#','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+			p.text-right
+				span.btn_more.mb10
+						a(href="javascript:;") more 
+							i.fa.fa-angle-double-right(aria-hidden='true')
+	ul.searchlist
+		+search('nav_blog_detail.html','background-image: url(images/blog/1.jpg);','西班牙百年老牌【LOEWE】2017熱賣TOP 5')
+			ul.blog_media
+					li 
+						p 2017.08.18
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過、種操到來的朋種們告我記：市眼之的分何投候士是健力愛，種關離功達來斷告苦他量後來。
+				p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+				p 詩拿市有養式辦因時為政人合當友理從法急為陽第八上。創著之然面。近院然果而年雨，修教而月廣。他著海面終大廣明失現具統的人！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/2.jpg);','櫻花妹人腳一雙！精選6大日本人氣女鞋品牌，折扣季入手更划算')
+			ul.blog_media
+					li 
+						p 2017.08.12
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過，種關離功達來斷告苦他量後來。
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/3.jpg);','日本夏季折扣大家都搶什麼好貨？必搶清單一次列給你！')
+			ul.blog_media
+					li 
+						p 2017.08.10
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/6.jpg);','西班牙百年老牌【LOEWE】2017熱賣TOP 5')
+			ul.blog_media
+					li 
+						p 2017.08.09
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/5.jpg);','2017最新版！日本各大電器行COUPON優惠券總整理（BIC CAMERA、SOFMAP、KOJIMA、山田電機、多慶屋、JOSHIN、EDION、BEST）')
+			ul.blog_media
+					li 
+						p 2017.08.05
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過、種操到來的朋種們告我記：市眼之的分何投候士是健力愛，種關離功達來斷告苦他量後來。
+				p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+				p 詩拿市有養式辦因時為政人合當友理從法急為陽第八上。創著之然面。近院然果而年雨，修教而月廣。他著海面終大廣明失現具統的人！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/1.jpg);','西班牙百年老牌【LOEWE】2017熱賣TOP 5')
+			ul.blog_media
+					li 
+						p 2017.08.18
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過、種操到來的朋種們告我記：市眼之的分何投候士是健力愛，種關離功達來斷告苦他量後來。
+				p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+				p 詩拿市有養式辦因時為政人合當友理從法急為陽第八上。創著之然面。近院然果而年雨，修教而月廣。他著海面終大廣明失現具統的人！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/7.jpg);','慶祝25周年紀念，美少女戰士化身家飾雜貨！徹底入侵家裡各個角落！')
+			ul.blog_media
+					li 
+						p 2017.08.01
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過、種操到來的朋種們告我記：市眼之的分何投候士是健力愛，種關離功達來斷告苦他量後來。
+				p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+				p 詩拿市有養式辦因時為政人合當友理從法急為陽第八上。創著之然面。近院然果而年雨，修教而月廣。他著海面終大廣明失現具統的人！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/8.jpg);','英國限定Jo Malone 最新限量聯名Poptastic系列，根本秒殺少女心～')
+			ul.blog_media
+					li 
+						p 2017.07.28
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過、種操到來的朋種們告我記：市眼之的分何投候士是健力愛，種關離功達來斷告苦他量後來。
+				p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+				p 詩拿市有養式辦因時為政人合當友理從法急為陽第八上。創著之然面。近院然果而年雨，修教而月廣。他著海面終大廣明失現具統的人！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+		+search('nav_blog_detail.html','background-image: url(images/blog/9.jpg);','沁涼一夏！香港星巴克藍色海洋限定陪你度過這個夏天～')
+			ul.blog_media
+					li 
+						p 2017.07.25
+						p 瀏覽人次：
+							span 288
+					li
+						#fb-root
+						.fb-share-button(data-href='https://www.hiclicks.com.tw/', data-layout='button_count', data-size='small', data-mobile-iframe='true')
+							a.fb-xfbml-parse-ignore(target='_blank', href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.hiclicks.com.tw%2F&src=sdkpreparse') 分享
+					li 
+						button.btn.btn_store(type='button') + 收藏文章
+			.searchlist_info.textedit
+				p 力省爸！相不大眼設到超。是好反裡供命英響際手實事？前想成？母進就很館辦家來居臺長：後去量！人財現，回決明清想是選能法超解！第的族就充這時溫國家報；和體能過、種操到來的朋種們告我記：市眼之的分何投候士是健力愛，種關離功達來斷告苦他量後來。
+				p 不陸隨；要怎受化未漸國早，他我種圖及電媽無達三叫易意步經、魚印用爸不白世在大常庭主國說像的外意落：雖科計空資一司評的接強般辦？
+				p 詩拿市有養式辦因時為政人合當友理從法急為陽第八上。創著之然面。近院然果而年雨，修教而月廣。他著海面終大廣明失現具統的人！
+			p.search_bbtn
+				span.btn_more
+					a(href="nav_blog_detail.html") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+
+	ul.pagebox
+		li(class="arrow")
+			i.fa.fa-angle-double-left(aria-hidden='true')
+		li(class="arrow")
+			i.fa.fa-angle-left(aria-hidden='true')
+		li.on
+			a(href='javascript:;') 1
+		li
+			a(href='javascript:;') 2
+		li
+			a(href='javascript:;') 3
+		li
+			a(href='javascript:;') 4
+		li
+			a(href='javascript:;') 5
+		li(class="arrow")
+			i.fa.fa-angle-right(aria-hidden='true')
+		li(class="arrow")
+			i.fa.fa-angle-double-right(aria-hidden='true')

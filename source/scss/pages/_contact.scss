@@ -1,0 +1,297 @@
+// login & contact
+.login {
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid lighten($grey, 25%);
+    .contact_form {
+        padding-right: 0;
+         ::-webkit-input-placeholder {
+            @include rem(font-size, 1.3rem);
+        }
+
+         :-ms-input-placeholder {
+            @include rem(font-size, 1.3rem);
+        }
+
+         ::-moz-placeholder {
+            @include rem(font-size, 1.3rem);
+        }
+
+         :-moz-placeholder {
+            @include rem(font-size, 1.3rem);
+        }
+    }
+
+    .form-horizontal .checkbox {
+        min-height: 24px;
+    }
+
+    .titles_line_font {
+        @include rem(font-size, 1.8rem);
+        &:before,
+        &:after {
+            @include pc-width {
+                max-width: 110px;
+            }
+        }
+    }
+    .checkbox a {
+        color: $blue;
+        &:hover {
+            color: $pink;
+        }
+    }
+    @include pc-width {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        .row {
+            >.col-lg-6+.col-lg-6 {
+                border-left: 1px solid lighten($grey, 25%);
+            }
+        }
+    }
+    @include spc-width {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .row {
+            >.col-lg-6+.col-lg-6 {
+                border-top: 1px dashed lighten($grey, 25%);
+                padding-top: 50px;
+                margin-top: 50px;
+            }
+        }
+    }
+}
+
+.buyerform .checkbox a {
+    color: $blue;
+    &:hover {
+        color: $pink;
+    }
+}
+
+.mobi_login {
+    .login_tabs {
+        li {
+            @include phone-width {
+                float: left;
+                width: 50%;
+            }
+            &.active {
+                a {
+                    background: $footerbg;
+                    border: $footerbg;
+                    color: $white;
+                    @include phone-width {
+                        border-bottom: none !important;
+                    }
+                }
+            }
+            a {
+                background: $white;
+                border: 1px solid lighten($grey, 35%);
+                color: $black;
+                @include phone-width {
+                    margin-bottom: 0;
+                    border-bottom-right-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+    }
+    .tab-content {
+        background: $white;
+        border-width: 0 1px 1px 1px;
+        border-style: solid;
+        border-color: transparent lighten($grey, 25%) lighten($grey, 25%) lighten($grey, 25%);
+        padding: 30px 20px 20px;
+    }
+    .titles_line_font {
+        @include rem(font-size, 1.8rem);
+        &:before,
+        &:after {
+            @include spc-width {
+                max-width: 240px;
+            }
+            @include table-width {
+                max-width: 150px;
+            }
+            @include phone-width {
+                max-width: 80px;
+            }
+        }
+    }
+}
+
+.contact_form {
+    label {
+        font-weight: 400;
+    }
+    input {
+        outline: none;
+    }
+    textarea {
+        overflow-x: hidden;
+    }
+
+     ::-webkit-input-placeholder {
+        color: $grey;
+        @include rem(font-size, 1.3rem);
+        transition: opacity 250ms ease-in-out;
+    }
+
+     :focus::-webkit-input-placeholder {
+        opacity: 0.5;
+    }
+
+     :-ms-input-placeholder {
+        color: $grey;
+        @include rem(font-size, 1.3rem);
+        transition: opacity 250ms ease-in-out;
+    }
+
+     :focus:-ms-input-placeholder {
+        opacity: 0.5;
+    }
+
+     ::-moz-placeholder {
+        color: $grey;
+        @include rem(font-size, 1.3rem);
+        opacity: 1;
+        transition: opacity 250ms ease-in-out;
+    }
+
+     :focus::-moz-placeholder {
+        opacity: 0.5;
+    }
+
+     :-moz-placeholder {
+        color: $grey;
+        @include rem(font-size, 1.3rem);
+        opacity: 1;
+        transition: opacity 250ms ease-in-out;
+    }
+
+     :focus:-moz-placeholder {
+        opacity: 0.5;
+    }
+    .form-control {
+    		padding: 5px;
+    		@include table-up-width {
+    				@include rem(font-size, 1.3rem);
+    		}
+    		option {
+    				@include table-up-width {
+		    				@include rem(font-size, 1.3rem);
+		    		}
+    		}
+    }
+    .mobile_mt10 {
+        @include phone-width() {
+            margin-top: 10px;
+        }
+    }
+    .reg_tip {
+        font-weight: 400;
+        position: relative;
+        padding-left: 12px;
+        &:before {
+            content: '\203B';
+            display: inline-block;
+            position: absolute;
+            left: 0;
+        }
+        @include pc-width {
+            padding-top: 15px;
+            word-break: break-all;
+        }
+    }
+    .checkbox {
+        padding-top: 0;
+        font-size: $font-size *0.95;
+    }
+    .btn-block+.btn-block {
+        margin-top: 10px;
+    }
+    .btn_black i {
+        margin-right: 0;
+    }
+    .btn_facebook {
+        color: $white;
+        background-color: #3b5998;
+        border-color: #3b5998;
+        transition: all 0.3s ease-in-out;
+        &:hover,
+        &:focus {
+            background-color: $red;
+            border-color: $red;
+        }
+    }
+    .input-group-btn>.btn {
+        font-weight: 200;
+    }
+    @include pc-width() {
+        margin-left: -20px;
+        padding-right: 30px;
+    }
+    @include table-width() {
+        .from_tp {
+            margin-top: 10px;
+        }
+    }
+}
+
+.infolist {
+    font-family: "Noto Sans TC", sans-serif;
+    letter-spacing: 1px;
+    li {
+        &:before {
+            content: attr(data-tit)'：';
+            display: inline-block;
+            text-align: right;
+            width: 90px;
+        }
+    }
+    li+li {
+        margin-top: 10px;
+    }
+}
+
+.contact_list {
+    @include rem(font-size, 1.3rem);
+    font-weight: 400;
+}
+
+.rating_btn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    span {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    label {
+        font-weight: 400;
+        @include rem(font-size, 1.5rem);
+        letter-spacing: 1px;
+        margin-bottom: 0;
+    }
+    input[type="radio"] {
+        display: none;
+    }
+    input[type="radio"]+label {
+        border-width: 1px;
+        border-style: solid;
+        border-color: $grey;
+        border-radius: 15px;
+        padding: 3px 12px;
+        color: $grey;
+        transition: all .3s ease-in;
+    }
+    input[type="radio"]:checked+label,
+    .rating_talk:hover>label {
+        color: $blue;
+        border-color: $blue;
+    }
+}

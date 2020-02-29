@@ -1,0 +1,175 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(date,author,title)
+	tr
+		td=date
+		td=author
+		td=title
+
+mixin emaillist(salerurl,img,buyerurl,name,date)
+	li
+		.email_titlebar
+			a.email_tipsimg(href=salerurl,style=img)
+			.email_info
+				h4: a(href=buyerurl)=name
+				span=date
+		.email_content.textedit
+			block
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 訊息信件匣
+			li.active 我的詢價/我的報價
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 我的詢價/我的報價
+		.bonus.keep
+			button.btn.btn_cafe(type='submit') 
+				i.fa.fa-trash-o
+				|  刪除
+			button.btn.btn_cafe(type="button", data-toggle="modal", data-target=".serial_number") 
+				i.fi.flaticon-arrows
+				|  回覆
+			button.btn.btn_helpbuy(type='submit') 
+				i.fi.flaticon-signs
+				|  確認詢價
+			table.table.tablestyle.keep_tb.helpbuy_feed(data-toggle-column="first")
+				thead
+					tr
+						//- th
+						//- 	.checkbox
+						//- 		label
+						//- 			input(type='checkbox')
+						//- 			i.fa.fa-check(aria-hidden='true')
+						th 日期
+						th 寄件者
+						th 標題
+				tbody
+					+keeptb('2017-11-21','藍色大腳Y','您好~~我需要幫忙代購噹噹葡萄糖')
+		ul.helpbuy_formlist
+			li
+				ul.helpbuy_formlist_child
+					li NO.1
+					li(data-tit="期望購買國家") 日本
+					li(data-tit="商品名") 葡萄太郎
+					li(data-tit="參考連結") 
+						a(href="#") https://www.google.com.tw
+					li(data-tit="規格") 黑色、L
+					li(data-tit="數量") 1
+					li(data-tit="參考價格") NTD:1,000
+			li
+				.row
+					.col-xs-4
+						img.img-thumbnail.img-responsive(src="images/bonus/gift001.jpg", alt="")
+					.col-xs-4
+						img.img-thumbnail.img-responsive(src="images/bonus/gift002.jpg", alt="")
+					.col-xs-4
+						img.img-thumbnail.img-responsive(src="images/bonus/gift003.jpg", alt="")
+				ul.helpbuy_formlist_child
+					li NO.2
+					li(data-tit="期望購買國家") 日本
+					li(data-tit="商品名") 葡萄太郎
+					li(data-tit="參考連結") 
+						a(href="#") https://www.google.com.tw
+					li(data-tit="規格")
+						span.red 白色、XL
+					li(data-tit="數量")
+						span.red 2
+					li(data-tit="參考價格")
+						span.red NTD:2,000
+			li
+				.row
+					.col-xs-4
+						img.img-thumbnail.img-responsive(src="images/bonus/gift003.jpg", alt="")
+					.col-xs-4
+						img.img-thumbnail.img-responsive(src="images/bonus/gift002.jpg", alt="")
+				ul.helpbuy_formlist_child
+					li NO.3
+					li(data-tit="期望購買國家") 日本
+					li(data-tit="商品名") 葡萄太郎
+					li(data-tit="參考連結") 
+						a(href="#") https://www.google.com.tw
+					li(data-tit="規格")
+						span.red 黑色、XL
+					li(data-tit="數量")
+						span.red 1
+					li(data-tit="參考價格") 
+						span.red NTD:1,000
+		ul.helpbuy_email
+			+emaillist('#','background-image: url(images/buyer_photo.jpg);','#','噹噹小叮噹小舖','2017-11-28')
+				p 已經可以正常供貨囉~~已開好賣場
+				p
+					a(href='nav_product_detail.html') XiAO AC-01 小小兵，四隻來自美國的小小兵
+			+emaillist('#','background-image: url(images/sale_photo.jpg);','#','藍色大腳ㄚ','2017-11-21')
+				p 所以收貨的日期還不能確定嗎？
+			+emaillist('#','background-image: url(images/buyer_photo.jpg);','#','噹噹小叮噹小舖','2017-11-18')
+				p 工廠目前爆單，要等工廠單消化完後才能下訂出貨了。
+			+emaillist('#','background-image: url(images/sale_photo.jpg);','#','藍色大腳ㄚ','2017-11-21')
+				p 請問有貨了嗎？
+			+emaillist('#','background-image: url(images/buyer_photo.jpg);','#','噹噹小叮噹小舖','2017-11-18')
+				p 您好，目前缺貨哦。
+			+emaillist('#','background-image: url(images/sale_photo.jpg);','#','藍色大腳ㄚ','2017-11-21')
+				p 您好，請問葡萄太郎的公仔什麼時候會有呢?
+					br
+					|訂購幾隻會有優惠?
+					br
+					|多少可以免運呢?
+
+				p ㄚ啾嬤也會出公仔嗎?
+					br
+					|請一起報價，謝謝
+
+				.divider-hr
+				ul.store_proinfo.mt20
+					li(data-tit='運費方式') 7-11
+					li(data-tit='備　　註') 備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊備註統一放這邊
+
+
+		ul.text_f_arrow.email.mt60
+			li
+				a(href="javascript:;")
+					small
+						i.fa.fa-angle-double-left(aria-hidden='true')
+						| 上一封
+					h3 您好~~我需要幫忙代購吹風機
+			li
+				a.btn.btn-lg.btn_cafe(href='nav_trans_newsdetail.html', role='button') 回訊息列表
+			li
+				a(href="javascript:;")
+					small
+						| 下一封
+						i.fa.fa-angle-double-right(aria-hidden='true')
+					h3 HELLO~可以幫我估價這個代運要多少錢嗎??
+					
+block lightbox
+	//- lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.blue 回覆代購單
+				.modal-body
+					form.contact_form.saler_form.mt20
+						.form-group
+							label(for='')
+								| RE：您好~~我需要幫忙代購噹噹葡萄糖
+						.form-group
+							label(for='')
+								| 訊息內容：
+							textarea.form-control(rows='6', placeholder='')
+						.form-group
+							button.btn.btn-block.btn_black(type='submit') 回覆訊息

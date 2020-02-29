@@ -1,0 +1,59 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptbn(name)
+	tr
+		td
+			button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+				.handle
+		td=name
+		td
+			a.btn.btn_cafe(href="members_store_ship_upload.html")
+				i.fa.fa-pencil
+
+mixin keeptb(name)
+	tr
+		td
+			button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+				.handle
+		td=name
+		td
+			a.btn.btn_cafe(href="members_store_ship_upload_other.html")
+				i.fa.fa-pencil
+			button.btn.btn_cafe(type='button')
+				i.fa.fa-trash
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 賣場商品管理
+			li.active 物流設定
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 物流設定
+		.bonus.keep
+			.form-inline
+					a.btn.btn_helpbuy(role='button', href="members_store_ship_upload.html")
+						i.fa.fa-plus
+						|  新增物流
+			table.table.tablestyle.keep_tb.store_order_tb.ship(data-toggle-column="first")
+				thead
+					tr
+						th 開啟
+						th 物流名稱
+						th 操作
+				tbody
+					+keeptbn('店到店')
+					+keeptb('郵寄')
+					+keeptb('宅配')
+					+keeptb('範例示範：OO物流名稱')

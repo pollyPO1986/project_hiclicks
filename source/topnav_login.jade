@@ -1,0 +1,213 @@
+extend layout/_layout.jade
+
+block header_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb.text-right
+					li
+						a(href='index.html') HiClicks
+					li.active 登入 &#8260; 註冊
+block content
+	.col-xs-12
+		.login.row.hidden-xs.hidden-sm.hidden-md
+			.col-lg-6
+				.row
+					.col-lg-9.col-lg-offset-1
+						.titlebar.clearfix.mb30
+							h3 
+								i.fa.fa-user-plus(aria-hidden='true')
+								|  註冊會員
+						form.form-horizontal.contact_form
+							.form-group
+								label.col-sm-4.control-label(for='reg_acc_email') 
+									span.red *
+									| 電子信箱(帳號)
+								.col-sm-8
+									input#reg_acc_email.form-control(type='email', name='', placeholder='請輸入您的電子信箱')
+									p.reg_tip.small_font.red
+										|為確保您可以順利收到會員驗證信,建議不要使用Yahoo信箱註冊。
+							.form-group
+								label.col-sm-4.control-label(for='reg_acc_password') 
+									span.red *
+									| 輸入密碼
+								.col-sm-8
+									input#reg_acc_password.form-control(type='password', name='', placeholder='至少要8個字元，且不包含任何符號與空白')
+							.form-group
+								label.col-sm-4.control-label(for='agn_password') 
+									span.red *
+									| 再次輸入密碼
+								.col-sm-8
+									input#agn_password.form-control(type='password', name='', placeholder='至少要8個字元，且不包含任何符號與空白')
+							.form-group
+								.col-sm-offset-4.col-sm-8
+									.checkbox
+										label
+											input(type='checkbox')
+											i.fa.fa-check(aria-hidden='true')
+											small
+												|  我已閱讀並同意 
+												a(href="#") HiClicks服務條款
+							.form-group
+								.col-sm-offset-4.col-sm-8
+									button.btn.btn-block.btn_black(type='submit') 免費註冊會員
+							.form-group
+								.col-sm-offset-4.col-sm-8
+									.titlebar_line
+										p.titles_line_font OR
+							.form-group
+								.col-sm-offset-4.col-sm-8
+									button.btn.btn-block.btn_facebook(type='submit') 使用facebook帳號註冊
+									p.text-center
+										small 一鍵註冊，快速安全
+						
+			.col-lg-6
+				.row
+					.col-lg-9.col-lg-offset-1
+						.titlebar.clearfix.mb30
+							h3 
+								i.fa.fa-user-circle-o(aria-hidden='true')
+								|  會員登入
+						form.form-horizontal.contact_form(role='form', method='POST')
+							.form-group
+								label.col-sm-4.control-label(for='acc_email') 
+									span.red *
+									| 電子信箱(帳號)
+								.col-sm-8
+									input#acc_email.form-control(type='email', name='', placeholder='請輸入您的電子信箱')
+							.form-group
+								label.col-sm-4.control-label(for='acc_password') 
+									span.red *
+									| 密碼
+								.col-sm-8
+									input#acc_password.form-control(type='password', name='', placeholder='')
+									
+							.form-group
+								.checkbox
+									.col-sm-offset-4.col-sm-8
+										.row
+											.col-xs-6
+												label
+													input(type='checkbox')
+													i.fa.fa-check(aria-hidden='true') 
+													small  記住此帳號
+											.col-xs-6
+												p.text-right
+													small
+														a(href="fun_forget.html") 忘記密碼?
+							.form-group.mt113
+								.col-sm-offset-4.col-sm-8
+									a.btn.btn-block.btn_black(href='members_verify.html') 會員登入
+							.form-group
+								.col-sm-offset-4.col-sm-8
+									.titlebar_line
+										p.titles_line_font OR
+							.form-group
+								.col-sm-offset-4.col-sm-8
+									button.btn.btn-block.btn_facebook(type='submit') 使用facebook帳號登入
+									p.text-center
+										small 一鍵登入，快速安全
+
+		.mobi_login.hidden-lg
+			.login_tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#member_register', aria-controls='member_register', role='tab', data-toggle='tab') 
+							i.fa.fa-user-plus(aria-hidden='true')
+							|  會員註冊
+					li(role='presentation')
+						a(href='#member_login', aria-controls='member_login', role='tab', data-toggle='tab')
+							i.fa.fa-user-circle-o(aria-hidden='true')
+							|  會員登入
+			.tab-content
+					#member_register.tab-pane.active(role='tabpanel')
+						//- .titlebar.clearfix.mb30
+						//- 	h3 
+						//- 		i.fa.fa-user-plus(aria-hidden='true')
+						//- 		|  註冊會員
+						form.form-horizontal.contact_form
+							.form-group
+								label.col-sm-3.col-md-4.control-label(for='reg_acc_email') 
+									span.red *
+									| 電子信箱(帳號)
+								.col-sm-8
+									input#reg_acc_email.form-control(type='email', name='', placeholder='請輸入您的電子信箱')
+									p.reg_tip.small_font.red
+										|為確保您可以順利收到會員驗證信,建議不要使用Yahoo信箱註冊。
+							.form-group
+								label.col-sm-3.col-md-4.control-label(for='reg_acc_password') 
+									span.red *
+									| 輸入密碼
+								.col-sm-8
+									input#reg_acc_password.form-control(type='password', name='', placeholder='至少要8個字元，且不包含任何符號與空白')
+							.form-group
+								label.col-sm-3.col-md-4.control-label(for='agn_password') 
+									span.red *
+									| 再次輸入密碼
+								.col-sm-8
+									input#agn_password.form-control(type='password', name='', placeholder='至少要8個字元，且不包含任何符號與空白')
+							.form-group
+								.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+									.checkbox
+										label
+											input(type='checkbox')
+											i.fa.fa-check(aria-hidden='true')
+											small
+												|  我已閱讀並同意 
+												a(href="#") HiClicks服務條款
+							.form-group
+								.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+									button.btn.btn-block.btn_black(type='submit') 免費註冊會員
+							.form-group
+								.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+									.titlebar_line
+										p.titles_line_font OR
+							.form-group
+								.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+									button.btn.btn-block.btn_facebook(type='submit') 使用facebook帳號註冊
+									p.text-center
+										small 一鍵註冊，快速安全
+					#member_login.tab-pane(role='tabpanel')
+						//- .titlebar.clearfix.mb30
+						//- 	h3 
+						//- 		i.fa.fa-user-circle-o(aria-hidden='true')
+						//- 		|  會員登入
+						form.form-horizontal.contact_form(role='form', method='POST')
+							.form-group
+								label.col-sm-3.col-md-4.control-label(for='acc_email') 
+									span.red *
+									| 電子信箱(帳號)
+								.col-sm-8
+									input#acc_email.form-control(type='email', name='', placeholder='請輸入您的電子信箱')
+							.form-group
+								label.col-sm-3.col-md-4.control-label(for='acc_password') 
+									span.red *
+									| 密碼
+								.col-sm-8
+									input#acc_password.form-control(type='password', name='', placeholder='')
+									
+							.form-group
+								.checkbox
+									.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+										.row
+											.col-xs-6
+												label
+													input(type='checkbox')
+													i.fa.fa-check(aria-hidden='true') 
+													small  記住此帳號
+											.col-xs-6
+												p.text-right
+													small
+														a(href="fun_forget.html") 忘記密碼?
+							.form-group.mt113
+								.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+									a.btn.btn-block.btn_black(href='members_verify.html') 會員登入
+							.form-group
+								.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+									.titlebar_line
+										p.titles_line_font OR
+							.form-group
+								.col-sm-offset-3.col-sm-8.col-md-offset-4.col-md-8
+									button.btn.btn-block.btn_facebook(type='submit') 使用facebook帳號登入
+									p.text-center
+										small 一鍵登入，快速安全

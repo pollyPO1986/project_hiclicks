@@ -1,0 +1,134 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的Hi 幣
+			li.active Hi 幣紀錄
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 Hi 幣紀錄
+		hr
+		.row
+			.col-lg-9
+				p.bonus_tit 您目前可使用的Hi 幣，共計有
+					span.red 540,038
+					|枚
+			.col-lg-3
+				a.btn.btn-block.btn_icons.bonuss(href='members_bonus_gift.html') 
+					i.fi.flaticon-gift
+					|Hi 幣兌換區
+		.bonus
+			table.table.tablestyle.mt20.bonus_tb(data-toggle-column="first")
+				thead
+					tr
+						th.hidden-xs NO
+						th 訂單日期
+						th Hi 幣生效日
+						th 活動名稱
+						th 新增的Hi 幣
+				tbody
+					tr(data-expanded="true")
+						td.hidden-xs 1
+						td 2017-12-09
+						td 2017-12-10
+						td 1111光棍節消費大放送
+						td 
+							span.blue 1000
+					tr
+						td.hidden-xs 2
+						td 2017-11-20
+						td 2017-11-22
+						td 新網站上線，消費送紅利
+						td 
+							span.blue 200
+					tr
+						td.hidden-xs 3
+						td 2017-11-15
+						td 2017-11-17
+						td 黑色星期五，代運享優惠
+						td 
+							span.blue 10000
+					tr
+						td.hidden-xs 4
+						td 2017-10-28
+						td 2017-10-26
+						td 1111光棍節消費大放送
+						td 
+							span.blue 1000
+					tr
+						td.hidden-xs 5
+						td 2017-10-20
+						td 2017-10-19
+						td 新網站上線，消費送紅利
+						td 
+							span.blue 200
+					tr
+						td.hidden-xs 6
+						td 2017-09-20
+						td 2017-09-22
+						td 黑色星期五，代運享優惠
+						td 
+							span.blue 10000
+					tr
+						td.hidden-xs 7
+						td 2017-09-11
+						td 2017-09-09
+						td 黑色星期五，代運享優惠享優惠享優惠享優惠
+						td 
+							span.blue 10000
+					tr
+						td.hidden-xs 8
+						td 2017-09-01
+						td 2017-09-02
+						td 1111光棍節消費大放送大放送大放送
+						td 
+							span.blue 1000
+					tr
+						td.hidden-xs 9
+						td 2017-08-15
+						td 2017-08-17
+						td 新網站上線，消費送紅利
+						td 
+							span.blue 200
+					tr
+						td.hidden-xs 10
+						td 2017-07-20
+						td 2017-07-22
+						td 黑色星期五，代運享優惠
+						td 
+							span.blue 10000
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')

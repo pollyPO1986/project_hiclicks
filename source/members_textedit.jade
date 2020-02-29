@@ -1,0 +1,42 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 大項目
+			li.active 大項目底下的子項目
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 文字編輯器頁面
+		hr
+		.textedit
+			p.text-center.blue 第一步驟:請於首頁官網點選【登入】進入註冊頁面。
+			img.img-responsive(src="images/textedit.jpg", alt="")
+			.mb30.mt30
+			p.text-center.blue 第二步驟:填寫您常使用的E-mail當作您日後登入的帳號
+			img.img-responsive(src="images/textedit.jpg", alt="")
+			.mb30.mt30
+			p.text-center.blue 第三步驟:點選【免費註冊會員】網站會出現以下的提醒字樣，按【確定】後請到您的mail收發認證信件。
+			img.img-responsive(src="images/textedit.jpg", alt="")
+			.mb30.mt30
+			p.text-center.blue 第四步驟:驗證成功之後會跳到填寫會員資料頁面，再請您確實填寫內容。
+			img.img-responsive(src="images/textedit.jpg", alt="")
+			.mb30.mt30
+			p.text-center.blue 第五步驟:填寫完之後會出現是否需上傳【身分證影本】及【委託書】，請您選擇【確定】進行上傳
+			img.img-responsive(src="images/textedit.jpg", alt="")
+			.mb30.mt30
+			p.text-center.blue 第六步驟:若您的收件地址跟您的基本資料相同，請直接勾選【同基本資料的收件地址】若不同請填選以下表格，並上傳身分證正反面影本及個案委任書，身分審核需一個工作天請您耐心等候。
+			img.img-responsive(src="images/textedit.jpg", alt="")
+			.mb30.mt30
+			p.red 審核通過就可以開始使用我們HiClicks代運服務囉~

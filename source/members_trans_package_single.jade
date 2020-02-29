@@ -1,0 +1,497 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(img,name,price)
+	tr
+		td
+			form
+				.checkbox
+					label
+						input(type='checkbox',name='all',value='car')
+						i.fa.fa-check(aria-hidden='true')
+		td
+			.doing_choicelist
+				a.imgbox(href="nav_product_detail.html", style=img)
+				p
+					a(href="nav_product_detail.html")=name
+					span.any_price(data-mark="NT$")=price
+
+mixin packs(no,sort,number,kg,whd,paykg,pay,state,other)
+	tr
+		td(class="visible-xs")
+		td.hidden-xs=no
+		td=sort
+		td=number
+		td.packtime
+			block
+		td=kg
+		td=whd
+		td=paykg
+		td=pay
+		td=state
+		td=other
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 代運包裹管理
+			li.active 我的代運單
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 我的代運單
+		.bonus.keep
+			.members_content
+				h3.point_title.mb20 欲出貨的包裹
+			table.table.tablestyle.keep_tb.package_standby(data-toggle-column="first")
+				thead
+					tr
+						th(class="visible-xs")
+						th.hidden-xs NO
+						th(data-breakpoints='xs sm') 代理
+							br
+							|編號
+						th 境內快遞單號
+						th(data-breakpoints='xs sm') 入庫時間
+						th(data-breakpoints='xs sm') 重量
+							br
+							small (KG)
+						th(data-breakpoints='xs sm') 體積
+							br
+							small (W x H x D cm)
+						th 收費公斤
+							br
+							small (KG)
+						th(data-breakpoints='xs sm') 運費
+						th(data-breakpoints='xs sm') 狀態
+						th(data-breakpoints='xs sm') 備註
+				tbody
+					+packs('1','00001','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物','123456789')
+						p
+							|2017-10-18
+							small 13:20:57
+					+packs('2','00002','1234567890','2','30.0*15.0*10.0','3','NT1,000','收到貨物','')
+						p
+							|2017-10-16
+							small 20:20:57
+					+packs('3','00003','1234567890','1','30.0*15.0*10.0','1','NT1,000','收到貨物','')
+						p
+							|2017-10-10
+							small 18:20:57
+			.members_content
+				.row
+					.col-xs-12.col-sm-9
+						label.checkbox-inline(for='01')
+							input(type='checkbox', id='01', name='01')
+							i.fa.fa-check(aria-hidden='true')
+							|  我已閱讀
+							a.order_link(href="javascript:;") 禁運品／危險品相關資訊
+					.col-xs-12.col-sm-3.text-right
+						button.btn.btn_search(type="button", data-toggle="modal", data-target=".doing_from") 新增包裹
+				hr
+			.package_check
+				.members_content
+					h3.point_title.mb10 填寫代運資料
+				table.mobile_datatb.package_infotb.pack_single
+					caption 境內快遞單號：1234567890
+					thead
+						tr
+							th 商品名稱
+							th 商品網址
+							th 數量
+							th 單價
+								|(
+								span.red 日幣
+								|)
+							th 操作
+					tbody
+						tr
+							td(data-th='商品名稱')
+								input.form-control(type='text', id='', name='', placeholder='商品名稱填寫中文品名')
+							td(data-th='商品網址')
+								input.form-control(type='text', id='', name='', placeholder='請您務必提供商品網址，以利順利報關')
+							td(data-th='數量')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td(data-th='單價(日幣)')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td.hidden-xs(data-th='操作') 
+						tr
+							td(data-th='商品名稱')
+								input.form-control(type='text', id='', name='', placeholder='')
+							td(data-th='商品網址')
+								input.form-control(type='text', id='', name='', placeholder='請您務必提供商品網址，以利順利報關')
+							td(data-th='數量')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td(data-th='單價(日幣)')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td(data-th='操作')
+								button.btn.btn_search(type='button') 刪除
+				.members_content
+					p.red.mi.mb10 少量可代運物品：食品最多每人限制5公斤，保健品/藥品每人最多2000粒&nbsp;&nbsp;
+						a.bluelink(href="#")
+							i.fa.fa-angle-double-left
+							|&nbsp;了解更多其他特殊限制&nbsp;
+							i.fa.fa-angle-double-right
+					.text-right
+						button.btn.btn_icons(type='button') 
+							i.fa.fa-plus-square 
+							|新增項目
+						button.btn.btn_icons(type='button') 
+							i.fa.fa-trash
+							|刪除包裹
+				
+				table.mobile_datatb.package_infotb.pack_single
+					caption 境內快遞單號：1234567890
+					thead
+						tr
+							th 商品名稱
+							th 商品網址
+							th 數量
+							th 單價
+								|(
+								span.red 日幣
+								|)
+							th 操作
+					tbody
+						tr
+							td(data-th='商品名稱')
+								input.form-control(type='text', id='', name='', placeholder='商品名稱填寫中文品名')
+							td(data-th='商品網址')
+								input.form-control(type='text', id='', name='', placeholder='請您務必提供商品網址，以利順利報關')
+							td(data-th='數量')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td(data-th='單價(日幣)')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td.hidden-xs(data-th='操作') 
+						tr
+							td(data-th='商品名稱')
+								input.form-control(type='text', id='', name='', placeholder='')
+							td(data-th='商品網址')
+								input.form-control(type='text', id='', name='', placeholder='請您務必提供商品網址，以利順利報關')
+							td(data-th='數量')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td(data-th='單價(日幣)')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td(data-th='操作')
+								button.btn.btn_search(type='button') 刪除
+				.members_content
+					p.red.mi.mb10 少量可代運物品：食品最多每人限制5公斤，保健品/藥品每人最多2000粒&nbsp;&nbsp;
+						a.bluelink(href="#")
+							i.fa.fa-angle-double-left
+							|&nbsp;了解更多其他特殊限制&nbsp;
+							i.fa.fa-angle-double-right
+					.text-right
+						button.btn.btn_icons(type='button') 
+							i.fa.fa-plus-square 
+							|新增項目
+						button.btn.btn_icons(type='button') 
+							i.fa.fa-trash
+							|刪除包裹
+				table.mobile_datatb.package_infotb.pack_single
+					caption 境內快遞單號：1234567890
+					thead
+						tr
+							th 商品名稱
+							th 商品網址
+							th 數量
+							th 單價
+								|(
+								span.red 日幣
+								|)
+							th 操作
+					tbody
+						tr
+							td(data-th='商品名稱')
+								input.form-control(type='text', id='', name='', placeholder='商品名稱填寫中文品名')
+							td(data-th='商品網址')
+								input.form-control(type='text', id='', name='', placeholder='請您務必提供商品網址，以利順利報關')
+							td(data-th='數量')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td(data-th='單價(日幣)')
+								input.form-control(type='number', id='', name='', placeholder='')
+							td.hidden-xs(data-th='操作')
+				.members_content
+					p.red.mi.mb10 少量可代運物品：食品最多每人限制5公斤，保健品/藥品每人最多2000粒&nbsp;&nbsp;
+						a.bluelink(href="#")
+							i.fa.fa-angle-double-left
+							|&nbsp;了解更多其他特殊限制&nbsp;
+							i.fa.fa-angle-double-right
+					.text-right
+						button.btn.btn_icons(type='button') 
+							i.fa.fa-plus-square 
+							|新增項目
+						button.btn.btn_icons(type='button') 
+							i.fa.fa-trash
+							|刪除包裹
+				.members_content
+					hr
+					h3.point_title.mb20 備註
+					textarea.form-control(rows='3', placeholder='')
+					hr
+					h3.point_title.mb20 加值服務
+					ul.list-unstyled
+						li
+							.radio
+								label(for='no')
+									input(type='radio',id='no', name='service', value='1', checked)
+									i.fa.fa-circle(aria-hidden='true')
+									|  不需要加值服務
+						li
+							.radio
+								label(for='yes')
+									input(type='radio',id='yes', name='service', value='2')
+									i.fa.fa-circle(aria-hidden='true')
+									|  需要加值服務
+					ul.list-unstyled.count_paylist
+						li
+							label.checkbox-inline(for='02')
+								input(type='checkbox', id='02', name='02')
+								i.fa.fa-check(aria-hidden='true')
+								.count_tip
+									span(data-balloon-length="large",data-balloon="加強包裝說明文字~",data-balloon-pos="up")
+										|加強包裝 (NT100/箱)
+						li
+							label.checkbox-inline(for='03')
+								input(type='checkbox', id='03', name='03')
+								i.fa.fa-check(aria-hidden='true')
+								.count_tip
+									span(data-balloon-length="large", data-balloon="說明文字說明文字說明文字說明文字說明文字  說明文字說明文字說明文字說明文字 說明文字", data-balloon-pos="up")
+										|單箱縮小體積 (NT150/箱)
+						li
+							label.checkbox-inline(for='04')
+								input(type='checkbox', id='04', name='04')
+								i.fa.fa-check(aria-hidden='true')
+								.count_tip
+									span(data-balloon-length="large", data-balloon="說明文字說明文字說明文字說明文字說明文字  說明文字說明文字說明文字說明文字 說明文字", data-balloon-pos="up")
+										|去除鞋盒 (NT100/雙)
+					hr
+					h3.point_title.mb20 折扣碼
+					.form-inline.discount
+						.form-group
+							label.sr-only(for='')
+							input.form-control(type='text', id='', placeholder='輸入折扣碼')
+						button.btn.btn_cafe(type='submit') 使用
+						p.mi.red.small_font 提醒:同一組折扣碼一個賬號只能使用一次
+					hr
+					h3.point_title.mb20 Hi幣點數折抵運費
+					.form-inline.discount
+						.form-group
+							label.sr-only(for='')
+							input.form-control(type='text', id='', placeholder='輸入Hi幣點數')
+						button.btn.btn_cafe(type='submit') 折抵
+						p.mi.red.small_font 提醒:一但確認折抵，將立即扣除您的Hi幣點數
+					hr
+					h3.point_title.mb20 應付金額
+					// 需要等待，顯示以下
+					p.red
+						i.fa.fa-exclamation-triangle
+						|  您選擇的加值服務中含有會影響運費的項目，將在加值項目完成後通知您於 我的代運包裹-處理中的包裹 內付款
+
+					// 不需要等待，顯示以下
+					ul.store_proinfo
+						li(data-tit="代收國際運費") 
+							span.any_price(data-mark="NT$") 1,800
+						li(data-tit="逾期保管費") 
+							span.any_price(data-mark="NT$") 200
+						li(data-tit="加值服務費") 
+							span.any_price(data-mark="NT$") 150
+						li(data-tit="折扣碼") 
+							span.any_price(data-mark="NT$") -200
+						li(data-tit="營業稅") 
+							span.any_price(data-mark="NT$") 130
+						li(data-tit="應付金額") 
+							span.any_price.red(data-mark="NT$") 2,080
+					hr
+					h3.point_title.mb20 發票
+					ul.list-inline
+						li
+							.radio
+								label(for='f01')
+									input(type='radio',id='f01', name='invoice', value='1', checked)
+									i.fa.fa-circle(aria-hidden='true')
+									|  二聯式
+						li
+							.radio
+								label(for='f02')
+									input(type='radio',id='f02', name='invoice', value='2')
+									i.fa.fa-circle(aria-hidden='true')
+									|  使用載具
+						li
+							.radio
+								label(for='f03')
+									input(type='radio',id='f03', name='invoice', value='3')
+									i.fa.fa-circle(aria-hidden='true')
+									|  三聯式
+						li
+							.radio
+								label(for='f04')
+									input(type='radio',id='f04', name='invoice', value='4')
+									i.fa.fa-circle(aria-hidden='true')
+									|  捐贈發票
+					.mt20
+						// 二聯式
+						p.mi_space 系統自動為您兌獎，中獎後將主動通知您並掛號寄出紙本發票。
+					
+						// 使用載具
+						.form-horizontal.contact_form.saler_form
+							.form-group
+								label.col-sm-2.control-label(for='') 
+									span.red *
+									| 載具類型：
+								.col-sm-10.col-md-9
+									label.radio-inline(for='device01')
+										input(type='radio',id='device01', name='invoice_2', value='1',)
+										i.fa.fa-circle(aria-hidden='true')
+										|  一般電子發票
+									label.radio-inline(for='device02')
+										input(type='radio',id='device02', name='invoice_2', value='2', checked)
+										i.fa.fa-circle(aria-hidden='true')
+										|  手機條碼載具
+							.form-group
+								label.col-sm-2.control-label(for='')
+									span.red *
+									| 載具編號：
+								.col-sm-10.col-md-9
+									input.form-control(type='text', id='', name='', placeholder='開頭請帶協線 e.g：/RHCKUTD8')
+							.form-group
+								label.col-sm-2.control-label.text-left(for='')
+									span.red *
+									| 再次輸入編號：
+								.col-sm-10.col-md-9
+									input.form-control(type='text', id='', name='', placeholder='開頭請帶協線 e.g：/RHCKUTD8')
+
+						//三聯式
+						.form-horizontal.contact_form.saler_form
+							.form-group
+								label.col-sm-2.control-label(for='')
+									span.red *
+									| 統編：
+								.col-sm-10.col-md-9
+									input.form-control(type='text', id='', name='', placeholder='')
+							.form-group
+								label.col-sm-2.control-label(for='') 
+									span.red *
+									| 抬頭：
+								.col-sm-10.col-md-9
+									input.form-control(type='number', id='', name='', placeholder='')
+						
+						//捐贈發票
+						.form-horizontal.contact_form.saler_form
+							.form-group
+								label.col-sm-2.control-label(for='')
+									span.red *
+									| 受贈單位：
+								.col-sm-10.col-md-9
+									a.btn.btn_black(href='javascript:;', role='button') 查詢愛心碼
+							.form-group
+								label.col-sm-2.control-label(for='') 
+									span.red *
+									| 愛心碼：
+								.col-sm-10.col-md-9
+									input.form-control(type='number', id='', name='', placeholder='請將查詢到的愛心碼輸入到這')
+					hr
+					h3.point_title.mb20 收件資料確認
+					.form-horizontal.contact_form.saler_form
+						.form-group
+							label.col-sm-2.control-label(for='')
+								span.red *
+								| 中文姓名：
+							.col-sm-10.col-md-9
+								input.form-control(type='text', id='', name='', placeholder='請輸入您的中文姓名')
+						.form-group
+							label.col-sm-2.control-label(for='') 
+								span.red *
+								| 手機號碼：
+							.col-sm-10.col-md-9
+								input.form-control(type='number', id='', name='', placeholder='格式示範：0911-123456')
+						.form-group
+							label.col-sm-2.control-label(for='')
+								| 市內電話：
+							.col-sm-10.col-md-9
+								input.form-control(type='email', id='', name='', placeholder='分機請用"#"字號分開')
+						.form-group
+							label.col-sm-2.control-label(for='') 
+								span.red *
+								| 收件地址：
+							.col-sm-10.col-md-9
+								.row
+									.col-xs-6
+										select.form-control
+											option 台中市
+											option 台北市
+									.col-xs-6
+										select.form-control
+											option 西屯區
+											option 西區
+									.col-xs-12.mt10
+										input.form-control(type='text',id="", name="", placeholder='請輸入您的收貨地址')
+					.row.mt30
+						.col-xs-12.col-sm-6.col-sm-offset-3.text-center.package_check_btns
+							button.btn.btn_search(type='button') 取消編輯
+							button.btn.btn_black(type='submit') 暫存代運單
+							button.btn.btn_black(type='submit') 確認送出代運單
+							
+block lightbox
+	//- lightbox區塊 - 新增包裹
+	.modal.fade.doing_from(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 新增未處理包裹
+				.modal-body
+					.doing_pro_choice
+						p.mi.red.mt10.visible-xs 表格可以左右滑動對照資料
+						.table-responsive
+							table.table.keep_tb.package_standby
+								thead
+									tr
+										th
+											.checkbox
+												label
+													input(type='checkbox')
+													i.fa.fa-check(aria-hidden='true')
+										th NO
+										th 代理
+											br
+											|編號
+										th 境內快遞單號
+										th 入庫時間
+										th 重量
+											br
+											small (KG)
+										th 體積
+											br
+											small (W x H x D cm)
+										th 收費公斤
+											br
+											small (KG)
+										th 運費
+										th 狀態
+										th 備註
+								tbody
+									+packs('1','00001','1234567890','0.5','30.0*15.0*10.0','1','NT1,000','收到貨物','123456789')
+										p
+											|2017-10-18
+											small 13:20:57
+									+packs('2','00002','1234567890','2','30.0*15.0*10.0','3','NT1,000','收到貨物','')
+										p
+											|2017-10-16
+											small 20:20:57
+									+packs('3','00003','1234567890','1','30.0*15.0*10.0','1','NT1,000','收到貨物','')
+										p
+											|2017-10-10
+											small 18:20:57
+				.modal-footer
+					button.btn.btn_cafe(type="button",data-dismiss="modal") 取消
+					button.btn.btn_cafe(type="button") 確認新增包裹

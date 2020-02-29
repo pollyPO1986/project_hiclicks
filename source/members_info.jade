@@ -1,0 +1,189 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的會員資料
+			li.active 基本資料
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 基本資料
+		hr
+		.members_content
+			.members_infobox
+				form.form.form-vertical(action='/avatar_upload.php', method='post', enctype='multipart/form-data')
+					.row
+						.col-sm-4.text-center
+							.kv-avatar
+								.file-loading
+									input#photos(name='photos', type='file', required='')
+							.kv-avatar-hint
+								ul.list-inline
+									li: small 檔案大小：2MB以下
+									li: small 檔案格式：jpg、jpeg
+									li: small 圖片尺寸：150px * 150px
+						.col-sm-8.col-md-7
+							ul.list-style
+								li 會員編號：
+									span HCLS12030116
+								li 註冊信箱：
+									span hiclicks@gmail.com
+							ul.info_icons
+								li
+									span.tips 1
+									a(href="members_store_order.html")
+										i.fi.flaticon-choice
+										span 代購訂單管理
+								li
+									a(href="members_trans_package.html")
+										i.fi.flaticon-commbo
+										span 查詢代運包裹
+								li
+									a(href="nav_footer_contact.html")
+										i.fi.flaticon-letter
+										span 聯絡我們
+								li
+									a(href="javascript:;", data-toggle="modal", data-target=".serial_number")
+										i.fi.flaticon-edit
+										span 編輯介紹
+				#kv-avatar-errors-1.center-block(style='width:800px;display:none')
+			hr
+			h3.nopoint_title 註冊／修改基本資料
+			p.grey.mi.mt10 為必填項目，其餘項目可自由填寫
+			p.red.mi_space.mt10 您尚未通過E-mail認證&nbsp;&nbsp;
+				a.bluelink(href="#")
+					i.fa.fa-angle-double-left
+					|&nbsp;沒收到驗證信&nbsp;
+					i.fa.fa-angle-double-right
+			.row
+				.col-xs-12
+					form.form-horizontal.contact_form.mt20
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| 中文姓名：
+							.col-sm-10.col-md-9
+								input.form-control(type='text', id='', name='')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								| 代運身分驗證狀態：
+							.col-sm-10.col-md-9
+								label.form-control-static.checkgreen
+									i.fa.fa-check-circle
+									|  代運身分已驗證&nbsp;&nbsp;
+								label.form-control-static.red
+									i.fa.fa-exclamation-circle
+									|  代運身分未驗證
+									a.bluelink(href="members_verify.html") 
+										i.fa.fa-angle-double-left
+										|&nbsp;請前往身分驗證上傳身分資料&nbsp;
+										i.fa.fa-angle-double-right
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| 性別：
+							.col-sm-10.col-md-9
+								label.radio-inline(for='female')
+									input(type='radio',id='female', name='sexual', value='1', checked)
+									i.fa.fa-circle(aria-hidden='true')
+									|  女性
+								label.radio-inline(for='male')
+									input(type='radio',id='male', name='sexual', value='2')
+									i.fa.fa-circle(aria-hidden='true')
+									|  男性
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| 出生年月日：
+							.col-sm-10.col-md-9
+								input#datetimepicker.form-control(type='text', name='', placeholder='請填寫正確出生年月日，資料提交後將無法修改')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| E-mail：
+							.col-sm-10.col-md-9
+								input.form-control(type='email', id='', name='', placeholder='請輸入您的電子郵件')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='')
+								span.red *
+								| 手機號碼：
+							.col-sm-10.col-md-9
+								input.form-control(type='number', id='', name='', placeholder='格式示範：0910123456')
+						//- .form-group.has-error
+						//- 	label.col-sm-2.col-md-3.control-label(for='')
+						//- 		span.red *
+						//- 		| 手機號碼：
+						//- 	.col-sm-10.col-md-9
+						//- 		input.form-control(type='number', id='', name='', placeholder='格式示範：0910123456')
+						//- 		p.help-block 格式錯誤提醒說明區塊
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='')
+								| 市內電話：
+							.col-sm-10.col-md-9
+								input.form-control(type='number', id='', name='', placeholder='分機請用"#"字號分開')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| 收件地址：
+							.col-sm-10.col-md-9
+								.row
+									.col-xs-6.col-md-3
+										select.form-control
+											option 台中市
+											option 台北市
+									.col-xs-6.col-md-3
+										select.form-control
+											option 西屯區
+											option 西區
+									.col-xs-12.col-md-6.from_tp
+										input.form-control(type='text',id="", name="", placeholder='填寫常用收件地址')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='')
+								| 介紹人：
+							.col-sm-10.col-md-9
+								input.form-control(type='number', id='', name='', placeholder='')
+						.form-group
+							.col-sm-offset-2.col-sm-10.col-md-offset-3.col-md-9
+								label.checkbox-inline(for='01')
+									input(type='checkbox', id='01', name='01', checked)
+									i.fa.fa-check(aria-hidden='true')
+									|  訂閱電子報
+						.form-group
+							.col-sm-offset-2.col-sm-10.col-md-offset-3.col-md-9
+								button.btn.btn-block.btn_black(type='submit') 確認修改
+		
+block lightbox	
+	//- lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.blue 編輯自我介紹
+				.modal-body
+					form.form-horizontal.contact_form.saler_form
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								| 您的暱稱：
+							.col-sm-10.col-md-9
+								input.form-control(type='text', id='', name='')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								| 自我介紹：
+							.col-sm-10.col-md-9
+								textarea.form-control(rows='5', placeholder='Hi~快讓大家認識你吧!')
+						.form-group
+							.col-sm-offset-2.col-sm-10.col-md-offset-3.col-md-9
+								button.btn.btn-block.btn_black(type='submit') 確認送出

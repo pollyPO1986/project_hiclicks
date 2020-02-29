@@ -1,0 +1,610 @@
+.breadcrumb {
+    font-family: 'Lato', 'Noto Sans TC', sans-serif;
+    background: transparent;
+    font-size: $font-size * 0.85;
+    font-weight: 400;
+    padding: 0;
+    @include spc-width() {
+    		margin: 10px 0;
+    }
+    &:before {
+        content: "\f072";
+        color: lighten($grey, 10%);
+        margin-right: 5px;
+        @extend %icons-f
+    }
+    li {
+    		color: lighten($grey, 10%);
+    }
+    a {
+        color: lighten($grey, 10%);
+        &:hover {
+            color: $red;
+        }
+    }
+    .active {
+        color: darken($grey, 10%);
+    }
+}
+
+.content {
+    @include pc-width {
+        padding-bottom: 454px;
+    }
+}
+
+ul.row.list-unstyled {
+    li+li{
+        @include phone-width() {
+            margin-top: 15px;
+        }
+    }
+}
+
+.swal2-popup {
+    font-family: "Lato", "Noto Sans TC", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif;
+}
+
+.swal2-icon {
+    &.swal2-warning,
+    &.swal2-info,
+    &.swal2-question {
+        font-family: "Lato", "Noto Sans TC", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif;
+    }
+}
+
+.bluelink {
+    color: $blue;
+    &:hover {
+        color: $pink;
+    }
+}
+
+.mi {
+    padding-left: 8px;
+    position: relative;
+    &:before {
+        content: '*';
+        display: block;
+        position: absolute;
+        left: 0;
+    }
+}
+
+.mi_space {
+    padding-left: 8px;
+    position: relative;
+    &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+    }
+}
+
+.list-style {
+    li {
+        padding-left: 10px;
+        position: relative;
+        &:before {
+            content: '.';
+            display: block;
+            position: absolute;
+            top: -7px;
+            left: 0;
+        }
+    }
+    li+li {
+        margin-top: 10px;
+    }
+}
+
+.bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
+    width: 100%;
+}
+
+//------------------------------------------------------slider
+.carousel-indicators {
+    li {
+        width: 12px;
+        height: 12px;
+        border-color: lighten($grey, 25%);
+        background: $white;
+    }
+    .active {
+        width: 14px;
+        height: 14px;
+        background: darken($grey, 10%);
+    }
+}
+
+.carousel-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: .8;
+    &:hover,
+    &:focus {
+        opacity: .7;
+    }
+    &.right,
+    &.left {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 100%);
+        background-repeat: repeat-x;
+    }
+}
+
+.slider {
+		@include pc-width(){
+				margin-right: auto;
+		    margin-left: auto;
+		    padding-left: 10px;
+		    padding-right: 10px;
+		    width: 1160px;
+		}
+		&:before, &:after {
+				@include pc-width() {
+						content: " ";
+    				display: table;
+				}
+		}
+    .carousel-control {
+        &.right {
+        		@include pc-width() {
+        				right: -15px;
+        		}
+        }
+        &.left {
+            @include pc-width() {
+        				left: -15px;
+        		}
+        }
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 100%;
+            border-radius: 50%;
+            color: $white;
+            background: $black;
+            @include table-up-width() {
+            		width: 60px;
+		            height: 60px;
+		            font-size: 50px;
+            }
+            @include table-width() {
+            		width: 100%;
+            		max-width: 50px;
+		            height: 100%;
+		            max-height: 50px;
+		            font-size: 36px;
+            }
+        }
+        .fa-angle-left:before {
+            display: inline-block;
+            margin-right: 6px;
+            margin-top: -2px;
+        }
+        .fa-angle-right:before {
+            display: inline-block;
+            margin-left: 6px;
+            margin-top: -2px;
+        }
+        &:hover,
+        &:focus {
+            color: lighten($black,10%);
+        }
+    }
+    .carousel-inner {
+        .item {
+		        width: 100%;
+        		@include pc-width() {
+        				@include bgimg();
+		            height: 500px;
+        		}
+            @include spc-width() {
+            		@include bgimg(center top, contain);
+            		height: calc(100vw / 117 * 50);
+            }
+        }
+    }
+}
+
+//------------------------------------------------------Fancybox
+.fancybox-controls--canzoomOut {
+    .fancybox-placeholder {
+        cursor: default;
+    }
+}
+
+.fancybox-controls--canzoomIn {
+    .fancybox-placeholder {
+        cursor: default;
+    }
+}
+
+.fancybox-button {
+    &.fancybox-button--right,
+    &.fancybox-button--left {
+        width: 60px;
+        height: 60px;
+    }
+    &.fancybox-button--left {
+        border-bottom-left-radius: 0;
+        &:after {
+            top: 15px;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border-top: 2px solid currentColor;
+            border-right: 2px solid currentColor;
+        }
+    }
+    &.fancybox-button--right {
+        border-bottom-right-radius: 0;
+        &:after {
+            top: 15px;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border-top: 2px solid currentColor;
+            border-right: 2px solid currentColor;
+        }
+    }
+}
+
+.fancybox-buttons {
+    &.btn_l {
+        z-index: 99999;
+        top: 50%;
+        left: 0;
+    }
+    &.btn_r {
+        z-index: 99999;
+        top: 50%;
+        right: 0;
+    }
+}
+
+.fancybox-share {
+    overflow: visible;
+}
+
+//------------------------------------------------------Table
+.mobile_datatb {
+    thead {
+        background: lighten($grey, 38%);
+        border: 1px solid lighten($grey, 25%);
+        tr>th {
+            color: $grey;
+            border-bottom: 1px solid lighten($grey, 25%);
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+        }
+    }
+    tbody {
+        border-bottom: 1px solid lighten($grey, 25%);
+        tr+tr {
+            @include table-up-width() {
+                border-top: 1px solid lighten($grey, 25%);
+            }
+        }
+        tr>td {
+            &:last-child {
+                border-right: none;
+            }
+            @include table-up-width() {
+                border-right: 1px solid lighten($grey, 25%);
+                vertical-align: middle;
+            }
+        }
+    }
+}
+
+//------------------------------------------------------Callout
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid transparent;
+    border-left-width: 5px; // border-radius: 3px;
+    h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        @include rem(font-size, 1.8rem);
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+    code {
+        border-radius: 3px;
+    }
+    .bs-callout+.bs-callout {
+        margin-top: -5px;
+    }
+    &.bs-callout-red {
+        padding: 10px;
+        margin: 0;
+        background: lighten($red, 40%);
+        border-color: $red;
+    }
+    &.bs-callout-grey {
+        padding: 10px;
+        margin: 0;
+        background: lighten($grey, 35%);
+        border-color: $grey;
+    }
+}
+
+//------------------------------------------------------tooltip
+.tooltip {
+    &.top .tooltip-arrow {
+        bottom: 0;
+        border-width: 3px 3px 0;
+        margin-left: -3px;
+    }
+    &.top .tooltip-inner {
+        position: relative;
+        bottom: -2px;
+    }
+}
+
+.tooltip-inner {
+    font-family: '新細明體', 'PMingLiU', serif;
+    font-size: $font-size * 0.75;
+    line-height: 100%;
+    padding: 5px 6px; // border-width: 2px;
+}
+
+//------------------------------------------------------title
+.title_index {
+    font-family: 'Lato', 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    position: relative;
+    @include table-up-width(){
+    		font-size: $font-size * 2;
+    }
+    @include phone-width(){
+    		@include rem(font-size, 2.4rem);
+    }
+}
+
+.title_index_s {
+    font-family: 'Lato', 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+    @include table-up-width(){
+    		font-size: $font-size * 1.8;
+    }
+    @include phone-width(){
+    		@include rem(font-size, 1.8rem);
+    }
+}
+
+.titlebar {
+    text-align: center;
+    h3 {
+        @include rem(font-size, 2.4rem);
+        font-weight: 400;
+    }
+    small {
+        @include rem(font-size, 1.3rem);
+        color: $grey;
+    }
+}
+
+.titlebar_line {
+    font-weight: 300;
+    text-align: center;
+    margin: 15px 0;
+    .titles_line_font {
+        color: $grey;
+        position: relative;
+        font-weight: 400;
+        padding: 0;
+        margin: 0 auto;
+        &:before,
+        &:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            height: 1px;
+            width: 100%;
+            background: $grey;
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+    }
+}
+
+.point_title {
+    padding-left: 10px;
+    position: relative;
+    margin: 10px 0;
+    &:before {
+        content: '.';
+        display: block;
+        position: absolute;
+        top: -7px;
+        left: 0;
+    }
+}
+
+.nopoint_title {
+    position: relative;
+    margin: 10px 0;
+}
+
+.point_title,
+.nopoint_title {
+    @include rem(font-size, 1.8rem);
+    font-weight: 400;
+    a {
+        @include rem(font-size, 1.5rem);
+    }
+}
+
+//------------------------------------------------------color
+.bg-red {
+    background: $red !important;
+}
+
+.bg-blue {
+    background: $blue !important;
+}
+
+.bg-checkgreen {
+    background: $checkgreen !important;
+}
+
+.bg-grey {
+    background: $grey !important;
+}
+
+.bg-green {
+    background: $treegreen !important;
+}
+
+.bg-pink {
+    background: $pink !important;
+}
+
+.bg-beige {
+    background: $beige !important;
+}
+
+.red {
+    color: $red !important;
+}
+
+.blue {
+    color: $blue !important;
+}
+
+.black {
+    color: $black !important;
+}
+
+.green {
+    color: $treegreen !important;
+}
+
+.checkgreen {
+    color: $checkgreen !important;
+}
+
+.pink {
+    color: $pink !important;
+}
+
+.beige {
+    color: $beige !important;
+}
+
+.yellow {
+    color: $yellow !important;
+}
+
+.grey {
+    color: $grey !important;
+}
+
+
+@media all and (min-width: 800px) {
+
+    /* Give space around main area */
+    .fancybox-custom-layout .fancybox-outer {
+        top: 50px;
+        left: 50px;
+        bottom: 50px;
+        right: 50px;
+        margin: auto;
+        max-width: 1200px;
+        max-height: 800px;
+        overflow: visible;
+        background: #fff;
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+        transition: opacity .3s;
+    }
+
+    /* Make it to fade-out while closing */
+    .fancybox-custom-layout.fancybox-is-closing .fancybox-outer {
+        opacity: 0;
+    }
+
+    /* Set color for background element */
+    .fancybox-custom-layout .fancybox-bg {
+        background: #f6f6f6;
+    }
+
+    .fancybox-custom-layout.fancybox-is-open .fancybox-bg {
+        opacity: 1;
+    }
+
+    /* Move caption area to the right side */
+    .fancybox-custom-layout .fancybox-caption-wrap {
+    		display: none;
+        // top: 0;
+        // right: 44px;
+        // bottom: 0;
+        // left: auto;
+        // width: 256px;
+        // padding: 0;
+        // background: #333;
+        // pointer-events: all;
+
+        /* Make text selectable */
+        // border-right: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    /* Adjust content area position */
+    .fancybox-custom-layout .fancybox-stage {
+        right: 44px;
+    }
+
+    /* Remove top border from the caption */
+    .fancybox-custom-layout .fancybox-caption {
+        padding: 0;
+        border: 0;
+    }
+
+    /* Align buttons at the right side  */
+    .fancybox-custom-layout .fancybox-toolbar {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        width: 44px;
+        background: #333;
+        border-left: 1px solid #222;
+    }
+
+    /* Remove background from all buttons */
+    .fancybox-custom-layout .fancybox-button,
+    .fancybox-custom-layout .fancybox-navigation button:before {
+        background: transparent;
+    }
+
+    /* Change arrow color */
+    .fancybox-custom-layout .fancybox-navigation button {
+        color: #333 !important;
+        padding: 10px;
+    }
+
+    /* Reposition arrows */
+    .fancybox-custom-layout .fancybox-button--arrow_left {
+        left: -60px;
+    }
+
+    .fancybox-custom-layout .fancybox-button--arrow_right {
+        right: -60px;
+    }
+
+    .fancybox-custom-layout.fancybox-show-thumbs .fancybox-button--arrow_right {
+        right: -272px;
+    }
+}

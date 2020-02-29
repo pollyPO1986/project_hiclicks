@@ -1,0 +1,64 @@
+extend layout/_layout.jade
+
+mixin newslist(date,name)
+	li
+		.newslist_info
+			span=date
+			h3
+				a(href='nav_trans_newsdetail.html')=name
+			p.text-right
+				//- span.btn_more
+				//- 	a(href="nav_trans_newsdetail.html") more 
+				//- 		i.fa.fa-angle-double-right(aria-hidden='true')
+				a.btn.btn-sm.btn_cafe(href='nav_trans_newsdetail.html', role='button') more
+
+block header_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb.text-right
+					li
+						a(href='index.html') HiClicks
+					li.active 代運公告
+block content
+	.col-xs-12.col-lg-10.col-lg-offset-1
+		.newstitlebar
+			h1 代運公告
+			p 最新的活動訊息及公告
+		hr
+		h2(style='display:none;') HiClicks 代運公告
+		ul.newslist
+			+newslist('2017-08-23','[搬遷公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-08-20','[公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-08-18','[搬遷公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-08-13','[搬遷公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-08-08','[停飛公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-08-02','[搬遷公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-07-28','[公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-07-13','[搬遷公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-07-07','[緊急公告] 美國倉庫搬遷更新地址！大升級！')
+			+newslist('2017-07-02','[搬遷公告] 美國倉庫搬遷更新地址！大升級！')
+
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')

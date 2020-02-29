@@ -1,0 +1,283 @@
+extend layout/_layout_side_l.jade
+
+mixin packs(number,time,store,qua,shippay,total,other)
+	tr
+		td(class="visible-xs visible-sm")
+		td
+			a.order_link(href="javascript:;", data-toggle="modal", data-target=".serial_number")=number
+		td=time
+		td
+			a(href="nav_product_saler.html")=store
+		td=qua
+		td
+			p.ord_price(data-mark="NT$")=shippay
+		td
+			p.ord_price.blue(data-mark="NT$")=total
+		td
+			block
+		td=other
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的訂單
+			li.active 購買清單
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 購買清單
+		.bonus.keep.packagebox
+			.package_tabs.mt10
+				//-Nav tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#order_waitpay', aria-controls='order_waitpay', role='tab', data-toggle='tab') 待付款
+						span.tips
+							|3
+					li(role='presentation')
+						a(href='#order_wait', aria-controls='order_wait', role='tab', data-toggle='tab') 待出貨
+						span.tips
+							|1
+					li(role='presentation')
+						a(href='#order_shipped', aria-controls='order_shipped', role='tab', data-toggle='tab') 已出貨
+						span.tips
+							|2
+					li(role='presentation')
+						a(href='#order_undone', aria-controls='order_undone', role='tab', data-toggle='tab') 未完成
+					li(role='presentation')
+						a(href='#order_cancel', aria-controls='order_cancel', role='tab', data-toggle='tab') 取消
+						span.tips
+							|1
+				//-Tab panes
+				.tab-content
+					#order_waitpay.tab-pane.active(role='tabpanel') 
+						table.table.tablestyle.keep_tb.order_history_tb(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs visible-sm")
+									th 訂單編號
+									th 下單時間
+									th 店家名稱
+									th(data-breakpoints='xs sm') 數量
+									th(data-breakpoints='xs sm') 運費
+									th(data-breakpoints='xs sm') 總金額
+									th(data-breakpoints='xs sm') 訂單狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packs('1234567890','2017-10-18','噹噹代購小叮噹小舖','1','90','1,290','ATM帳號放置處')
+									.order_state
+										p 待付款
+								+packs('1234567890','2017-10-18','噹噹愛佩佩代購','2','390','1,289','')
+									.order_state
+										p 待付款
+								+packs('1234567890','2017-10-18','限時代購','1','120','4,620','')
+									.order_state
+										p 待付款
+
+					#order_wait.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.order_history_tb(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs visible-sm")
+									th 訂單編號
+									th 下單時間
+									th 店家名稱
+									th(data-breakpoints='xs sm') 數量
+									th(data-breakpoints='xs sm') 運費
+									th(data-breakpoints='xs sm') 總金額
+									th(data-breakpoints='xs sm') 訂單狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packs('1234567890','2017-10-18','噹噹代購小叮噹小舖','1','90','1,290','送貨前請電聯')
+									.order_state
+										p 待出貨
+										button.btn.btn-xs.btn-block.btn_store.mt5(type='button')
+											|申請取消訂單
+										button.btn.btn-xs.btn-block.btn_icons.mt5(type='button')
+											|同意延長出貨
+										button.btn.btn-xs.btn-block.btn_icons.mt5(type='button')
+											|不同意延長出貨
+					#order_shipped.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.order_history_tb(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs visible-sm")
+									th 訂單編號
+									th 下單時間
+									th 店家名稱
+									th(data-breakpoints='xs sm') 數量
+									th(data-breakpoints='xs sm') 運費
+									th(data-breakpoints='xs sm') 總金額
+									th(data-breakpoints='xs sm') 訂單狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packs('1234567890','2017-10-18','噹噹代購小叮噹小舖','1','90','1,290','送貨前請電聯')
+									.order_state
+										p 已出貨
+										a.btn.btn-xs.btn_store.mt5(href='members_order_rating_single.html', role='button')
+											|前往評價
+								+packs('1234567890','2017-10-18','限時代購','1','120','4,620','')
+									.order_state
+										p 已出貨
+										a.btn.btn-xs.btn_store.mt5(href='members_order_rating_single.html', role='button')
+											|前往評價
+					#order_undone.tab-pane(role='tabpanel')
+						.no_productinfo
+							img.img-responsive.center-block(src='images/noorder.png', alt='HiClicks')
+					#order_cancel.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.order_history_tb(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs visible-sm")
+									th 訂單編號
+									th 下單時間
+									th 店家名稱
+									th(data-breakpoints='xs sm') 數量
+									th(data-breakpoints='xs sm') 運費
+									th(data-breakpoints='xs sm') 總金額
+									th(data-breakpoints='xs sm') 訂單狀態
+									th(data-breakpoints='xs sm') 備註
+							tbody
+								+packs('1234567890','2017-10-18','噹噹代購小叮噹小舖','1','90','1,290','買家取消訂單')
+									.order_state
+										p 取消訂單
+			
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')
+
+block lightbox
+	//- lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-lg.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 訂單編號：1234567890
+				.modal-body
+					p.mi.red.mt10.visible-xs 表格可以左右滑動觀看資料
+					.table-responsive
+						table.table.history
+							tr
+								th 訂單編號
+								td(data-th='訂單編號') 1234567890
+								th 下單時間
+								td(data-th='下單時間') 2017-10-18
+								th 訂購會員
+								td(data-th='訂購會員') 王大明
+								th 訂單狀態
+								td(data-th='訂單狀態') 待付款
+							tr
+								th 付款時間
+								td(data-th='付款時間') 2017-12-28 23:38
+								th 付款期限
+								td(data-th='付款期限') 2017-12-29 23:59
+								th 付款資訊
+								td(colspan="3", data-th='付款資訊') 銀行代碼：005
+									br
+									|虛擬帳戶：5219-8013-4515-3413
+							tr
+								th 出貨時間
+								td(data-th='出貨時間') 2018-01-01 09:52
+								th 取消時間
+								td(data-th='取消時間') ---
+								th 取消原因
+								td(colspan="3", data-th='取消原因') ---
+							tr
+								th 商品金額
+								td(data-th='商品金額') 
+									p.any_price(data-mark="NT$") 4,000
+								th 折扣金額
+								td(data-th='折扣金額') ---
+								th 運費
+								td(data-th='運費') 
+									p.any_price(data-mark="NT$") 250
+								th 總訂單金額
+								td(data-th='總訂單金額') 
+									p.any_price.red(data-mark="NT$") 4,250
+							tr
+								th 付款方式
+								td(data-th='付款方式') 線上刷卡
+								th 運送方式
+								td(data-th='運送方式') 店到店
+								th 包裹單號
+								td(colspan="3", data-th='包裹單號') 1234567890
+							tr
+								th 收貨人
+								td(data-th='收貨人') 王大明
+								th 收貨人電話
+								td(data-th='收貨人電話') 0912-345678
+								th 收件地址
+								td(colspan="3",data-th='收件地址') 7-11 風和門市
+							tr
+								th 備註：
+								td(colspan='7') 送貨前請電聯
+					table.table.history_listtb
+						caption.text-center 商品明細
+						tbody
+							tr
+								td
+									ul.row.history_list_child
+										li.col-sm-3.col-md-2
+											a(href="nav_product_detail.html")
+												.imgbox(style="background-image: url(images/blog/1.jpg);")
+										li.col-sm-5.col-md-7
+											p.store_protitle.now
+												a(href="nav_product_detail.html")
+													|【樂芙夏夏】日本 JOUL'S VERNI ＊甜美香氛＊ 珍珠吊飾超美的香水 護手霜/指緣滋潤霜50g
+											ul.list-inline.cart_proinfo
+												li(data-info='顏色') 金黃色
+												li(data-info='尺寸') XL
+										li.col-sm-2.col-md-2
+											|數量：1
+										li.col-sm-2.col-md-2
+											|單價：
+											span.any_price(data-mark="NT$") 1,000
+							tr
+								td
+									ul.row.history_list_child
+										li.col-sm-3.col-md-2
+											a(href="nav_product_detail.html")
+												.imgbox(style="background-image: url(images/blog/3.jpg);")
+										li.col-sm-5.col-md-7
+											p.store_protitle.wait
+												a(href="nav_product_detail.html") melody 立體造型靠墊毛毯 預購 收納毛毯靠枕 毯子 被子 冷氣毯 紅.趴姿.可捲起收納
+											ul.list-inline.cart_proinfo
+												li(data-info='顏色') 黃色
+												li(data-info='尺寸') M
+										li.col-sm-2.col-md-2
+											|數量：1
+										li.col-sm-2.col-md-2
+											|單價：
+											span.any_price(data-mark="NT$") 1,000

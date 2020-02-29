@@ -1,0 +1,220 @@
+extend layout/_layout.jade
+
+block header_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb.text-right
+					li
+						a(href='index.html') HiClicks
+					li.active 購物車
+block content
+	.col-xs-12
+		.newstitlebar
+			h1 
+				i.fi.flaticon-cart
+				|  購物車
+			p 不同賣場商品 不可合併訂單結帳
+		table.table.tablestyle.cart_tb(data-toggle-column="first")
+			caption 
+				a(href="nav_product_saler.html") 噹噹代購小叮噹小舖
+			thead
+				tr
+					th(class="hidden-md hidden-lg")
+					th
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					th 商品圖
+					th(data-breakpoints='sm') 商品名稱
+					th(data-breakpoints='xs') 單價
+					th(data-breakpoints='xs') 數量
+					th 總計
+					th(data-breakpoints='xs') 刪除
+			tbody
+				tr(data-expanded="true")
+					td(class="hidden-md hidden-lg")
+					td 
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					td 
+						a(href="nav_product_detail.html")
+							.imgbox(style="background-image: url(images/blog/1.jpg);")
+					td 
+						p.store_protitle.now
+							a(href="nav_product_detail.html")
+								|【樂芙夏夏】日本 JOUL'S VERNI ＊甜美香氛＊ 珍珠吊飾超美的香水 護手霜/指緣滋潤霜50g
+						ul.list-inline.cart_proinfo
+							li(data-info='顏色') 金黃色
+							li(data-info='尺寸') XL
+					td 
+						span.cart_pirce(data-mark='NTD') 21,000
+					td 
+						.wan-spinner.store_num
+							a.minus(href='javascript:void(0)') -
+							input(type='text', value='1')
+							a.plus(href='javascript:void(0)') +
+					td 
+						span.cart_pirce(data-mark='NTD') 21,000
+					td 
+						a(href="javascript:;")
+							i.fa.fa-times(aria-hidden='true')
+				tr
+					td(class="hidden-md hidden-lg")
+					td 
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					td 
+						a(href="nav_product_detail.html")
+							.imgbox(style="background-image: url(images/blog/text02.jpg);")
+					td 
+						p.store_protitle.wait
+							a(href="nav_product_detail.html") melody 立體造型靠墊毛毯 預購 收納毛毯靠枕 毯子 被子 冷氣毯 紅.趴姿.可捲起收納
+						ul.list-inline.cart_proinfo
+							li(data-info='顏色') 黃色
+							li(data-info='尺寸') M
+					td 
+						span.cart_pirce(data-mark='NTD') 21,000
+					td 
+						.wan-spinner.store_num
+							a.minus(href='javascript:void(0)') -
+							input(type='text', value='1')
+							a.plus(href='javascript:void(0)') +
+					td 
+						span.cart_pirce(data-mark='NTD') 21,000
+					td 
+						a(href="javascript:;")
+							i.fa.fa-times(aria-hidden='true')
+				tr
+					td(class="hidden-md hidden-lg")
+					td 
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					td 
+						a(href="nav_product_detail.html")
+							.imgbox(style="background-image: url(images/index/4.jpg);")
+					td 
+						p.store_protitle.wait
+							a(href="nav_product_detail.html") 依蝶日本代購- 森永 零食,美食,零嘴小吃~必吃必買
+						ul.list-inline.cart_proinfo
+							li(data-info='尺寸') 四包入
+					td 
+						span.cart_pirce(data-mark='NTD') 21,000
+					td 
+						.wan-spinner.store_num
+							a.minus(href='javascript:void(0)') -
+							input(type='text', value='1')
+							a.plus(href='javascript:void(0)') +
+					td 
+						span.cart_pirce(data-mark='NTD') 21,000
+					td 
+						a(href="javascript:;")
+							i.fa.fa-times(aria-hidden='true')
+			tfoot
+				tr
+					td(colspan="8") 
+						p(data-tit="商品小計 (商品數量：2)") 
+							span.cart_pirce.all(data-mark='NTD') 21,000
+						.buy_tipbox
+							p.red.mi 購物車內已選擇商品含【預購/代購商品】與現貨合併出貨，等待天數會比較長，如需拆單出貨請分開勾選結帳喔！
+							p.red.mi 同筆訂單結賬商品將等所有商品到貨後，賣家才會安排寄出喔！
+							p.red.mi 訂單內【預購/代購商品】出貨時間將以20天為標準，若買家同意延長出貨時，整張訂單將再延長20天（出貨期限為40天）
+						.text-right.mt20
+							ul.list-inline.mt10
+								li
+									a.btn.btn-block.btn_black(href='nav_product.html', role='button') 繼續購物
+								li
+									a.btn.btn-block.btn_black(href='user_checkout.html', role='button') 前往結帳
+				
+		table.table.tablestyle.cart_tb(data-toggle-column="first")
+			caption 
+				a(href="nav_product_saler.html") 噹噹代購小叮噹小舖
+			thead
+				tr
+					th(class="hidden-md hidden-lg")
+					th
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					th 商品圖
+					th(data-breakpoints='sm') 商品名稱
+					th(data-breakpoints='xs') 單價
+					th(data-breakpoints='xs') 數量
+					th 總計
+					th(data-breakpoints='xs') 刪除
+			tbody
+				tr(data-expanded="true")
+					td(class="hidden-md hidden-lg")
+					td 
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					td 
+						a(href="nav_product_detail.html")
+							.imgbox(style="background-image: url(images/blog/1.jpg);")
+					td 
+						p.store_protitle.now
+							a(href="nav_product_detail.html")
+								|【樂芙夏夏】日本 JOUL'S VERNI 　＊甜美香氛＊　珍珠吊飾 超美的香水護手霜/指緣滋潤霜 50g
+						ul.list-inline.cart_proinfo
+							li(data-info='顏色') 金黃色
+							li(data-info='尺寸') XL
+					td 
+						span.cart_pirce(data-mark='NTD') 1,000
+					td 
+						.wan-spinner.store_num
+							a.minus(href='javascript:void(0)') -
+							input(type='text', value='1')
+							a.plus(href='javascript:void(0)') +
+					td 
+						span.cart_pirce(data-mark='NTD') 1,000
+					td 
+						a(href="javascript:;")
+							i.fa.fa-times(aria-hidden='true')
+				tr
+					td(class="hidden-md hidden-lg")
+					td 
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+					td 
+						a(href="nav_product_detail.html")
+							.imgbox(style="background-image: url(images/index/4.jpg);")
+					td 
+						p.store_protitle.now
+							a(href="nav_product_detail.html") 依蝶日本代購- 森永 零食,美食,零嘴小吃~必吃必買
+						ul.list-inline.cart_proinfo
+							li(data-info='尺寸') 四包入
+					td 
+						span.cart_pirce(data-mark='NTD') 400
+					td 
+						.wan-spinner.store_num
+							a.minus(href='javascript:void(0)') -
+							input(type='text', value='1')
+							a.plus(href='javascript:void(0)') +
+					td 
+						span.cart_pirce(data-mark='NTD') 400
+					td 
+						a(href="javascript:;")
+							i.fa.fa-times(aria-hidden='true')
+			tfoot
+				tr
+					td(colspan="8") 
+						p(data-tit="商品小計 (商品數量：1)") 
+							span.cart_pirce.all(data-mark='NTD') 1,400
+						.text-right.mt20
+							ul.list-inline.mt10
+								li
+									a.btn.btn-block.btn_black(href='nav_product.html', role='button') 繼續購物
+								li
+									a.btn.btn-block.btn_black(href='user_checkout.html', role='button') 前往結帳

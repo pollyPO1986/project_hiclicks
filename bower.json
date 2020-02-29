@@ -1,0 +1,30 @@
+{
+  "name": "hiclicks",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "pollypo"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome": "fontawesome#^4.7.0",
+    "footable": "3.1.6",
+    "bootstrap-fileinput": "^4.4.5",
+    "jQuery.mmenu": "^7.0.3",
+    "jQuery.mhead": "https://github.com/FrDH/jQuery.mhead.git#^1.0.1",
+    "sweetalert2": "^7.0.6",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "fancybox": "^3.2.5",
+    "bootstrap-select": "^1.13.1"
+  }
+}

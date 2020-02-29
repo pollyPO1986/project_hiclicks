@@ -1,0 +1,205 @@
+extend layout/_layout_side_faq.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li.active 常見問題
+
+block sidenav
+	include include/_faq_sidebar.jade
+
+block content
+	.faq_content
+		.trans_titlebar
+			h1 一般常見問題
+		hr
+		.faq_acc
+			h3 平台問題
+			ul#accordion.accordion
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col01')
+							|如何註冊平台會員
+					#col01.accordion-body.collapse
+						.accordion-inner
+							|您可於海克力斯會員註冊頁面輸入電子信箱&密碼註冊或使用Facebook帳號註冊。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col02')
+							|註冊會員沒有收到E-mail認證信怎麼辦?
+					#col02.accordion-body.collapse
+						.accordion-inner
+							ol
+								li 提醒您再次確認自己註冊填寫的信箱是否正確。
+								li 因個人信箱設定不同，驗證信可能被歸類為垃圾信件，建議您可同時確認您的垃圾信件匣。
+								li 如果還是沒有收到驗證信，您可登入【我的會員資料】>【基本資料】>點選下方藍字“沒收到驗證信”，系統將重新發送認證信至您的信箱。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col03')
+							|只使用代購服務也需上傳身分驗證資料嗎?
+					#col03.accordion-body.collapse
+						.accordion-inner
+							|若只使用代購服務的話，是不需要完成身分驗證的。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col04')
+							|如何聯絡平台客服？
+					#col04.accordion-body.collapse
+						.accordion-inner
+							ol
+								li 可點選網站下方【聯絡我們】>【聯絡我們】，填寫您的相關問題反饋給我們；或直接將問題寄至客服信箱service@hiclicks.com.tw
+								li 搜尋Facebook粉絲專頁 @海克力斯HiClicks代運 通過私訊的方式與我們洽詢。
+								li 直接撥打網站下方的聯絡電話
+								li 代運相關問題您登入代運相關頁面後，可點選網頁右下方線上客服進行咨詢。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col05')
+							|忘記密碼怎麼辦？
+					#col05.accordion-body.collapse
+						.accordion-inner
+							|請在會員登入頁面，密碼下方選擇“忘記密碼”，點選後系統會自動寄送系統信到您註冊的信箱，請依上面指示重新登入賬戶。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col06')
+							|海克力斯代購平台賣家上架商品是否會收取手續費？
+					#col06.accordion-body.collapse
+						.accordion-inner
+							|海克力斯提供免費的平台供用戶使用，平台使用部分不收取手續費。
+			h3 代購問題
+			ul#accordion.accordion
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col07')
+							| 如何成為代購賣家?
+					#col07.accordion-body.collapse
+						.accordion-inner
+							|您需點選網站下方【聯絡我們】>【代購賣家申請進駐】，填寫相關代購賣家申請進駐表格併回傳至我們客服信箱。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col08')
+							|我要如何聯絡賣家？
+					#col08.accordion-body.collapse
+						.accordion-inner
+							|進入商品細節頁面，直接點選【聯絡賣家】，填寫聯絡賣家表單，系統會直接將訊息寄送給賣家。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col09')
+							|賣場提供哪幾種付款方式？
+					#col09.accordion-body.collapse
+						.accordion-inner
+							|平台使用第三方金流設定，賣家需自行於綠界官網進行申請，可選擇線上刷卡或ATM轉賬。買家在購買商品細節頁面可於商品介紹部分看到該賣場的所提供的付款方式。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col10')
+							|購物車內現貨/預購商品可以合併結賬出貨嗎?
+					#col10.accordion-body.collapse
+						.accordion-inner
+							|購物車內已選擇商品含【預購/代購商品】與現貨合併出貨，等待天數會比較長，如需拆單出貨請分開勾選結帳喔！同筆訂單結賬商品將等所有商品到貨後，賣家才會安排寄出喔！
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col11')
+							|賣場訂單未完成率如何計算?
+					#col11.accordion-body.collapse
+						.accordion-inner
+							|總未完成訂單數量/(總完成訂單數量+總未完成訂單數量)。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col12')
+							|ATM轉賬需於多少時間內完成轉賬?
+					#col12.accordion-body.collapse
+						.accordion-inner
+							|ATM繳費期限為一天內，購物點選“確認結賬”按鈕後，會顯示ATM匯款資訊內容顯示正確具體的繳費期限時間。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col13')
+							|刷卡需於多少時間內完成轉賬?
+					#col13.accordion-body.collapse
+						.accordion-inner
+							|付款方式選擇刷卡需於30分鐘內完成付款。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col14')
+							|若誤關刷卡頁面可以直接重新付款嗎?
+					#col14.accordion-body.collapse
+						.accordion-inner
+							|因為網站與第三方金流串接的關係，使用者誤關刷卡頁面，需等待”刷卡限制的付款時間30分鐘”過後，該筆訂單狀態才會變成”取消訂單”，在等待的過程，該筆訂單狀態會是”待付款”。無法直接點選重新付款，需點選商品重新加入購物車下單。
+			h3 代運問題
+			ul#accordion.accordion
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col15')
+							|為什麼使用代運服務要通過身分驗證(上傳身份證&委任書)?
+					#col15.accordion-body.collapse
+						.accordion-inner
+							|因海克力斯使用個人名義報關，根據快遞貨物通關辦法第17條規定，運送委託人須提供委任書委由報關業者向海關辦理報關，並附身份證影本供海關審核。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col16')
+							|使用代運服務需在什麼時候完成身分驗證？
+					#col16.accordion-body.collapse
+						.accordion-inner
+							|提醒您：一定要在包裹入庫前完成身分驗證，不然您的包裹將無法順利入庫喔。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col17')
+							|你們怎麼辨認包裹安排入庫?
+					#col17.accordion-body.collapse
+						.accordion-inner
+							ol
+								li HiClicks主要是依照包裹收件姓名/地址欄位的會員編號進行入庫。
+								li 部分美國網站無法完整填寫會員編號，建議您在First name欄位填寫HCL+名字外文拼音
+									br
+									|如果在包裹顯示派送完成的3個工作日後仍未收到我們的入庫通知，請您將包裹追蹤號碼&快遞公司名稱&訂單明細告知客服，我們將為您查詢包裹狀況。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col18')
+							|包裹可以在倉庫集貨多久？
+					#col18.accordion-body.collapse
+						.accordion-inner
+							|海克力斯HiClicks提供14天的商品放置期。當您的商品到了第15天代運單還未完成繳費，我們將依包裹入庫時的材積與重量取大值計價跟您收取逾期保管費。保管費依每天每公斤NTD15元計算。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col19')
+							|網站顯示包裹已送達，但未接到Hiclicks的收貨通知?
+					#col19.accordion-body.collapse
+						.accordion-inner
+							p 包裹抵達倉庫後，日本/韓國代運需要1個工作日的時間登錄作業。因美國地區時差關係，美國代運需要2~3個工作日的時間登陸作業，完成後就會入庫到您的【包裹管理】中。
+							p 如果在包裹到達後３個工作日【代運包裹管理】皆未顯示新的包裹資訊，很有可能是您包裹的姓名或收件地址欄位未完整填寫會員編號，導致我們無法順利辨認包裹安排入庫。
+							p 這種情況下，請您將包裹追蹤號碼&快遞公司名稱&訂單明細告知客服，我們將為您查詢包裹狀況。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col20')
+							|為什麼我的包裹被Hiclicks拒收了？
+					#col20.accordion-body.collapse
+						.accordion-inner
+							|很有可能是因為您的包裹在倉庫簽收時需支付到付費用，海外倉庫無法簽收任何到付包裹。提醒您，為了避免此情形發生請在下單購物時確認商品費用與海外境內運費都已完成支付。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col21')
+							|如何節省材積運費?
+					#col21.accordion-body.collapse
+						.accordion-inner
+							|我們提供多項加值服務供選擇(如單箱縮小體積、合併裝箱、加強包裝、去除鞋盒等)，您可在填寫代運單時，下方選擇“我需要加值服務”并勾選對應項目。選擇加值服務確認送出代運單後，倉庫會依造您的需求進行作業，作業完成後會重新測量包裹的材積重量取大值計費，將以mail&訊息通知的形式通知您繳費。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col22')
+							|包裹合併裝箱或單箱縮小體積後費用一定會比較便宜嗎?
+					#col22.accordion-body.collapse
+						.accordion-inner
+							|使用加值服務後，我們無法保證包裹縮小之後再加上加值服務的費用一定會變比較便宜。需請您填寫代運單選擇加值服務前自行評估確認，再送出代運單。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col23')
+							|送出代運單後可以取消或更改嗎?
+					#col23.accordion-body.collapse
+						.accordion-inner
+							|您在申請加值服務或繳費後就無法取消或更改代運單，為了避免此情形發生請在建立您的代運單時請仔細選取／填寫。
+				li.accordion-group
+					.accordion-heading
+						a.accordion-toggle(data-toggle='collapse', data-parent='#accordion', href='#col24')
+							|填寫代運資料時要照實填寫嗎?
+					#col24.accordion-body.collapse
+						.accordion-inner
+							|HiClicks在報關時將依您填寫的商品資訊做報關，因此請您一定要填寫正確的商品資訊，避免申報不實影響清關進度，嚴重者還會產生扣貨／銷毀的情況。

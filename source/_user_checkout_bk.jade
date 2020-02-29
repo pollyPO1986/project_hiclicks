@@ -1,0 +1,170 @@
+extend layout/layout.jade
+
+block header_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb.text-right
+					li
+						a(href='index.html') HiClicks
+					li
+						a(href='nav_product_cart.html') 購物車
+					li.active 結帳
+block content
+	.col-xs-12
+		.blogarea
+			form.checkout_form
+				.row
+					.col-xs-12.col-md-6
+						legend 填寫收件人資訊
+						.form-group
+							label(for="") 姓名：
+							input.form-control(type='text',id="", name="", placeholder='請輸入您的姓名')
+						.form-group
+							label(for="") 電子信箱：
+							input.form-control(type='email',id="", name="", placeholder='請輸入您的電子信箱')
+						.form-group
+							label.control-label(for="") 手機號碼：
+							input.form-control(type='number',id="", name="", placeholder='請輸入您的手機號碼')
+						//- .form-group.has-error.has-feedback
+						//- 	label.control-label(for="") 手機號碼：
+						//- 	input.form-control(type='number',id="", name="", placeholder='請輸入您的手機號碼')
+						//- 	span.glyphicon.glyphicon-remove.form-control-feedback(aria-hidden='true')
+						//- 	span.help-block 請輸入您的手機號碼
+						.form-group
+							label(for="") 市話：
+							input.form-control(type='number',id="", name="", placeholder='請輸入您的室內電話')
+						.form-group
+							label(for="") 收貨地址：
+							.row
+								.col-xs-6.col-sm-3
+									select.form-control
+										option 台中市
+										option 台北市
+								.col-xs-6.col-sm-3
+									select.form-control
+										option 西屯區
+										option 西區
+								.col-xs-12.col-sm-6.formtop
+									input.form-control(type='text',id="", name="", placeholder='請輸入您的收貨地址')
+					.col-xs-12.col-md-6
+						legend 填寫訂購人資訊
+						.form-group
+							label(for="") 姓名：
+							input.form-control(type='text',id="", name="", placeholder='請輸入您的姓名')
+						.form-group
+							label(for="") 電子信箱：
+							input.form-control(type='email',id="", name="", placeholder='請輸入您的電子信箱')
+						.form-group
+							label.control-label(for="") 手機號碼：
+							input.form-control(type='number',id="", name="", placeholder='請輸入您的手機號碼')
+						.form-group
+							label(for="") 市話：
+							input.form-control(type='number',id="", name="", placeholder='請輸入您的室內電話')
+						.form-group
+							label(for="") 帳單地址：
+							.row
+								.col-xs-6.col-sm-3
+									select.form-control
+										option 台中市
+										option 台北市
+								.col-xs-6.col-sm-3
+									select.form-control
+										option 西屯區
+										option 西區
+								.col-xs-12.col-sm-6.formtop
+									input.form-control(type='text',id="", name="", placeholder='請輸入您的帳單地址')
+								//- .col-xs-12.col-sm-6.has-warning.formtop
+								//- 	input.form-control(type='text',id="", name="", placeholder='請輸入您的帳單地址')
+								//- 	span.help-block 格式錯誤
+					.col-xs-12.col-md-6
+						legend.mt60 選擇付款方式
+						.row
+							.col-xs-6.col-sm-3
+								label.radio-inline(for="")
+									input(type='radio',id="", name="", value='option1', checked='')
+									i.fa.fa-circle(aria-hidden='true')
+									|  ATM匯款
+							.col-xs-6.col-sm-3
+								label.radio-inline(for="")
+									input(type='radio',id="", name="", value='option2')
+									i.fa.fa-circle(aria-hidden='true')
+									|  線上刷卡
+					.col-xs-12.col-md-6
+						legend.mt60 選擇運送方式
+						.row
+							.col-xs-3.col-sm-3
+								label.radio-inline(for="")
+									input(type='radio',id="", name="", value='option1', checked='')
+									i.fa.fa-circle(aria-hidden='true')
+									|  7-11店到店
+							.col-xs-3.col-sm-3
+								label.radio-inline(for="")
+									input(type='radio',id="", name="", value='option2')
+									i.fa.fa-circle(aria-hidden='true')
+									|  賣家宅配
+							.col-xs-3.col-sm-3
+								label.radio-inline(for="")
+									input(type='radio',id="", name="", value='option2')
+									i.fa.fa-circle(aria-hidden='true')
+									|  郵寄
+				legend.mt60 再次確認訂單
+				.table-responsive
+					table.table.cart_tb(data-toggle-column="first")
+						thead
+							tr
+								th
+								th(data-breakpoints='xs') 照片
+								th 品名
+								th(data-breakpoints='xs') 數量
+								th(data-breakpoints='xs sm') 單價
+								th 金額
+						tbody
+							tr(data-expanded="true")
+								td 1
+								td 
+									a(href="#")
+										.imgbox(style="background-image: url(images/blog/1.jpg);")
+								td 【樂芙夏夏】日本 JOUL'S VERNI 　＊甜美香氛＊　珍珠吊飾 超美的香水護手霜/指緣滋潤霜 50g
+								td 1
+								td 
+									span.cart_pirce(data-mark='NTD') 700
+								td 
+									span.cart_pirce(data-mark='NTD') 700
+							tr
+								td 2
+								td 
+									a(href="#")
+										.imgbox(style="background-image: url(images/blog/text02.jpg);")
+								td melody 立體造型靠墊毛毯 預購 收納毛毯靠枕 毯子 被子 冷氣毯 紅.趴姿.可捲起收納
+								td 1
+								td 
+									span.cart_pirce(data-mark='NTD') 1,896
+								td 
+									span.cart_pirce(data-mark='NTD') 1,896
+							tr
+								td 3
+								td 
+									a(href="#")
+										.imgbox(style="background-image: url(images/blog/text03.jpg);")
+								td 依蝶日本代購- 森永 零食,美食,零嘴小吃~必吃必買
+								td 1
+								td 
+									span.cart_pirce(data-mark='NTD') 11,000
+								td 
+									span.cart_pirce(data-mark='NTD') 11,000
+						tfoot
+							tr
+								td(colspan="7") 
+									p(data-tit="運費") 
+										span.cart_pirce(data-mark='NTD') 150
+							tr
+								td(colspan="7") 
+									p(data-tit="折扣優惠") 
+										span.cart_pirce(data-mark='NTD') 1,000
+							tr
+								td(colspan="7") 
+									p(data-tit="合計") 
+										span.cart_pirce.all(data-mark='NTD') 12,746
+				p.clearfix
+					button.btn.pull-right.btn_black.mt60.mb10(type='submit') 確認結帳

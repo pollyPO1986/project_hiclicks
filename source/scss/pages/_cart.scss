@@ -1,0 +1,418 @@
+//cart
+.cart_tb {
+    margin-top: 7vh;
+    margin-bottom: 0;
+    background: $white;
+    border: 1px solid lighten($grey, 25%);
+    font-weight: 400;
+    @include phone-width {
+        margin-top: 20px;
+    }
+    caption {
+        @include rem(font-size, 1.5rem);
+        color: $black;
+        letter-spacing: 1px;
+        padding-left: 30px;
+        @include phone-width {
+            @include rem(font-size, 1.3rem);
+        }
+        &:before {
+            content: url(../images/cart_store.png);
+            display: inline-block;
+            line-height: 100%;
+            margin-right: 10px;
+            position: relative;
+            top: 5px;
+        }
+    }
+    >a {
+        display: block;
+    }
+    th,
+    td {
+        text-align: center;
+    }
+    thead {
+        background-color: lighten($blue, 20%);
+        >tr>th {
+            color: $white;
+            border-bottom: 1px solid lighten($grey, 25%);
+            font-weight: 400;
+            @include phone-width() {
+                padding: 5px;
+                @include rem(font-size, 1.3rem);
+            }
+            .checkbox {
+                margin: 0;
+                input {
+                    &+i {
+                        &:before {
+                            color: lighten($blue, 20%);
+                            background-color: lighten($blue, 20%);
+                            border: 1px solid $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >tbody {
+        >tr>td {
+            vertical-align: middle;
+            &:first-child {
+                @include table-width {
+                    position: relative;
+                }
+            }
+            &:nth-child(2) {
+                @include phone-width() {
+                    position: relative;
+                }
+                p {
+                    @include phone-width() {
+                        @include font-dots();
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+        >tr>th {
+            background-color: lighten($blue, 20%);
+            color: $white;
+            font-weight: 400;
+            @include rem(font-size, 1.5rem);
+            vertical-align: middle;
+        }
+        .imgbox {
+            display: block;
+            @extend %bgimg;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+            border: 1px solid lighten($grey, 25%);
+            @include table-up-width {
+                width: 120px;
+                height: 120px;
+            }
+            @include phone-width {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        .wan-spinner {
+            .minus,
+            .plus {
+                background: $footerbg;
+                &:hover {
+                    background: $red;
+                }
+            }
+            .minus {
+                border-radius: 5px 0 0 5px;
+            }
+            .plus {
+                border-radius: 0 5px 5px 0;
+            }
+            input {
+                border-left: 1px solid $footerbg;
+                border-right: 1px solid $footerbg;
+                width: 35px;
+            }
+        }
+        .checkbox {
+            margin: 0;
+            input {
+                &+i {
+                    &:before {
+                        color: $white;
+                        background-color: $white;
+                        border: 1px solid lighten($black, 5%);
+                    }
+                }
+            }
+        }
+    }
+    &.footable-details {
+        >tbody {
+            >tr>td {
+                vertical-align: middle;
+                &:nth-child(2) {
+                    @include table-width {
+                        position: relative;
+                    }
+                }
+            }
+        }
+    }
+    &:not(.footable-details) {
+        >tbody {
+            >tr>td {
+                @include phone-width() {
+                    padding: 5px;
+                }
+                &:nth-child(1) {
+                    @include table-width() {
+                        width: 34px;
+                    }
+                    .footable-toggle {
+                        margin-right: 0;
+                    }
+                }
+                &:nth-child(2) {
+                    @include table-up-width() {
+                        width: 100px;
+                    }
+                    @include table-width() {
+                        width: 34px;
+                    }
+                    @include phone-width() {
+                        width: 30px;
+                    }
+                }
+                &:nth-last-child(6) {
+                    @include table-up-width() {
+                        width: 140px;
+                    }
+                }
+                &:nth-last-child(5) {
+                    @include table-up-width() {
+                        text-align: left;
+                        font-weight: 400;
+                        position: relative;
+                    }
+                }
+                &:nth-last-child(4) {
+                    @include table-up-width() {
+                        width: 120px;
+                    }
+                }
+                &:nth-last-child(3) {
+                    @include table-up-width() {
+                        width: 150px;
+                    }
+                }
+                &:nth-last-child(2) {
+                    @include table-up-width() {
+                        width: 120px;
+                    }
+                }
+                &:last-child {
+                    @include rem(font-size, 2rem);
+                    @include table-up-width() {
+                        width: 90px;
+                    }
+                }
+            }
+        }
+    }
+    tfoot {
+        >tr>td {
+            text-align: right;
+            border-top-color: transparent;
+            @include pc-width {
+                padding-right: 20px;
+            }
+            .cart_pirce {
+                @include phone-width {
+                    display: block;
+                }
+                &:before {
+                    display: inline-block;
+                }
+            }
+        }
+        >tr:first-child td {
+            border-top-color: lighten($grey, 25%);
+        }
+        >p {
+            font-weight: 400;
+            &:before {
+                color: $black;
+                content: attr(data-tit)'：';
+                display: inline-block;
+                font-size: $font-size;
+                font-weight: 400;
+                line-height: 100%;
+                letter-spacing: 1px;
+                margin-right: 20px;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .checkbox {
+        margin: 0;
+    }
+    .store_protitle {
+        @include table-up-width() {
+            @include font-dots(inline-block,2,20px);
+        }
+        @include phone-width() {
+            @include font-dots(inline-block,2,20px);
+        }
+    }
+}
+
+.footable-details.cart_tb>tbody>tr>th:nth-child(1) {
+    @include phone-width() {
+        width: 85px;
+    }
+}
+
+.footable-detail-row .cart_tb {
+    margin-top: 0;
+}
+
+.store_protitle {
+    font-size: $font-size;
+    line-height: 140%;
+    font-weight: 400;
+    @include phone-width {
+        @include rem(font-size, 1.3rem);
+        word-break: normal;
+        text-align: left;
+    }
+    &.wait {
+        &:before {
+            color: $white;
+            content: '預購';
+            display: inline-block;
+            background: $red;
+            @include rem(font-size, 1.3rem);
+            font-weight: 300;
+            line-height: 100%;
+            letter-spacing: 2px;
+            text-shadow: 0 0 3px rgba(100, 100, 100, .85);
+            margin-right: 10px;
+            padding: 4px 4px 4px 6px;
+            position: relative;
+            top: -2px;
+            left: 0;
+            @include phone-width {
+                letter-spacing: 0;
+                top:0;
+            }
+        }
+    }
+    &.now {
+        &:before {
+            color: $white;
+            content: '現貨在台';
+            display: inline-block;
+            background: $bluegreen;
+            @include rem(font-size, 1.3rem);
+            font-weight: 300;
+            line-height: 100%;
+            letter-spacing: 2px;
+            text-shadow: 0 0 3px rgba(100, 100, 100, .85);
+            margin-right: 10px;
+            padding: 4px 4px 4px 6px;
+            position: relative;
+            top: -2px;
+            left: 0;
+            @include phone-width {
+                letter-spacing: 0;
+                top:0;
+            }
+        }
+    }
+}
+
+.cart_pirce {
+    display: inline-block;
+    @include phone-width {
+        @include rem(font-size, 1.3rem);
+    }
+    &:before {
+        color: $grey;
+        content: attr(data-mark);
+        display: inline-block;
+        font-size: $font-size*0.85;
+        font-weight: 400;
+        line-height: 100%;
+        letter-spacing: 1px;
+        margin-right: 5px;
+        @include phone-width {
+            // display: block;
+            @include rem(font-size, 1.3rem);
+            text-align: center;
+        }
+    }
+}
+
+.all {
+    color: $red;
+    font-size: $font-size*1.5;
+    @include phone-width {
+        @include rem(font-size, 1.6rem);
+    }
+    &:before {
+        color: $red;
+        font-weight: 400;
+        font-size: $font-size;
+        @include phone-width {
+		        @include rem(font-size, 1.3rem);
+		    }
+    }
+}
+
+.cart_proinfo {
+    @include rem(font-size, 1.3rem);
+    position: absolute;
+    bottom: 5px;
+    @include phone-width {
+        position: static;
+    }
+    @include sphone-width {
+        text-align: left;
+        padding: 0 5px;
+    }
+    li {
+        color: $grey;
+        font-weight: 300;
+        @include sphone-width {
+            display: block;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &:before {
+            content: attr(data-info)'：';
+            display: inline-block;
+            line-height: 100%;
+            letter-spacing: 1px;
+            @include phone-width {
+				        letter-spacing: 0;
+				    }
+        }
+    }
+    li+li {
+        margin-left: 20px;
+        @include phone-width {
+            margin-left: 0;
+        }
+    }
+}
+
+.buy_tipbox {
+    padding: 20px;
+    border: 2px solid $red;
+    margin-top: 20px;
+    margin-left: 12px;
+    @include phone-width {
+        padding: 10px;
+        margin: 20px 10px 0;
+    }
+    >p {
+        @include rem(font-size, 1.5rem);
+        text-align: left;
+        letter-spacing: 1px;
+        @include phone-width {
+		        @include rem(font-size, 1.3rem);
+		    }
+        +p {
+            margin-top: 12px;
+        }
+    }
+}

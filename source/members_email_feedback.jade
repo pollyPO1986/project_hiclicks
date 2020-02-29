@@ -1,0 +1,112 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(date,author,title)
+	tr
+		//- td
+		//- 	.checkbox
+		//- 		label
+		//- 			input(type='checkbox')
+		//- 			i.fa.fa-check(aria-hidden='true')
+		td=date
+		td=author
+		td=title
+
+mixin emaillist(salerurl,img,buyerurl,name,date)
+	li
+		.email_titlebar
+			a.email_tipsimg(href=salerurl,style=img)
+			.email_info
+				h4: a(href=buyerurl)=name
+				span=date
+		.email_content.textedit
+			block
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 訊息信件匣
+			li.active 訊息通知
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 訊息通知
+		.bonus.keep
+			button.btn.btn_cafe(type='submit') 
+				i.fa.fa-trash-o
+				|  刪除
+			button.btn.btn_cafe(type="button", data-toggle="modal", data-target=".serial_number") 
+				i.fi.flaticon-arrows
+				|  回覆
+			table.table.tablestyle.keep_tb.helpbuy_feed(data-toggle-column="first")
+				thead
+					tr
+						//- th
+						//- 	.checkbox
+						//- 		label
+						//- 			input(type='checkbox')
+						//- 			i.fa.fa-check(aria-hidden='true')
+						th 日期
+						th 寄件者
+						th 標題
+				tbody
+					+keeptb('2017-11-21','藍色大腳Y','您好~~請問何時出貨??')
+		ul.helpbuy_email
+			+emaillist('#','background-image: url(images/sale_photo.jpg);','#','藍色大腳ㄚ','2017-11-21')
+				p 所以收貨的日期還不能確定嗎？
+			+emaillist('#','background-image: url(images/buyer_photo.jpg);','#','噹噹小叮噹小舖','2017-11-18')
+				p 工廠目前爆單，要等工廠單消化完後才能幫您出貨了。
+			+emaillist('#','background-image: url(images/sale_photo.jpg);','#','藍色大腳ㄚ','2017-11-21')
+				p 您好，請問何時出貨??
+				.divider-hr
+				ul.store_proinfo.mt20
+					li(data-tit='商品網址')
+						a.order_link(href="https://web.yaii.com.tw/hiclicks/product/13341142214", target="_blank") https:/ /web.yaii.com.tw/hiclicks/product/13341142214
+					li(data-tit='訂單編號') 20180822003
+
+
+		ul.text_f_arrow.email.mt60
+			li
+				a(href="javascript:;")
+					small
+						i.fa.fa-angle-double-left(aria-hidden='true')
+						| 上一封
+					h3 【取消訂單】買家：HSLA123456 提出取消訂單需求
+			li
+				a.btn.btn-lg.btn_cafe(href='nav_trans_newsdetail.html', role='button') 回訊息列表
+			li
+				a(href="javascript:;")
+					small
+						| 下一封
+						i.fa.fa-angle-double-right(aria-hidden='true')
+					h3 訂單編號：123456789 已超過出貨天數
+					
+block lightbox
+	//- lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.blue 回覆訊息
+				.modal-body
+					form.contact_form.saler_form.mt20
+						.form-group
+							label(for='')
+								| RE：您好~~請問何時出貨??
+						.form-group
+							label(for='')
+								| 訊息內容：
+							textarea.form-control(rows='6', placeholder='')
+						.form-group
+							button.btn.btn-block.btn_black(type='submit') 回覆訊息

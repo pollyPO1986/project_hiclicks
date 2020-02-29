@@ -1,0 +1,72 @@
+mixin side_nav(url,name)
+	li
+		a(class!=attributes.class,href=url)=name
+
+h3(style='display:none;') HiClicks 開箱文側選單
+.sidebox.trans
+	.side_title
+		h4 
+			i.fa.fa-plane(aria-hidden='true') 
+			| 新手上路
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('nav_trans.html','認識HiClicks代運服務')
+			+side_nav('nav_trans.html','日韓美倉庫簡介')
+			+side_nav('nav_trans.html','代運流程')
+			+side_nav('nav_trans.html','代運方式及時效')
+			+side_nav('nav_trans.html','尺寸限制')
+			+side_nav('nav_trans.html','代運費用')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-cog(aria-hidden='true') 
+			| 使用教學
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('nav_trans.html','註冊教學')
+			+side_nav('nav_trans.html','上傳身分證／委託書')(class='on')
+			+side_nav('nav_trans.html','包裹管理／繳費')
+			+side_nav('nav_trans.html','代運進度追蹤')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-exclamation-triangle(aria-hidden='true') 
+			| 禁運用品&amp;限制
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('nav_trans.html','禁運用品')
+			+side_nav('nav_trans.html','食品類限制')
+			+side_nav('nav_trans.html','美國特殊限制')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-shopping-bag(aria-hidden='true') 
+			| 日韓提貨服務
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('nav_trans.html','日本東京大阪提貨服務')
+			+side_nav('nav_trans.html','韓國東大門提貨服務')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-credit-card(aria-hidden='true') 
+			| 費用說明
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('nav_trans.html','收費規則')
+			+side_nav('nav_trans.html','加值服務')
+			+side_nav('nav_trans_count.html','運費試算')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-bullhorn(aria-hidden='true') 
+			| 代運公告
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('nav_trans_news.html','代運公告')

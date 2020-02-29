@@ -1,0 +1,107 @@
+extend layout/_layout.jade
+
+block header_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb.text-right
+					li
+						a(href='index.html') HiClicks
+					li.active 聯絡我們
+block content
+	.col-xs-12.col-lg-10.col-lg-offset-1
+		.newstitlebar
+			h1 聯絡我們
+		hr
+		.row
+			.col-xs-12.col-md-7.col-md-offset-3
+				h2(style='display:none;') HiClicks 聯絡我們
+				ul.infolist
+					li(data-tit="客服時間")
+						|週一 ~ 週五 上午09:00~下午06:00 
+						small.grey
+							|  (週六週日及國定假日休息)
+					li(data-tit="客服信箱") service@hiclicks.com.tw
+					li(data-tit="FB粉絲團")
+						a(href="#",target="_blank") www.facebook.com/HiclicksOfficial/
+					li(data-tit="LINE@")
+						a(href="#") @ahs2211j
+						small.grey
+							|  (暫不開放1對1聊天功能，無法回覆訊息)
+		hr
+		.row
+			.col-xs-12.col-md-8.col-md-offset-2
+				form.form-horizontal.contact_form
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='')
+							| 問題類型：
+						.col-sm-10.col-md-9
+							select.form-control
+								option(value='contact_trans') 代運問題
+								option(value='contact_web') 平台問題
+								option(value='contact_customer') 客訴
+
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='')
+							| 會員編號：
+						.col-sm-10.col-md-9
+							input.form-control(type='text', id='', name='', placeholder='請輸入您的會員編號')
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='') 
+							span.red *
+							| 姓名：
+						.col-sm-10.col-md-9
+							input.form-control(type='text', id='', name='', placeholder='請輸入您的大名')
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='') 
+							span.red *
+							| E-mail：
+						.col-sm-10.col-md-9
+							input.form-control(type='email', id='', name='', placeholder='請輸入您的電子郵件')
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='') 
+							span.red *
+							| 主旨：
+						.col-sm-10.col-md-9
+							input.form-control(type='text', id='', name='')
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='')
+							| 身份：
+						.col-sm-10.col-md-9
+							select.form-control
+								option 買家
+								option 賣家
+								option 其他
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='')
+							| 連絡電話：
+						.col-sm-10.col-md-9
+							input.form-control(type='number', id='', name='')
+					.form-group.has-error
+						label.col-sm-2.col-md-3.control-label(for='')
+							| 訂單編號：
+						.col-sm-10.col-md-9
+							input.form-control(type='number', id='', name='')
+							p.help-block 錯誤提醒說明 
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='') 
+							| 代運委託單：
+						.col-sm-10.col-md-9
+							input.form-control(type='text', id='', name='', placeholder='請填寫代運委託單號，讓我們更快為您處理')
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='file_up') 
+							| 上傳檔案：
+						.col-sm-10.col-md-9
+							.file-loading
+								input#file_up.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png", "word", "pdf"]')
+							ul.contact_list.mt10.list-unstyled
+								li.red *檔案大小：5MB以下
+								li.red *檔案格式：jpg、jpeg、png、word、pdf
+					.form-group
+						label.col-sm-2.col-md-3.control-label(for='') 
+							| 問題說明：
+						.col-sm-10.col-md-9
+							textarea.form-control(rows='3', placeholder='請務必詳細說明您詢問及反應的問題')
+					.form-group
+						.col-sm-offset-2.col-sm-10.col-md-offset-3.col-md-9
+							button.btn.btn-block.btn_black(type='submit') 送出

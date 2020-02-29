@@ -1,0 +1,96 @@
+$marker-size: 1.5rem;
+$step-size: 9.25rem;
+$line-size: 2px;
+
+.timeline {
+    position: relative;
+    margin: $marker-size;
+}
+
+.steps {
+    position: relative;
+    // padding: 0.5rem;
+    padding-left: $marker-size;
+    border-left: $line-size solid lighten($grey, 25%);
+}
+
+.steps[data-notes-count]:before {
+    content: attr(data-notes-count);
+    font-size: 0.8rem;
+    line-height: $marker-size;
+    text-align: center;
+}
+
+.steps:before {
+    content: '';
+    width: $marker-size;
+    height: $marker-size;
+    border-radius: $marker-size;
+    background-color: $white;
+    border: 1px solid darken($white, 15%);
+    position: absolute;
+    left: -$marker-size / 2;
+    top: $marker-size / 2;
+    margin-left: -$line-size / 2;
+}
+
+.steps .date {
+    font-size: 80%;
+    color: gray;
+}
+
+.steps .title {
+    font-weight: bolder;
+}
+
+.steps.completed {
+    border-color: $bluegreen;
+}
+
+.steps.completed:before {
+    border: 1px solid darken($bluegreen, 10%);
+    background-color: $bluegreen;
+}
+
+.steps.current {
+    border-color: adjust-hue(lighten($red, 5%), 20%);
+}
+
+.steps.current:before {
+    border: 1px solid adjust-hue(darken($red, 10%), 20%);
+    background-color: adjust-hue(lighten($red, 5%), 20%);
+}
+
+@media screen and (min-width: 40em) {
+    .timeline {
+        font-size: 0;
+        padding-top: $marker-size;
+    }
+    .steps {
+        display: inline-block;
+        font-size: 0.8rem;
+        width: $step-size * 0.8;
+        padding-left: 0;
+        margin-bottom: 0;
+        border-left: none;
+        border-top: $line-size solid lighten($grey, 25%);
+        padding-top: $marker-size / 2;
+        text-align: center;
+    }
+    .steps:before {
+        left: $step-size * 0.8 / 2 - $marker-size / 2;
+        top: -$marker-size / 2;
+        margin-left: 0;
+        margin-top: -$line-size / 2;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    .steps {
+        font-size: 1rem;
+        width: $step-size;
+    }
+    .steps:before {
+        left: $step-size / 2 - $marker-size / 2;
+    }
+}

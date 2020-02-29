@@ -1,0 +1,85 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的Hi 幣
+			li.active Hi 幣兌換區 - 填寫收貨資料
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 Hi 幣兌換區 - 填寫收貨資料
+		hr
+		.row
+			.col-xs-12.col-md-6
+				h3.point_title.blue 填寫收件資料
+				form.form-horizontal.checkout_form
+					.form-group
+						label.col-sm-3.col-md-4.control-label(for='') 
+							span.red *
+							| 運送方式：
+						.col-sm-9.col-md-8
+							label.radio-inline(for="")
+								input(type='radio',id="", name="", value='')
+								i.fa.fa-circle(aria-hidden='true')
+								|  宅配
+							label.radio-inline(for="")
+								input(type='radio',id="", name="", value='')
+								i.fa.fa-circle(aria-hidden='true')
+								|  郵寄
+					.form-group
+						label.col-sm-3.col-md-4.control-label(for='') 
+							span.red *
+							| 姓名：
+						.col-sm-9.col-md-8
+							input.form-control(type='text', id='', name='')
+					.form-group
+						label.col-sm-3.col-md-4.control-label(for='') 
+							span.red *
+							| 手機號碼：
+						.col-sm-9.col-md-8
+							input.form-control(type='number', id='', name='', placeholder='格式示範：0911-123456')
+					.form-group
+						label.col-sm-3.col-md-4.control-label(for='')
+							| 市內電話：
+						.col-sm-9.col-md-8
+							input.form-control(type='email', id='', name='', placeholder='分機請用"#"字號分開')
+					.form-group
+						label.col-sm-3.col-md-4.control-label(for='') 
+							span.red *
+							| 收件地址：
+						.col-sm-9.col-md-8
+							.row
+								.col-xs-6
+									select.form-control
+										option 台中市
+										option 台北市
+								.col-xs-6
+									select.form-control
+										option 西屯區
+										option 西區
+								.col-xs-12.mt10
+									input.form-control(type='text',id="", name="", placeholder='請輸入您的收貨地址')
+			.col-xs-12.col-md-5.col-md-offset-1
+				h3.point_title.blue 兌換商品
+				p.bonus_tit 兌換商品名稱：
+					span Nintendo SWITCH
+				h3.point_title.blue.mt30 Hi 幣資訊
+				p.bonus_tit 您原有的Hi 幣：540,038枚
+				p.bonus_tit 兌換後剩餘Hi幣
+					span.red 530,000
+					|枚
+		hr
+		.row
+			.col-xs-12.col-sm-offset-3.col-sm-6
+				button.btn.btn-block.btn_black(type='submit') 確認送出

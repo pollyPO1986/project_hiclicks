@@ -1,0 +1,87 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(number,img,store,name)
+	tr
+		td
+			.checkbox
+				label
+					input(type='checkbox')
+					i.fa.fa-check(aria-hidden='true')
+		td.hidden-xs=number
+		td
+			.keep_img
+				a(href="nav_product_detail.html",style=img)
+		td
+			a(href="nav_product_detail.html")=store
+		td
+			a(href="nav_product_detail.html")=name
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的收藏管理
+			li.active 收藏商品
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 收藏商品
+		.bonus.keep
+			button.btn.btn_cafe(type='submit')
+				i.fa.fa-times
+				|  取消收藏
+			table.table.tablestyle.keep_tb.store(data-toggle-column="first")
+				thead
+					tr
+						th
+							.checkbox
+								label
+									input(type='checkbox')
+									i.fa.fa-check(aria-hidden='true')
+						th.hidden-xs NO
+						th 商品圖片
+						th 商品名稱
+						th 店家名稱
+				tbody
+					+keeptb('1','background-image:url(images/index/4.jpg);','2017 冬季必買大衣冬季必買大衣','噹噹代購小舖')
+					+keeptb('2','background-image:url(images/index/15.png);','2017 冬季必買大衣','花嬤嬤日本代購')
+					+keeptb('3','background-image:url(images/index/12.gif);','TRIP ADVISER好評/當地人推薦/希臘愛琴島KIPSELI新鮮開心果食品代購/11/20收單團/希臘代購','我被淘汰了這個世界真的好殘酷')
+					+keeptb('4','background-image:url(images/index/13.jpg);','英國NIKE全線七折起/快來幫自己的運動用品更新吧!/英國代購','酒窩．美日幫你買酒窩．美日幫你買')
+					+keeptb('5','background-image:url(images/index/9.jpg);','阿黛勒藝術與文創空間','酒窩．美日幫你買')
+					+keeptb('6','background-image:url(images/index/5.png);','【清倉5折】美國《SeeKaiRun》柔軟、舒適、耐穿又時尚的童鞋～嬰兒學步鞋、兒童涼鞋、皮鞋、靴子代購中','阿黛勒藝術與文創空間')
+					+keeptb('7','background-image:url(images/index/16.gif);','2017 冬季必買大衣','噹噹代購小舖')
+					+keeptb('8','background-image:url(images/index/4.jpg);','2017 冬季必買大衣','噹噹代購小舖')
+					+keeptb('9','background-image:url(images/index/15.png);','2017 冬季必買大衣','噹噹代購小舖')
+					+keeptb('10','background-image:url(images/index/12.gif);','2017 冬季必買大衣','噹噹代購小舖')
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')

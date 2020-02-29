@@ -1,0 +1,55 @@
+mixin side_nav(href,item,navs)
+	li.drup-add
+		//- a.plus(href='javascript:;') ✖
+		a.plus(href='javascript:;')
+		a(class!=attributes.class, href=href)=item
+		ul.sidebar_drownav
+			each nav in navs
+				li
+					a(href='nav_product_saler.html')=nav
+			block
+
+mixin goga_check(name)
+	li=name
+		a(href='javascript:;') &#10006;
+
+h3(style='display:none;') HiClicks 所有商品側選單
+.sidebox
+	.side_title
+		h4 國家篩選
+	.side_content
+		button.btn.btn-block.btn_cafe(type='button', data-fancybox='', data-src='#state_check') 選擇國家
+		//- ul.pro_checkbox.nation
+		//- 	+goga_check('美國')
+		//- 	+goga_check('英國')
+		//- 	+goga_check('日本')
+		//- 	+goga_check('韓國')
+
+	hr
+	.side_title
+		h4 商品類型
+	.side_content
+		ul.pro_checkbox
+			li
+				label.checkbox-inline(for='now')
+					input(type='checkbox', id='now', name='now')
+					i.fa.fa-check(aria-hidden='true')
+					|  現貨
+			li
+				label.checkbox-inline(for='wa')
+					input(type='checkbox', id='wa', name='wa')
+					i.fa.fa-check(aria-hidden='true')
+					|  預購
+
+.sidebox
+	.side_title
+		h4 全部商品
+	hr
+	.side_content
+		ul.side_toggienav
+			+side_nav('nav_product_saler.html','美妝保養',['配件飾品','手鍊/手環','耳環','項鍊/墜子','戒指','髮飾','鑰匙圈/鑰匙包'])(class="on")
+			+side_nav('nav_product_saler.html','女生服飾',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product_saler.html','進口食品',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product_saler.html','居家用品',['子選項01','子選項02','子選項03'])
+			li
+				a(href="nav_product_saler.html") 代購結帳

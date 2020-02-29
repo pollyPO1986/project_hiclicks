@@ -1,0 +1,87 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(number,img,store,name)
+	tr
+		td
+			.checkbox
+				label
+					input(type='checkbox')
+					i.fa.fa-check(aria-hidden='true')
+		td.hidden-xs=number
+		td
+			.keep_img
+				a(href="nav_product_saler.html",style=img)
+		td
+			a(href="nav_product_saler.html")=store
+		td
+			a(href="nav_product_saler.html")=name
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的收藏管理
+			li.active 收藏店家
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 收藏店家
+		.bonus.keep
+			button.btn.btn_cafe(type='submit')
+				i.fa.fa-times
+				|  取消收藏
+			table.table.tablestyle.keep_tb.store(data-toggle-column="first")
+				thead
+					tr
+						th
+							.checkbox
+								label
+									input(type='checkbox')
+									i.fa.fa-check(aria-hidden='true')
+						th.hidden-xs NO
+						th 店家照片
+						th 店家名稱
+						th 賣家名稱
+				tbody
+					+keeptb('1','background-image:url(images/sale_photo.jpg);','噹噹代購小舖','背影殺手手癢養')
+					+keeptb('2','background-image:url(images/sale_photo.jpg);','噹噹愛佩佩代購','轉身耍帥就是率')
+					+keeptb('3','background-image:url(images/sale_photo.jpg);','花媽媽日本代購','我被淘汰了這個世界真的好殘酷')
+					+keeptb('4','background-image:url(images/sale_photo.jpg);','UK2Taiwan 英國連線代購','藍色大腳丫')
+					+keeptb('5','background-image:url(images/sale_photo.jpg);','阿黛勒藝術與文創空間','阿黛勒')
+					+keeptb('6','background-image:url(images/sale_photo.jpg);','噹噹代購小舖','背影殺手手癢養')
+					+keeptb('7','background-image:url(images/sale_photo.jpg);','噹噹代購小舖','背影殺手手癢養')
+					+keeptb('8','background-image:url(images/sale_photo.jpg);','噹噹代購小舖','背影殺手手癢養')
+					+keeptb('9','background-image:url(images/sale_photo.jpg);','噹噹代購小舖','背影殺手手癢養')
+					+keeptb('10','background-image:url(images/sale_photo.jpg);','噹噹代購小舖','背影殺手手癢養')
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')

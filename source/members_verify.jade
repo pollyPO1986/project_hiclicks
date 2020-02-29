@@ -1,0 +1,155 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的會員資料
+			li.active 身分驗證
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 身分驗證
+		hr
+		.members_content
+			p.red.mi.mb20 根據快遞貨物通關辦法第17條規定：
+				br
+				| 運送委託人須提供委任書委由報關業者向海關辦理報關，並附身份證影本供海關審核。
+			h3.nopoint_title 填寫代運身分驗證資料
+			.row
+				.col-xs-12.col-md-10
+					form.form-horizontal.contact_form.mt20
+						.form-group
+							.col-sm-offset-2.col-sm-10.col-md-offset-3.col-md-9
+								label.checkbox-inline(for='01')
+									input(type='checkbox', id='01', name='01')
+									i.fa.fa-check(aria-hidden='true')
+									|  同基本資料
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| 中文姓名：
+							.col-sm-10.col-md-9
+								input.form-control(type='text', id='', name='')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| 英文姓名：
+							.col-sm-10.col-md-9
+								input.form-control(type='text', id='', name='', placeholder='同護照的英文姓名')
+						.form-group.has-error
+							label.col-sm-2.col-md-3.control-label(for='')
+								span.red *
+								| 手機號碼：
+							.col-sm-10.col-md-9
+								input.form-control(type='number', id='', name='', placeholder='格式示範：0910123456')
+								p.help-block 錯誤提醒說明區塊
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='')
+								| 市內電話：
+							.col-sm-10.col-md-9
+								input.form-control(type='number', id='', name='', placeholder='分機請用"#"字號分開')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| E-mail：
+							.col-sm-10.col-md-9
+								input.form-control(type='email', id='', name='', placeholder='請輸入您的電子郵件')
+						.form-group
+							label.col-sm-2.col-md-3.control-label(for='') 
+								span.red *
+								| 戶籍地址：
+							.col-sm-10.col-md-9
+								.row
+									.col-xs-6.col-md-3
+										select.form-control
+											option 台中市
+											option 台北市
+									.col-xs-6.col-md-3
+										select.form-control
+											option 西屯區
+											option 西區
+									.col-xs-12.col-md-6.from_tp
+										input.form-control(type='text',id="", name="", placeholder='同身分證地址')
+						.form-group
+							.col-sm-offset-2.col-sm-10.col-md-offset-3.col-md-9
+								button.btn.btn-block.btn_black(type='submit') 確認
+			hr.mg_divide
+			h3.nopoint_title 身分證上傳  
+				a.bluelink(href="#")
+					i.fa.fa-angle-double-left
+					|&nbsp;了解如何上傳身份證&nbsp;
+					i.fa.fa-angle-double-right
+			p.grey.mi_space 若已通過認證想重新上傳請與客服聯繫。
+			p.red.mi_space.mt10 請上傳身分證正反面掃描件或清晰照片的電子檔&nbsp;&nbsp;
+				a.bluelink(href="#")
+					i.fa.fa-angle-double-left
+					|&nbsp;沒收到驗證信&nbsp;
+					i.fa.fa-angle-double-right
+			.row
+				.col-xs-12.col-md-10
+					form.form-horizontal.contact_form.mt20
+						.form-group
+							label.col-sm-3.col-md-4.control-label(for='') 
+								span.red *
+								| 身分證字號：
+							.col-sm-9.col-md-8
+								input.form-control(type='text', id='', name='')
+						.form-group
+							label.col-sm-3.col-md-4.control-label(for='file_up')
+								span.red *
+								| 上傳身分證正面：
+							.col-sm-9.col-md-8
+								.file-loading
+									input#idfront_up.file(name='idfront_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg"]')
+						.form-group
+							label.col-sm-3.col-md-4.control-label(for='file_up') 
+								span.red *
+								| 上傳身分證反面：
+							.col-sm-9.col-md-8
+								.file-loading
+									input#idback_up.file(name='idback_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg","jpeg"]')
+								ul.contact_list.mt10.list-unstyled
+									li.red *檔案大小：5MB以下
+									li.red *檔案格式：jpg、jpeg
+						.form-group
+							.col-sm-offset-3.col-sm-9.col-md-offset-4.col-md-8
+								button.btn.btn-block.btn_black(type='submit') 確認
+			hr.mg_divide
+			h3.nopoint_title 委任書上傳  
+				a.bluelink(href="#")
+					i.fa.fa-angle-double-left
+					|&nbsp;了解如何上傳委任書&nbsp;
+					i.fa.fa-angle-double-right
+			.row
+				.col-xs-12.col-md-10
+					form.form-horizontal.contact_form.mt20
+						.form-group
+							label.col-sm-3.col-md-4.control-label(for='') 
+								| 下載空白委任書：
+							.col-sm-9.col-md-8
+								button.btn.btn_icons(type='submit') DOWNLOAD
+									i.fa.fa-angle-double-down
+						.form-group
+							label.col-sm-3.col-md-4.control-label(for='') 
+								span.red *
+								| 上傳已填寫委任書：
+							.col-sm-9.col-md-8
+								.file-loading
+									input#paper_up.file(name='paper_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg","jpeg","pdf", "dox", "docx"]')
+								ul.contact_list.mt10.list-unstyled
+									li.red *檔案大小：5MB以下
+									li.red *檔案格式：jpg、jpeg、pdf、dox、docx
+						.form-group
+							.col-sm-offset-3.col-sm-9.col-md-offset-4.col-md-8
+								button.btn.btn-block.btn_black(type='submit', disabled="disabled") 確認
+		

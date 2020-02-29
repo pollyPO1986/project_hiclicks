@@ -1,0 +1,65 @@
+extend layout/_layout.jade
+
+mixin newslist(img,date,name)
+	li
+		a.imgbox(href='nav_news_detail.html', style=img)
+		.newslist_info
+			span=date
+			h3=name
+			p.text-right
+				a.btn.btn_cafe(href='nav_news_detail.html', role='button') more
+
+block header_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb.text-right
+					li
+						a(href='index.html') HiClicks
+					li
+						a(href='nav_trans_news.html') 代運公告
+					li.active [搬遷公告] 美國倉庫搬遷更新地址！大升級！
+block content
+	.col-xs-12.col-lg-10.col-lg-offset-1
+		.newstitlebar
+			h1 [搬遷公告] 美國倉庫搬遷更新地址！大升級！
+			p 2018-08-25 (五)
+		hr
+		.textedit.text-center
+			h2(style='display:none;') HiClicks 代運公告
+			img.img-responsive.center-block(src='images/banner/news_banner.jpg')
+			h3.black.mt20.mb10 好消息~~ 2017.7月份起，海克力斯代運日本/韓國週週飛！
+			p.grey 代運速度大升級↗↗日本每週兩航班，韓國每週一航班！
+			.mt30
+			p 【代運時效】一般來說自您繳完運費起算：
+			p 日本代運到您的地址需約 5～10個工作天的時間；
+			p 韓國代運到您的地址需約 5～10個工作天的時間；
+			.mt30
+			p.grey 如仍有問題請在官網上直接點選【訪客咨詢】 或直接FB私訊小編喔~ <br/>我們不定時會在facebook上更新美日韓資訊<br/>讓您可以更輕鬆購買美日韓熱門的商品～
+		.news_footers
+			img.img-responsive.center-block(src="images/news_footer.svg")
+			ul.news_f_media
+				li
+					p.imgbox(style="background-image: url(images/line.png);")
+					span @ahs2211j
+				li
+					p.imgbox(style="background-image: url(images/fb.png);")
+					span 海克力斯HiClicks代運
+		hr
+		ul.text_f_arrow
+			li
+				a(href="javascript:;")
+					small
+						i.fa.fa-angle-double-left(aria-hidden='true')
+						| 上一篇
+					h3 [緊急公告] 美國倉庫搬遷更新地址！大升級！
+			li
+				a.btn.btn-lg.btn_cafe(href='nav_trans_newsdetail.html', role='button') 回公告
+			li
+				a(href="javascript:;")
+					small
+						| 下一篇
+						i.fa.fa-angle-double-right(aria-hidden='true')
+					h3 [公告] 美國倉庫搬遷更新地址！大升級！
+			
+		

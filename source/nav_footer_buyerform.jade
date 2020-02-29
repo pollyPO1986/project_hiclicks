@@ -1,0 +1,237 @@
+extend layout/_layout.jade
+
+block header_content
+	.container
+		.row
+			.col-xs-12
+				ol.breadcrumb.text-right
+					li
+						a(href='index.html') HiClicks
+					li.active 代購賣家進駐申請
+block content
+	h2(style='display:none;') HiClicks 代購賣家進駐申請
+	.col-xs-12.col-lg-6.col-lg-offset-3
+		.newstitlebar
+			h1 代購賣家進駐申請
+		hr
+		.row
+			.col-xs-12.text-center
+				p
+					|" 
+					span.red *
+					|  "星號資訊為必填，若有登入系統需可自動帶入基本資料
+		hr
+		.row
+			.col-xs-12
+				form.contact_form.saler_form.buyerform
+					.form-group
+						label(for='')
+							span.red *
+							| 會員編號：
+						input.form-control(type='text', id='', name='', placeholder='請輸入您的會員編號')
+					.form-group
+						label(for='') 
+							span.red *
+							| 姓名：
+						input.form-control(type='text', id='', name='', placeholder='請輸入您的大名')
+					.form-group
+						label(for='')
+							span.red *
+							| 連絡電話：
+						input.form-control(type='number', id='', name='')
+					.form-group
+						label(for='') 
+							span.red *
+							| E-mail：
+						input.form-control(type='email', id='', name='', placeholder='請輸入您的電子郵件')
+						span.grey.small_font.mt10 提醒您：審核結果將會以mail回覆，請填寫正確的信箱，若超過3個工作天以上未收到回覆，歡迎主動詢問。
+					.form-group
+						label(for='')
+							span.red *
+							| 代購國家：
+						select.selectpicker(data-style="btn-default", multiple='', data-size="8", data-selected-text-format='count')
+							option(value="all", selected='selected') 所有國家
+							optgroup(label='美洲')
+								option(value="m01") 全部美洲國家
+								option(value="m02") 美國
+								option(value="m03") 巴西
+								option(value="m04") 加拿大
+								option(value="m05") 阿根廷
+								option(value="m06") 墨西哥
+								option(data-divider="true")
+							optgroup(label='歐洲')
+								option(value="e01") 全部歐洲國家
+								option(value="e02") 英國
+								option(value="e03") 荷蘭
+								option(value="e04") 法國
+								option(value="e05") 希臘
+								option(value="e06") 捷克
+								option(value="e07") 義大利
+								option(value="e08") 比利時
+								option(value="e09") 西班牙
+								option(value="e10") 葡萄牙
+								option(value="e11") 德國
+								option(value="e12") 波蘭
+								option(value="e13") 丹麥
+								option(value="e14") 瑞士
+								option(data-divider="true")
+							optgroup(label='亞洲')
+								option(value="a01") 全部亞洲國家
+								option(value="a02") 日本
+								option(value="a03") 韓國
+								option(value="a04") 泰國
+								option(value="a05") 中國
+								option(value="a06") 香港
+								option(value="a07") 新加坡
+								option(value="a08") 印尼
+								option(value="a09") 越南
+								option(value="a10") 馬來西亞
+								option(value="a11") 台灣
+								option(data-divider="true")
+							optgroup(label='大洋洲')
+								option(value="d01") 全部大洋洲國家
+								option(value="d02") 澳洲
+								option(value="d03") 紐西蘭
+								option(data-divider="true")
+							optgroup(label='其他')
+								option(value="o01") 其他
+					.form-group
+						label(for='') 
+							| 代購商品類別(複選)：
+						ul.pro_checkbox.buyer
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  美妝保養
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  女生服飾
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  男生服飾
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  鞋品箱包
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  飾品配件
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  進口食品
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  居家用品
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  ３Ｃ家電
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  動漫偶像
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  運動戶外
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  醫療保健
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  文具雜貨
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  寵物用品
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  其他
+					.form-group
+						label(for='') 
+							| 目前經營代購的途徑(複選)：
+						ul.pro_checkbox.buyer.stores
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  露天拍賣
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  雅虎拍賣
+							li
+								label.checkbox-inline(for='p02')
+									input(type='checkbox', id='p02', name='p02')
+									i.fa.fa-check(aria-hidden='true')
+									|  蝦皮賣場
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  實體店面
+							li
+								label.checkbox-inline(for='p01')
+									input(type='checkbox', id='p01', name='p01')
+									i.fa.fa-check(aria-hidden='true')
+									|  Facebook粉絲專頁
+					.form-group.has-error
+						label(for='')
+							| 目前經營線上代購的網址：
+						input.form-control(type='text', id='', name='', placeholder='請盡量提供，讓我們更了解你~')
+						p.help-block 錯誤提醒說明
+					.form-group
+						label(for='') 
+							| 為什麼想成為賣家？
+						textarea.form-control(rows='3', placeholder='請盡量說明您的背景及希望成為平台賣家的原因，也可以提出您想要詢問我們的任何問題')
+					.form-group
+						.checkbox
+							label
+								input(type='checkbox')
+								i.fa.fa-check(aria-hidden='true')
+								small
+									|  我已閱讀並同意 
+									a(data-fancybox='', data-src='#textedit_box', href='javascript:;') 賣家申請進駐條款
+					.form-group
+						.text-center
+							button.btn.btn_black(type='submit') 送出
+block lightbox
+	//- lightbox
+	#textedit_box.state_timeline(style='display: none;max-width:1200px;')
+		h2.mb20(data-selectable='true') 賣家駐站規範
+		p 為維護平台的環境與文化，海克力斯Hiclicks平台需要所有進駐本平台的代購賣家遵守以下規範，請務必詳細閱讀：
+		ol.stage.chinese
+			li 尊重原創、嚴禁抄襲。每一篇文章、每一張圖片都是各位的辛苦結晶，海克力斯Hiclicks平台嚴禁抄襲複製別位代購賣家的原創文字、原創圖片及拼圖。
+			li 8小時內回覆買家提出的代購單，並且在交易過程中讓買家安心掌握代購進度。 (考慮到賣家有時會有家庭、假期因素，若長時間無法回覆處理訂單，請務必於代購館"公告區"說明並將代購館設定為"休假模式"。)
+			li 為維護平台交易安全，禁止引導買家進行站外交易。請勿於關於我、代購文章內或任何海克力斯Hiclicks平台頁面中，留下Email、部落格、個人網站、Line ID、粉絲團、Google表單或其他賣場網址等，可能引導會員至站外交易的內容資訊。在交易過程中，同樣嚴禁引導買家進行站外交易、引導私下收付款等涉及交易安全的行為。若情節嚴重平台有權立即中止賣家進駐資格。
+			li 絕不販售仿冒品。所有的代購交易都需保存購買單據、訂購e-mail等資料，若買家對商品來源有疑慮，向平台提出申訴，賣家有義務出示單據供買家及平台確認商品來源。若賣家無法提供相關證明，平台得暫停結算及支付所代收之所有款項。
+			li 提供台灣緊急連絡人與您的聯絡電話，作為身分查核及緊急聯絡使用。平台不會散佈您的聯絡資料給任何第三方，只會在第一次身份查核及疑似涉及交易安全的緊急狀況時，撥打電話與您聯繫。
+			li 若平台收到買家提出的交易申訴，超過48小時無法與賣家取得聯繫、賣家不積極處理或拒絕與買家溝通協調後續時，平台得暫停結算及支付所代收之所有款項，至交易申訴處理完成為止。
+			li 服務條款變更
+				br
+				|本公司保有變更本服務內容與解釋本服務條款的權利。 
+		p 上述駐站規範是為了讓站上大多數認真經營的代購賣家能夠得到保障，也確保消費者在海克力斯Hiclicks平台能持續感受到穩定、優質的服務品質。
+		p.mt10 因此，若駐站賣家違反上述規範，平台可視情況提出警告或立即停權處理。謝謝您的理解與配合

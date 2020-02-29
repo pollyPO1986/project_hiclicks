@@ -1,0 +1,36 @@
+//logo
+@mixin logo-texthide {
+	text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: url("../images/logo.png") left top no-repeat;
+  width: $logo-w;
+  height: $logo-h;
+  margin: 0;
+}
+
+//bg setting
+@mixin bgimg($bgposition:center center,$bgsize:cover) {
+	background-repeat: no-repeat;
+  background-position: $bgposition;
+  background-size: $bgsize;
+}
+
+//paint
+@mixin circle($size,$c-bgcolor) {
+  width: $size;
+  height: $size;
+  font-size: $size/3;
+  line-height: $size+2px;
+  background: $c-bgcolor; 
+	-moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+//三角形
+@mixin triangle($tri-border-color,$tri-border-width){
+	border-color: $tri-border-color;
+	border-style: solid;
+	border-width: $tri-border-width;
+}

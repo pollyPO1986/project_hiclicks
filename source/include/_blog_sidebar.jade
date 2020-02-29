@@ -1,0 +1,46 @@
+mixin side_nav(url,img,author)
+	li
+		a.imgbox(href=url, style=img)
+		p
+			a(href=url)=author
+
+mixin side_news(url,name)
+	li
+		a(href=url)=name
+
+h3(style='display:none;') HiClicks 開箱文側選單
+.sidebox.blogs.mb30.hidden-xs.hidden-sm
+	.side_title
+		h4.blog_newstit 活動公告
+	hr
+	.side_content
+		//-列表樣式同代運公告列表；這裡自動顯示最新的三則活動公告
+		ul.blog_news
+			+side_news('nav_trans_news.html','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+			+side_news('nav_trans_news.html','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+			+side_news('nav_trans_news.html','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+		p.text-right
+			span.btn_more.mb10
+					a(href="javascript:;") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+.sidebox.blogs
+	.side_title
+		h4 熱門作者
+	hr
+	.side_content
+		ul.blog_nav
+			+side_nav('nav_blog.html','background-image: url(images/index/1.jpg);','神一般的開箱文')
+			+side_nav('nav_blog.html','background-image: url(images/index/2.jpg);','就好棒棒')
+			+side_nav('nav_blog.html','background-image: url(images/index/3.jpg);','ㄚ空服員')
+			+side_nav('nav_blog.html','background-image: url(images/index/4.jpg);','apple')
+			+side_nav('nav_blog.html','background-image: url(images/index/6.jpg);','orange')
+			+side_nav('nav_blog.html','background-image: url(images/index/7.jpg);','pinapple')
+			+side_nav('nav_blog.html','background-image: url(images/index/8.jpg);','小蘋果2代')
+			+side_nav('nav_blog.html','background-image: url(images/index/9.jpg);','汽氣氣車球')
+			+side_nav('nav_blog.html','background-image: url(images/index/10.jpg);','轉身耍帥就是率')
+			+side_nav('nav_blog.html','background-image: url(images/index/13.jpg);','背影殺手手癢養')
+			+side_nav('nav_blog.html','background-image: url(images/index/14.jpg);','休息一下再一下下')
+			+side_nav('nav_blog.html','background-image: url(images/index/3.jpg);','夏夜有蚊睡不好覺怎麼辦')
+			+side_nav('nav_blog.html','background-image: url(images/index/2.jpg);','我被淘汰了這個世界真的好殘酷')
+			+side_nav('nav_blog.html','background-image: url(images/index/4.jpg);','夏季限電')
+			+side_nav('nav_blog.html','background-image: url(images/index/6.jpg);','藍色大腳丫')

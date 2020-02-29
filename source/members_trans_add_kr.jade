@@ -1,0 +1,86 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 代運地址
+			li.active 韓國代運地址
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 韓國代運地址
+		hr
+		.members_content
+			h3.nopoint_title 您的韓國轉運倉庫地址
+			p.red 您尚未上傳身分證與委託書，請您務必上傳通過驗證才可使用HiClicks代運的服務。
+			h5.mt20.mb10 運送地址請填寫下方住址：
+			.adds_box
+				ul.list-unstyled
+					li 運送地址：5th Floor,22, Dongnae-ro 148 beon-gil, Dongnae-gu, Busan, Korea HCLS09038117
+					li 運送地址(韓文)：부산광역시 동래구 동래로 148번길 22, 5층 HCLS09038117
+					li 郵遞區號：607-020 (若不行請填47810)
+					li 電　　話：10-4855-1949
+			hr
+			h3.nopoint_title 韓國網站收件地址填寫對照表 (僅供參考)
+			p.mi.red.mb10.visible-xs 表格可以左右滑動對照資料
+			.textedit
+				//-這裡是文字編輯器的區塊
+				.table-responsive
+					table.table.table-bordered.table-condensed.adds_table
+						tr
+							th ID
+							td 아이디
+							td 您的HiClicks ID (HCLS09038117)
+						tr
+							th 姓名
+							td 성명
+							td 您的姓名
+						tr
+							th 姓
+							td 성
+							td 您的姓
+						tr
+							th 名
+							td 이름
+							td 您的名字
+						tr
+							th 城市
+							td 시
+							td Busan
+						tr
+							th 區
+							td 구
+							td Dongnae-gu
+						tr
+							th 地址
+							td 주소
+							td 5th Floor,22, Dongnae-ro 148 beon-gil
+						tr
+							th 電話號碼
+							td 전화번호
+							td 10-4855-1949
+						tr
+							th 電子郵件
+							td 이메일
+							td 您的電子郵件信箱
+			hr
+			h3.nopoint_title 常用韓國網站地址填寫範例
+			.store_tabs
+				//-Nav tabs
+				ul.nav.nav-tabs.nav-justified(role='tablist')
+					li.active(role='presentation')
+						a(href='#addstext01', aria-controls='addstext01', role='tab', data-toggle='tab') 韓國Gmarket地址填寫指南
+				//-Tab panes
+				.tab-content
+					#addstext01.tab-pane.active(role='tabpanel') 
+						img.img-responsive(src='images/members/text_kr01.jpeg',alt='')

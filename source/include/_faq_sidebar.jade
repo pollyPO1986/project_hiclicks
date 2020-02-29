@@ -1,0 +1,20 @@
+mixin side_nav(item,navs)
+	li
+		a.faq_d(href='javascript:;')=item
+		ul.sidebar_drownav
+			each nav in navs
+				li
+					a(href='nav_footer_faq.html')=nav
+
+h3(style='display:none;') HiClicks 常見問題側選單
+.sidebox.trans
+	.side_title
+		h4 
+			i.fa.fa-pencil-square-o(aria-hidden='true') 
+			|  常見問題
+	hr
+	.side_content
+		ul.side_secnav
+			+side_nav('平台問題',['子項目01','子項目02','子項目03'])
+			+side_nav('代購問題',['賣家相關','買家相關'])
+			+side_nav('代運問題',['子項目01','子項目02','子項目03'])

@@ -1,0 +1,121 @@
+extend layout/_layout_side_trans.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 我要代運
+			li.active 費用說明
+
+block sidenav
+	include include/_trans_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 我要代運
+	.trans_content
+		.trans_titlebar
+			h1 運費試算
+		hr
+		.trans_count
+			h3.blogstitle.pink 計算說明
+			.textedit
+				p 重量重與體積重取其大者作為計價單位。(體積的計算方式為 長ｘ寬ｘ高 (cm)／6000) 
+				p 包裹重量與材積將依實際入倉數據為主。
+				p 以下不含5%營業稅。
+			h3.blogstitle.pink.mt30 請輸入資料
+			form.count_form
+				ul.list-unstyled.countlist
+					li
+						div.countbox
+							.step
+								p STEP
+								p 01
+							.countbox_bar
+								h4 請選擇代運國家
+							.countbox_content
+								label.radio-inline(for='us')
+									input(type='radio',id='us', name='us', value='')
+									i.fa.fa-circle(aria-hidden='true')
+									|  美國
+								label.radio-inline(for='jp')
+									input(type='radio',id='jp', name='jp', value='')
+									i.fa.fa-circle(aria-hidden='true')
+									|  日本
+								label.radio-inline(for='kr')
+									input(type='radio',id='kr', name='kr', value='')
+									i.fa.fa-circle(aria-hidden='true')
+									|  韓國
+					li
+						div.countbox
+							.step
+								p STEP
+								p 02
+							.countbox_bar
+								h4 請輸入包裹資料
+							.countbox_content
+								.row
+									.col-xs-12.col-sm-3
+										.form-group
+											label(for='') 包裹計算重量 (kg)
+											.row
+												.col-lg-9
+													input.form-control(id='', name='', type='number', placeholder='請輸入數字(kg)')
+									.col-xs-12.col-sm-7
+										.form-group
+											label(for='') 包裹材積 (cm)
+											ul.packagesize
+												li
+													input.form-control(id='', name='', type='number', placeholder='長 (cm)')
+												li
+													input.form-control(id='', name='', type='number', placeholder='寬 (cm)')
+												li
+													input.form-control(id='', name='', type='number', placeholder='高 (cm)')
+					li
+						div.countbox
+							.step
+								p STEP
+								p 03
+							.countbox_bar
+								h4 加值服務
+								a(href="#") 
+									i.fa.fa-plane
+									|  詳細收費規則
+							.countbox_content
+								ul.list-unstyled.count_paylist
+									li
+										label.checkbox-inline(for='02')
+											input(type='checkbox', id='02', name='02')
+											i.fa.fa-check(aria-hidden='true')
+											|  加強包裝 (NT100/箱)
+									li
+										label.checkbox-inline(for='03')
+											input(type='checkbox', id='03', name='03')
+											i.fa.fa-check(aria-hidden='true')
+											|  單箱縮小體積 (NT150/箱)
+									li
+										label.checkbox-inline(for='04')
+											input(type='checkbox', id='04', name='04')
+											i.fa.fa-check(aria-hidden='true')
+											|  去除鞋盒 (NT100/雙)
+								p.text-right
+									button.btn.btn_store(type='submit') 開始試算
+
+			h3.blogstitle.pink.mt30 計算結果
+			ul.list-unstyled.alls
+					li
+						span 包裹重量
+						p 1.0kg
+					li
+						span 國際運費
+						p 250元
+					li
+						span 加值服務
+						p 依您的選擇
+					li
+						span 派送費用(台灣本島)
+						p 免費
+					li
+						span 估算結果
+						p.red 250元

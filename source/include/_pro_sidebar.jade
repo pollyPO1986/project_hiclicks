@@ -1,0 +1,90 @@
+mixin side_nav(href,item,navs)
+	li.drup-add
+		//- a.plus(href='javascript:;') ✖
+		a.plus(href='javascript:;')
+		a(class!=attributes.class, href=href)=item
+		ul.sidebar_drownav
+			each nav in navs
+				li
+					a(href='nav_product.html')=nav
+
+mixin goga_check(name)
+	li=name
+		a(href='javascript:;') &#10006;
+
+h3(style='display:none;') HiClicks 所有商品側選單
+.sidebox
+	.side_title
+		h4 預算篩選
+		span 價格範圍
+	.side_content
+		.pro_inputpri
+			input.form-control(type='number')
+			span.ds -
+			input.form-control(type='number')
+			button.btn.btn_search(type='button') 篩選
+	hr
+	.side_title
+		h4 國家篩選
+		//- span 國家可以複選
+	.side_content
+		button.btn.btn-block.btn_cafe(type='button', data-fancybox='', data-src='#state_check') 選擇國家
+		ul.pro_checkbox.nation
+			+goga_check('美國')
+			+goga_check('英國')
+			+goga_check('日本')
+			+goga_check('韓國')
+
+	hr
+	.side_title
+		h4 商品類型
+	.side_content
+		ul.pro_checkbox
+			li
+				label.checkbox-inline(for='now')
+					input(type='checkbox', id='now', name='now')
+					i.fa.fa-check(aria-hidden='true')
+					|  現貨
+			li
+				label.checkbox-inline(for='wa')
+					input(type='checkbox', id='wa', name='wa')
+					i.fa.fa-check(aria-hidden='true')
+					|  預購
+	hr
+	.side_title
+		h4 付款方式
+	.side_content
+		ul.pro_checkbox.paym
+			li
+				label.checkbox-inline(for='card')
+					input(type='checkbox', id='card', name='card')
+					i.fa.fa-check(aria-hidden='true')
+					|  線上刷卡
+			li
+				label.checkbox-inline(for='atm')
+					input(type='checkbox', id='atm', name='atm')
+					i.fa.fa-check(aria-hidden='true')
+					|  虛擬ATM
+
+.sidebox
+	.side_title
+		h4 全部商品
+	hr
+	.side_content
+		ul.side_toggienav
+			+side_nav('nav_product.html','美妝保養',['配件飾品','手鍊/手環','耳環','項鍊/墜子','戒指','髮飾','鑰匙圈/鑰匙包'])(class="on")
+			+side_nav('nav_product.html','女生服飾',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','男生服飾',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','鞋品箱包',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','飾品配件',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','進口食品',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','居家用品',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','３Ｃ家電',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','動漫偶像',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','運動戶外',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','醫療保健',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','文具雜貨',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','寵物用品',['子選項01','子選項02','子選項03'])
+			+side_nav('nav_product.html','其他',['子選項01','子選項02','子選項03'])
+
+	

@@ -1,0 +1,146 @@
+mixin trans_nav(title,items)
+	ul.trans_dropbox.nav_listhover
+		li
+			h4=title
+		each item in items
+			li
+				a(href="nav_trans.html")=item
+header
+	h2(style='display:none;') HiClicks 海克力斯主選單
+	.main_navbar.visible-lg
+		.top_nav
+			.container
+				.row
+					.col-lg-8
+						.newsbar
+							ul
+								li
+									a(href="nav_trans_newsdetail.html") 公告訊息在這裡~歐嗨唷~
+								li
+									a(href="nav_trans_newsdetail.html") 公告訊息在這裡~歐嗨唷~歐嗨唷~歐嗨唷~歐嗨唷~
+								li
+									a(href="nav_trans_newsdetail.html") 消息公告02
+								li
+									a(href="nav_trans_newsdetail.html") 消息公告03
+								li
+									a(href="nav_trans_newsdetail.html") 消息公告04
+					.col-lg-4
+						ul.top_navlist
+							li
+								a(href="topnav_login.html") 
+									i.fa.fa-sign-in(aria-hidden='true')
+									| 登入 &#8260; 註冊
+							// li
+							// 	a(href="topnav_login.html") 
+							// 		i.fa.fa-sign-in(aria-hidden='true')
+							// 		| 登入 &#8260; 註冊
+							li
+								a(href="nav_product_cart.html")
+									i.fi.flaticon-cart
+									| 購物車 (
+									span 0
+									| )
+		.container
+			.row.table_navbox
+				.col-lg-3
+					nav
+						ul.navbar_horizontal
+							li.dropdown.mega-dropdown
+								h3
+									a.dropdown-toggle(href='javascript:;', data-toggle="dropdown") 我要代運
+								.dropdown-menu.mega-dropdown-menu.trans_dropv
+									.trans_drop
+										+trans_nav('新手上路',['認識HiClicks代運服務','日韓美倉庫簡介','代運流程','代運方式及時效','尺寸限制','代運費用'])
+										+trans_nav('使用教學',['註冊教學','上傳身分證／委託書','包裹管理／繳費','代運進度追蹤'])
+										+trans_nav('禁運用品&限制',['禁運用品','食品類限制','美國特殊限制'])
+										+trans_nav('日本提貨服務',['日本東京大阪提貨服務'])
+										+trans_nav('費用說明',['收費規則','加值服務','運費試算'])
+										+trans_nav('代運公告',['代運公告'])
+								
+							li.dropdown.mega-dropdown
+								h3
+									a.active.dropdown-toggle(href='javascript:;') 所有商品
+								.dropdown-menu.mega-dropdown-menu.pro_drop
+									.col-lg-3
+										ul.nav_right.nav_listhover
+											li
+												a(href="nav_product.html") 全部商品
+											li
+												a(href="javascript:;") 最新上架
+											li
+												a(href="javascript:;") 熱門代購商品
+											li
+												a(href="javascript:;") 現貨在台
+									.col-lg-6
+										ul.nav_flex.nav_listhover
+											li
+												a(href="javascript:;") 美妝保養
+											li
+												a(href="javascript:;") 女生服飾
+											li
+												a(href="javascript:;") 男生服飾
+											li
+												a(href="javascript:;") 鞋品箱包
+											li
+												a(href="javascript:;") 飾品配件
+											li
+												a(href="javascript:;") 進口食品
+											li
+												a(href="javascript:;") 居家用品
+											li
+												a(href="javascript:;") 3C家電
+											li
+												a(href="javascript:;") 動漫偶像
+											li
+												a(href="javascript:;") 運動戶外
+											li
+												a(href="javascript:;") 醫療保健
+											li
+												a(href="javascript:;") 文具雜貨
+											li
+												a(href="javascript:;") 寵物用品
+											li
+												a(href="javascript:;") 其他
+									.col-lg-3
+										.side_slider
+											#slider_col.carousel.slide(data-ride='carousel')
+												ol.carousel-indicators
+													li.active(data-target='#slider_col', data-slide-to='0')
+													li(data-target='#slider_col', data-slide-to='1')
+												.carousel-inner(role='listbox')
+													.item.active(style="background-image:url('images/banner/slider_1170x500_02.jpg');")
+													.item(style="background-image:url('images/banner/slider_1170x500_01.jpg');")
+												a.left.carousel-control(href='#slider_col', role='button', data-slide='prev')
+													span.fa.fa-angle-left
+													span.sr-only Prev
+												a.right.carousel-control(href='#slider_col', role='button', data-slide='next')
+													span.fa.fa-angle-right
+													span.sr-only Next
+							li
+								h3
+									a(href='nav_blog.html') 開箱文
+				.col-lg-6
+					.logo
+						
+							a(href='./')
+								h2 HiClicks 海克力斯LOGO
+								img(src='images/logo-n.svg',alt="HiClicks 海克力斯 | 點一下，海外商品輕鬆到～", class="img-responsive")
+				.col-lg-3
+					.searchbox
+						.input-group
+							.input-group-btn
+								button.btn.btn_search.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									| 全部 
+									span.caret
+								ul.dropdown-menu
+									li
+										a(href='#') 全部
+									li
+										a(href='#') 商品
+									li
+										a(href='#') 賣家
+									li
+										a(href='#') 開箱文
+							input.form-control(type='text', aria-label='', placeholder='請輸入關鍵字')
+							span.input-group-btn
+								button.btn.btn_search(type='button') 搜尋

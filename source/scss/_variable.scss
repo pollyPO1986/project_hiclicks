@@ -1,0 +1,40 @@
+$logored:#da1c5e;
+$red:#ff2244;
+$blue:#27a8e0;
+$white:#fff;
+$black:#333;
+$treegreen:#97a076;
+$checkgreen:#9fcb57;
+$bluegreen:#39b7a6;
+$pink:#ff96a4;
+$beige:#d9c5a7;
+$yellow:#f89a1f;
+$grey:#999;
+$footerbg:#413a3a;
+$text-color:#333;
+
+$font-size:16px;
+
+
+// Switch Colors
+$switch-primary: #29b5a8;
+$switch-secondary: #ff8300;
+$switch-default: #6b7381;
+$gray-light: lighten($switch-default, 15%);
+$gray-lighter: lighten($switch-default, 30%);
+
+// Switch Button Colors
+$btn-default-color: $switch-default;
+$btn-default-bg: $gray-lighter;
+
+// Switch Toggle Sizes
+$toggle-default-size: 1.5rem;
+$toggle-default-label-width: 4rem;
+$toggle-default-font-size: 0.75rem;
+
+$bpc-media:1200px;
+$spc-media:1199px;
+$table-media:768px;
+$mobile-media:767px;
+$i7mobile-media:375px;
+$smobile-media:320px;

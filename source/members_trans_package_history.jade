@@ -1,0 +1,348 @@
+extend layout/_layout_side_l.jade
+
+mixin packship(no,number,kg,whd,sort,state)
+	tr
+		td(class="visible-xs")
+		td.hidden-xs=no
+		td
+			a(href="javascript:;",class="order_link", data-toggle="modal", data-target=".package_lightbox")=number
+		td.packtime
+			block
+		td=kg
+		td=whd
+		td=sort
+		td=state
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 代運包裹管理
+			li.active 歷史代運單
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 歷史代運單
+		.bonus.keep.packagebox
+			.transtalkbox
+				h3.point_title 您的歷史代運單紀錄
+			.package_tabs.historylist
+				//-Nav tabs
+				ul.nav.nav-tabs(role='tablist')
+					li.active(role='presentation')
+						a(href='#package_onship_jp', aria-controls='package_onship_jp', role='tab', data-toggle='tab') 日本
+					li(role='presentation')
+						a(href='#package_onship_kr', aria-controls='package_onship_kr', role='tab', data-toggle='tab') 韓國
+					li(role='presentation')
+						a(href='#package_onship_us', aria-controls='package_onship_us', role='tab', data-toggle='tab') 美國
+				//-Tab panes
+				.tab-content
+					#package_onship_jp.tab-pane.active(role='tabpanel') 
+						table.table.tablestyle.keep_tb.package_history(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs")
+									th.hidden-xs NO
+									th 流水號
+									th(data-breakpoints='xs') 完成時間
+									th(data-breakpoints='xs') 重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs') 台灣派送單號
+									th 狀態
+							tbody
+								+packship('1','1234567890','0.5','30.0*15.0*10.0','DHL0007890','代運單完成')
+									p
+										|2017-10-18
+										small 13:20:57
+								+packship('2','1234567890','2','30.0*15.0*10.0','DHL0007890','代運單完成')
+									p
+										|2017-10-16
+										small 20:20:57
+								+packship('3','1234567890','1','30.0*15.0*10.0','DHL0007890','代運單完成')
+									p
+										|2017-10-10
+										small 18:20:57
+					#package_onship_kr.tab-pane(role='tabpanel')
+						//- .no_productinfo
+						//- 	p 目前沒有包裹資料哦!
+						table.table.tablestyle.keep_tb.package_history(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs")
+									th.hidden-xs NO
+									th 流水號
+									th(data-breakpoints='xs') 完成時間
+									th(data-breakpoints='xs') 重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs') 台灣派送單號
+									th 狀態
+							tbody
+								+packship('1','1234567890','0.5','30.0*15.0*10.0','DHL0007890','代運單完成')
+									p
+										|2017-10-18
+										small 13:20:57
+								+packship('2','1234567890','1','30.0*15.0*10.0','DHL0007890','代運單完成')
+									p
+										|2017-10-10
+										small 18:20:57
+					#package_onship_us.tab-pane(role='tabpanel')
+						table.table.tablestyle.keep_tb.package_history(data-toggle-column="first")
+							thead
+								tr
+									th(class="visible-xs")
+									th.hidden-xs NO
+									th 流水號
+									th(data-breakpoints='xs') 完成時間
+									th(data-breakpoints='xs') 重量
+										br
+										small (KG)
+									th(data-breakpoints='xs') 體積
+										br
+										small (W x H x D cm)
+									th(data-breakpoints='xs') 台灣派送單號
+									th 狀態
+							tbody
+								+packship('1','1234567890','1','30.0*15.0*10.0','DHL0007890','代運單完成')
+									p
+										|2017-10-10
+										small 18:20:57
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')
+
+block lightbox
+	//- lightbox區塊
+	.modal.fade.package_lightbox(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-lg.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 流水號：1234567890
+				.modal-body
+					p.mi.red.mb20.visible-xs 以下所有表格皆可以左右滑動觀看資料
+					.table-responsive
+						table.table.package_listtb
+							tr
+								th 流水號
+								td(data-th='流水號') 1234567890
+								th 代運單成立時間
+								td(data-th='代運單成立時間') 2017-10-18 18:32:44
+							tr
+								th 收件人
+								td(data-th='客戶姓名') 王大明
+								th 聯絡電話
+								td(data-th='聯絡電話') 04-23598671
+							tr
+								th 收件地址
+								td(data-th='收件地址') 台中市西區五權五街351巷100號10F
+								th 代運單狀態
+								td(data-th='代運單狀態') 代運單完成
+							tr
+								th E-Mail
+								td(data-th='E-Mail') abcde@gmail.com
+								th 代運單完成時間
+								td(data-th='代運單完成時間') 2017-10-18 18:32:44
+							tr
+								th 加值服務
+								td(data-th='加值服務')
+									ul.list-inline.add_service
+										li 加強包裝
+										li 去除鞋盒
+								th 台灣派送單號
+								td(data-th='台灣派送單號') 
+									ul.list-unstyled
+										li DHL123456789
+										li DHL123456789
+							tr
+								th 備註
+								td(colspan='3',data-th='備註') 這裡是顯示代運客戶填的代運單備註
+							tr
+								th 代收國際運費
+								td(data-th='代收國際運費')
+									span.any_price(data-mark="NT$") 800
+								th 加值服務金額
+								td(data-th='加值服務金額') 
+									span.any_price(data-mark="NT$") 1,500
+							tr
+								th 逾期保管費
+								td(data-th='逾期保管費')
+									span.any_price(data-mark="NT$") 800
+								th 關稅
+								td(data-th='關稅')
+									span.any_price(data-mark="NT$") 200
+							tr
+								th 代運費用總計
+									br
+									small (含5%營業稅)
+								td(colspan='3',data-th='代運費用總計(含5%營業稅)')
+									span.any_price.red(data-mark="NT$") 3,200
+
+					.table-responsive
+						//- 包裹一
+						table.table.package_infotb
+							caption.text-center.red 包裹一
+							thead
+								tr
+									th 流水號
+									th 重量(KG)
+									th 體積
+									th 收費公斤(KG)
+									th 運費
+								tr
+									td HTY180327001_1
+									td(data-th='重量(KG)') 1
+									td(data-th='體積') 30.0*15.0*10.0
+									td(data-th='收費公斤(KG)')  1.5
+									td(data-th='運費')  
+										span.any_price(data-mark="NT$") 1,200
+						//- 包裹二
+						table.table.package_infotb
+							caption.text-center.red 包裹二
+							thead
+								tr
+									th 流水號
+									th 重量(KG)
+									th(colspan='2') 體積
+									th(colspan='2') 收費公斤(KG)
+									th(colspan='2') 運費
+								tr
+									td HTY180327001_2
+									td 1
+									td(colspan='2') 30.0*15.0*10.0
+									td(colspan='2')  1.5
+									td(colspan='2')  
+										span.any_price(data-mark="NT$") 1,200
+
+						table.table.package_infotb.thisbox
+							caption.text-center 代運資料
+							thead
+								tr
+									th 代理編號
+									th 境內快遞單號
+									th 入庫時間
+									th 重量
+									th 體積
+									th 收費公斤
+									th 運費
+								tr
+									td(data-th='代理編號') 00001
+									td(data-th='境內快遞單號') HSL0032651
+									td(data-th='入庫時間') 2017-10-18 18:32:44
+									td(data-th='重量') 0.8
+									td(data-th='體積') 30.0*15.0*10.0
+									td(data-th='收費公斤') 1
+									td(data-th='運費')
+										span.any_price(data-mark="NT$") 90
+							tbody
+								tr
+									th(colspan='3') 商品名稱
+									th(colspan='2') 商品網址
+									th 數量
+									th 單價
+										|(
+										span 日幣
+										|)
+								tr
+									td(colspan='3', data-th='商品名稱') XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+									td(colspan='2', data-th='商品網址') 
+										a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+									td(data-th='數量') 1
+									td(data-th='單價(日幣)') 1,268
+								tr
+									td(colspan='3', data-th='商品名稱') 2018 新春福袋大放送，優惠 免收代購費
+									td(colspan='2', data-th='商品網址') 
+										a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+									td(data-th='數量') 1
+									td(data-th='單價(日幣)') 1,268
+								tr
+									td(colspan='3', data-th='商品名稱') 2017 冬季必買大衣
+									td(colspan='2', data-th='商品網址') 
+										a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+									td(data-th='數量') 1
+									td(data-th='單價(日幣)') 1,268
+							//- 下一個包裹
+						table.table.package_infotb.thisbox
+							thead
+								tr
+									th 代理編號
+									th 境內快遞單號
+									th 入庫時間
+									th 重量
+									th 體積
+									th 收費公斤
+									th 運費
+								tr
+									td(data-th='代理編號') 00001
+									td(data-th='境內快遞單號') HSL0032651
+									td(data-th='入庫時間') 2017-10-18 18:32:44
+									td(data-th='重量') 0.8
+									td(data-th='體積') 30.0*15.0*10.0
+									td(data-th='收費公斤') 1
+									td(data-th='運費')
+										span.any_price(data-mark="NT$") 90
+							tbody
+								tr
+									th(colspan='3') 商品名稱
+									th(colspan='2') 商品網址
+									th 數量
+									th 單價
+										|(
+										span 日幣
+										|)
+								tr
+									td(colspan='3', data-th='商品名稱') XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+									td(colspan='2', data-th='商品網址') 
+										a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+									td(data-th='數量') 1
+									td(data-th='單價(日幣)') 1,268
+								tr
+									td(colspan='3', data-th='商品名稱') 2018 新春福袋大放送，優惠 免收代購費
+									td(colspan='2', data-th='商品網址') 
+										a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+									td(data-th='數量') 1
+									td(data-th='單價(日幣)') 1,268
+								tr
+									td(colspan='3', data-th='商品名稱') 2017 冬季必買大衣
+									td(colspan='2', data-th='商品網址') 
+										a(href="www.amazon.com.jp/products/beauty/000253.html", target="_blank") www.amazon.com.jp/products/beauty/000253.html
+									td(data-th='數量') 1
+									td(data-th='單價(日幣)') 1,268
+					

@@ -1,0 +1,151 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(cate,img,name,qua,price)
+	tr
+		td.visible-xs
+		td
+			button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+				.handle
+		td=cate
+		td
+			.keep_img
+				p(style=img)
+		td=name
+		td=qua
+		td
+			p.any_price(data-mark="NT$")=price
+		td
+			a.btn.btn_cafe(href="members_store_product_upload.html")
+				i.fa.fa-pencil
+			button.btn.btn_cafe(type='button')
+				i.fa.fa-trash
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 賣場商品管理
+			li.active 商品上架
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 商品上架
+		.bonus.keep
+			.row
+				.col-xs-12
+					.form-inline.hidden-xs
+						.btn-group.btn-group-justified(role='group')
+							.btn-group(role='group')
+								a.btn.btn_helpbuy(role='button', href="members_store_product_upload.html")
+									i.fa.fa-plus
+									|  新增商品
+							.btn-group(role='group')
+								select.selectpicker(data-style="btn-default", data-live-search="false")
+									option 所有商品分類
+									optgroup(label='美妝保養')
+										option 全部美妝保養
+										option 配件飾品
+										option 手鍊/手環
+										option 耳環
+									optgroup(label='女生服飾')
+										option 全部女生服飾
+										option 子選項01
+										option 子選項02
+										option 子選項03
+							.btn-group(role='group')
+								select.selectpicker(data-style="btn-default")
+									option 全部賣場分類
+									option 一般商品
+									option 代購結帳
+							.btn-group(role='group')
+								.input-group.store_search
+									input.form-control(type='text', aria-label='', placeholder='請輸入商品關鍵字')
+									span.input-group-btn
+										button.btn.btn_cafe(type='button') 商品搜尋
+					//- 手機版篩選
+					.form-inline.visible-xs
+						.btn-group.btn-group-justified(role='group')
+							.btn-group(role='group')
+								a.btn.btn_helpbuy(role='button', href="members_store_product_upload.html")
+									i.fa.fa-plus
+									|  商品
+							.btn-group(role='group')
+								select.selectpicker(data-style="btn-default", data-live-search="false")
+									option 所有商品分類
+									optgroup(label='美妝保養')
+										option 全部美妝保養
+										option 配件飾品
+										option 手鍊/手環
+										option 耳環
+									optgroup(label='女生服飾')
+										option 全部女生服飾
+										option 子選項01
+										option 子選項02
+										option 子選項03
+							.btn-group(role='group')
+								select.selectpicker(data-style="btn-default")
+									option 全部賣場分類
+									option 一般商品
+									option 代購結帳
+						.input-group.store_search
+							input.form-control(type='text', aria-label='', placeholder='請輸入商品關鍵字')
+							span.input-group-btn
+								button.btn.btn_cafe(type='button') 商品搜尋
+			table.table.tablestyle.keep_tb.store_order_tb.pro(data-toggle-column="first")
+				thead
+					tr
+						th.visible-xs
+						th 上架
+						th(data-breakpoints='xs') 分類
+							a.btn.btn-link.hidden-xs(role='button')
+								i.fa.fa-caret-down
+						th 商品圖片
+						th(data-breakpoints='xs') 商品名稱
+						th(data-breakpoints='xs') 數量
+						th(data-breakpoints='xs') 價格
+							a.btn.btn-link.hidden-xs(role='button')
+								i.fa.fa-caret-down
+						th 操作
+				tbody
+					+keeptb('美妝保養','background-image:url(images/blog/1.jpg);','2017 冬季必買大衣','10','1,000')
+					+keeptb('居家用品','background-image:url(images/blog/3.jpg);','夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★','2','1,000')
+					+keeptb('美妝保養','background-image:url(images/blog/6.jpg);','2017 冬季必買大衣','7','2,200')
+					+keeptb('女生服飾','background-image:url(images/blog/7.jpg);','2017 冬季必買大衣','2','2,200')
+					+keeptb('飾品配件','background-image:url(images/blog/8.jpg);','最新2018代購商品','9','2,200')
+					+keeptb('美妝保養','background-image:url(images/blog/9.jpg);','最新2018代購商品','3','2,200')
+					+keeptb('飾品配件','background-image:url(images/blog/2.jpg);','2017 冬季必買大衣','2','2,200')
+					+keeptb('飾品配件','background-image:url(images/blog/4.jpg);','最新2018代購商品','4','2,200')
+					+keeptb('居家用品','background-image:url(images/blog/5.jpg);','夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★','2','2,200')
+					+keeptb('女生服飾','background-image:url(images/blog/10.jpg);','最新2018代購商品','7','2,200')
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')

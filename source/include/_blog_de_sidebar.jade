@@ -1,0 +1,46 @@
+mixin side_nav(url,img,author)
+	li
+		a.imgbox(href=url, style=img)
+		p
+			a(href=url)=author
+
+h3(style='display:none;') HiClicks 開箱文側選單
+.sidebox.blogs
+	.side_title
+		h4 關於作者
+	hr
+	.side_content.blogss
+		.author_info
+			p.imgbox(style='background-image: url(images/index/7.jpg);')
+			h4 神一般的開箱文
+			p.self 一個喜歡買喜歡賣喜歡開箱與分享的小天地，歡迎大家一起交流
+			button.btn.btn-block.btn_black(type='button')
+				i.fi.flaticon-eye(aria-hidden='true') 
+				| 收藏
+	hr
+	.side_content.blogss
+		h4 代購國家
+		ul.state.mt10
+			li
+				img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+			li
+				img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+			li
+				img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+	hr
+	.side_content.blogss
+		button.btn.btn-block.btn_black(type='button', data-toggle="modal", data-target=".helpbuy_forms")
+			i.fi.flaticon-bag(aria-hidden='true') 
+			| 幫我代購
+		button.btn.btn-block.btn_black(type='button', data-toggle="modal", data-target=".serial_number")
+			i.fi.flaticon-tel(aria-hidden='true') 
+			| 聯絡賣家 
+	hr
+	.side_content
+		h4.mt10 作者其他開箱文 
+		ul.blog_nav
+			+side_nav('nav_blog_detail.html','background-image: url(images/index/14.jpg);','休息一下再一下下')
+			+side_nav('nav_blog_detail.html','background-image: url(images/index/3.jpg);','夏夜有蚊睡不好覺怎麼辦')
+			+side_nav('nav_blog_detail.html','background-image: url(images/index/2.jpg);','我被淘汰了這個世界真的好殘酷')
+			+side_nav('nav_blog_detail.html','background-image: url(images/index/4.jpg);','夏季限電')
+			+side_nav('nav_blog_detail.html','background-image: url(images/index/6.jpg);','藍色大腳丫')

@@ -1,0 +1,91 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(date,author,title)
+	tr
+		//- td.hidden-lg.hidden-md
+		td
+			.checkbox
+				label
+					input(type='checkbox')
+					i.fa.fa-check(aria-hidden='true')
+		td=date
+		td=author
+		td
+			a(href="members_email_helpbuy_feedback.html",class!=attributes.class)=title
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 訊息信件匣
+			li.active 我的詢價/我的報價
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 我的詢價/我的報價
+		.bonus.keep
+			.row
+				.col-xs-5.col-md-4
+					button.btn.btn_cafe(type='submit') 
+						i.fa.fa-trash-o
+						|  刪除
+				.col-xs-7.col-md-4.col-md-offset-4
+					.input-group
+							input.form-control(type='text', aria-label='', placeholder='請輸入商品關鍵字')
+							span.input-group-btn
+								button.btn.btn_cafe(type='button') 搜尋
+			table.table.tablestyle.keep_tb.helpbuy(data-toggle-column="first")
+				thead
+					tr
+						//- th.hidden-lg.hidden-md
+						th
+							.checkbox
+								label
+									input(type='checkbox')
+									i.fa.fa-check(aria-hidden='true')
+						th 日期
+						th 寄件者
+						th 標題
+				tbody
+					+keeptb('2017-11-21','apple','您好~~我需要幫忙代購噹噹葡萄糖')(class="buy_ok active")
+					+keeptb('2017-11-18','pinapple','HELLO~可以幫我估價這個代購要多少錢嗎??這個代購要多少錢嗎??這個代購要多少錢嗎??')(class="buy_talk")
+					+keeptb('2017-11-02','小蘋果2代','您好~請問有在代購日本的戴森吸塵器嗎?')(class="buy_talk")
+					+keeptb('2017-10-23','汽氣氣車球','這些東西有在幫忙代購嗎?')(class="buy_talk")
+					+keeptb('2017-10-11','轉身耍帥就是率','請問這些代購+運費多少錢?')(class="buy_ok")
+					+keeptb('2017-10-01','背影殺手手癢養','您好~請問有在代購日本的戴森吸塵器嗎?')(class="buy_ok")
+					+keeptb('2017-09-30','休息一下再一下下','請問這些代購+運費多少錢?')(class="buy_talk")
+					+keeptb('2017-09-24','就好棒棒','請問這些代購+運費多少錢?')(class="buy_talk")
+					+keeptb('2017-09-08','王O明','您好~請問有在代購日本的戴森吸塵器嗎?')(class="buy_ok")
+					+keeptb('2017-08-28','陳O','這些東西有在幫忙代購嗎?')(class="buy_ok")
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')

@@ -1,0 +1,255 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 賣場商品管理
+			li.active 商品上架
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 商品上架
+		hr
+		form.contact_form.saler_form.order.mt20
+			.row
+				.col-sm-2
+					.form-group
+						span.red *
+						label(for='')
+							| 上架：
+						button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+							.handle
+				.col-sm-5
+					.form-group
+						span.red *
+						label(for='')
+							| 賣場分類：
+						label.radio-inline(for='value01')
+							input(type='radio',id='value01', name='sale_type', value='1', checked)
+							i.fa.fa-circle(aria-hidden='true')
+							|  一般商品
+						label.radio-inline(for='value02')
+							input(type='radio',id='value02', name='sale_type', value='2')
+							i.fa.fa-circle(aria-hidden='true')
+							|  代購結帳
+				.col-sm-5
+					.form-group
+						span.red *
+						label(for='')
+							| 商品類型：
+						label.radio-inline(for='value03')
+							input(type='radio',id='value03', name='pro_type', value='1', checked)
+							i.fa.fa-circle(aria-hidden='true')
+							span.bs_tool(data-toggle="tooltip",data-placement="top",title="Tooltip on top")  現貨在台
+						label.radio-inline(for='value04')
+							input(type='radio',id='value04', name='pro_type', value='2')
+							i.fa.fa-circle(aria-hidden='true')
+							|  預購商品
+				.col-sm-12
+					.form-group
+						span.red *
+						label(for='')
+							| 商品名稱：
+						input.form-control(type='text', id='', name='', placeholder='商品名稱限制字數為40個中文字數')
+				.col-sm-4
+					.form-group
+						span.red *
+						label(for='')
+							| 商品品牌：
+						input.form-control(type='text', id='', name='', placeholder='')
+				.col-sm-4
+					.form-group
+						span.red *
+						label(for='')
+							| 代購國家：
+						select.selectpicker(data-style="btn-default")
+							optgroup(label='美洲')
+								option 美國
+								option 巴西
+								option 加拿大
+								option 阿根廷
+							optgroup(label='歐洲')
+								option 子選項01
+								option 子選項02
+								option 子選項03
+							optgroup(label='亞洲')
+								option 子選項01
+								option 子選項02
+								option 子選項03
+							optgroup(label='大洋洲')
+								option 澳洲
+								option 紐西蘭
+							optgroup(label='其他')
+								option 其他
+				.col-sm-4
+					.form-group
+						span.red *
+						label(for='')
+							| 等待天數：
+						input.form-control(type='text', id='', name='', placeholder='')
+				.col-sm-4
+					.form-group
+						span.red *
+						label(for='')
+							| 商品分類：
+						select.selectpicker(data-style="btn-default", data-live-search="false")
+							optgroup(label='美妝保養')
+								option 配件飾品
+								option 手鍊/手環
+								option 耳環
+							optgroup(label='女生服飾')
+								option 子選項01
+								option 子選項02
+								option 子選項03
+				.col-sm-8
+					.form-group
+						span.red *
+						label(for='')
+							| 預設價格：
+						.input-group
+							.input-group-addon NT$
+							input.form-control(type='text', id='', name='', placeholder='')
+				.col-sm-12
+					.form-group
+						.row
+							.col-sm-4
+								span.red *
+								label(for='')
+									| 商品規格：
+								select.selectpicker(data-style="btn-default")
+									option 沒有商品規格
+									option 一項商品規格
+									option 二項商品規格
+									option 三項商品規格
+							.col-sm-8
+								.bs-callout.bs-callout-grey
+									h4 注意Tip
+									|請先選擇左側"商品規格數" (最多可新增3項規格)，再進行以下樣式管理
+					.pro_specbox.mt10
+						.table_bar
+							h5 商品樣式管理
+						.table-responsive
+							table.table.mem_pro_tb
+								thead
+									tr
+										th 
+											input.form-control.input-sm(type='text', id='', name='', placeholder='規格1 EX:顏色')
+										th 
+											input.form-control.input-sm(type='text', id='', name='', placeholder='規格2 EX:尺寸')
+										th 
+											input.form-control.input-sm(type='text', id='', name='', placeholder='規格3 EX:版型')
+										th 商品價格
+										th 庫存
+										th 操作
+								tbody
+									tr
+										td
+											input.form-control(type='text', id='', name='', placeholder='EX:金黃色')
+										td
+											input.form-control(type='text', id='', name='', placeholder='EX:M號')
+										td
+											input.form-control(type='text', id='', name='', placeholder='EX:V領、圓領')
+										td
+											input.form-control(type='number', id='', name='', placeholder='')
+										td
+											input.form-control(type='number', id='', name='', placeholder='')
+										td
+									tr
+										td
+											input.form-control(type='text', id='', name='', placeholder='EX:金黃色')
+										td
+											input.form-control(type='text', id='', name='', placeholder='EX:M號')
+										td
+											input.form-control(type='text', id='', name='', placeholder='EX:V領、圓領')
+										td
+											input.form-control(type='number', id='', name='', placeholder='')
+										td
+											input.form-control(type='number', id='', name='', placeholder='')
+										td
+											button.btn.btn_cafe(type='button')
+												i.fa.fa-trash
+						p.mi.red.mb10.visible-xs 表格可以左右滑動填寫資料
+						.text-right
+							button.btn.btn_cafe(type='button') 
+								i.fa.fa-plus
+								|  新增商品樣式
+				.col-sm-12
+					.form-group
+						span.red *
+						label(for='')
+							| 上傳商品圖片：
+						.mem_pro_albumbox.mb10
+							ul.list-unstyled.mem_pro_album
+								li.default_cover(style="background-image:url(images/blog/1.jpg);")
+									.tool_btn
+										.btn-group.btn-group-justified(role='group')
+											.btn-group(role='group')
+												button.btn.btn-link.btn_del(type='button')
+													i.fa.fa-trash
+											.btn-group(role='group')
+												button.btn.btn-link.btn_look(type='button', data-toggle="modal", data-target=".serial_number")
+													i.fi.flaticon-eye
+								li(style="background-image:url(images/blog/2.jpg);")
+									.tool_btn
+										.btn-group.btn-group-justified(role='group')
+											.btn-group(role='group')
+												button.btn.btn-link.btn_del(type='button')
+													i.fa.fa-trash
+											.btn-group(role='group')
+												button.btn.btn-link.btn_look(type='button', data-toggle="modal", data-target=".serial_number")
+													i.fi.flaticon-eye
+								li(style="background-image:url(images/blog/3.jpg);")
+									.tool_btn
+										.btn-group.btn-group-justified(role='group')
+											.btn-group(role='group')
+												button.btn.btn-link.btn_del(type='button')
+													i.fa.fa-trash
+											.btn-group(role='group')
+												button.btn.btn-link.btn_look(type='button', data-toggle="modal", data-target=".serial_number")
+													i.fi.flaticon-eye
+						.file-loading
+							input#file_up_two.mt10.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png"]')
+						ul.contact_list.mt10.list-unstyled
+							li.grey 限制張數：最多可上傳5張商品照片
+							li.grey 圖片尺寸：718 * 718px以內
+							li.grey 檔案大小：2MB以下
+							li.grey 檔案格式：jpg、jpeg、png
+				.col-sm-12
+					.form-group
+						span.red *
+						label(for='')
+							| 商品描述：
+						p
+							img.img-responsive(src='images/blog/textedit.jpg')
+				.col-sm-12
+					.form-group
+						label(for='')
+							| 注意事項：
+						p
+							img.img-responsive(src='images/blog/textedit.jpg')
+			.form-group.text-center
+				button.btn.btn_black(type='submit') 刪除商品
+				button.btn.btn_black(type='submit') 取消編輯
+				button.btn.btn_black(type='submit') 確認送岀
+				
+block lightbox	
+	//- lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-sm.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 預覽圖片
+				.modal-body
+					img.img-responsive(src='images/blog/1.jpg')

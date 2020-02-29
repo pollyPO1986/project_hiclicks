@@ -1,0 +1,442 @@
+body {
+    background-color: lighten($grey, 37.5%);
+    font-family: "Lato", "Noto Sans TC", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif;
+    color: $text-color;
+    line-height: 140%;
+    font-weight: 300;
+    // text-shadow: 0 0 0.00001em rgba(100, 100, 100, .1);
+}
+
+::selection {
+    background: rgba(0, 0, 0, .5);
+    color: $white;
+    text-shadow: none;
+}
+
+a {
+    color: $black;
+    transition: color .2s linear;
+    &:link {
+        text-decoration: none;
+    } //-還沒被訪問的樣式
+    &:active {
+        text-decoration: none;
+    } //-滑鼠按下的樣式
+    &:visited {
+        text-decoration: none;
+    } //-被訪問過的樣式
+    &:hover {
+        text-decoration: none;
+        color: $pink;
+    } //-滑鼠滑過的樣式
+    &:focus {
+        text-decoration: none;
+        color: $pink;
+    } //-鍵盤聚焦的樣式
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+input {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    //- Chrome
+    color: $grey;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+    //- IE 10+
+    color: $grey;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus:-ms-input-placeholder {
+    opacity: 0.5;
+}
+
+::-moz-placeholder {
+    //- Firefox 19+
+    color: $grey;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus::-moz-placeholder {
+    opacity: 0.5;
+}
+
+:-moz-placeholder {
+    //- Firefox 4 - 18
+    color: $grey;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+:focus:-moz-placeholder {
+    opacity: 0.5;
+}
+
+.fancybox-container{
+		font-family: "Lato", "Noto Sans TC", "Apple LiGothic Medium", "微軟正黑體", "Microsoft Jhenghei", sans-serif;
+    .fancybox-close-small {
+        @include table-up-width() {
+            top: -20px;
+            right: -20px;
+        }
+        &:after {
+            background-color: $grey;
+            color: $white;
+        }
+    }
+}
+
+.has-error .form-control {
+		color:$red;
+    border-color: $red;
+    border-width: 2px;
+}
+
+//------------------------------------------------------hr
+hr {
+    border-color: lighten($grey, 25%);
+    &.mg_divide {
+    		margin: 10vh 0;
+    }
+}
+
+.divider-hr{
+		// position: relative;
+    overflow: hidden;
+    margin: auto 0;
+    color: lighten($grey, 25%);
+    width: 100%;
+    border-top: 1px solid lighten($grey, 25%);
+    // &:before{
+    // 		content: '';
+		  //   position: absolute;
+		  //   width: 100%;
+		  //   top: 8px;
+		  //   left: 30px;
+		  //   height: 0;
+		  //   border-top: 1px solid lighten($grey, 25%);
+    // }
+}
+
+//------------------------------------------------------條款
+.stage {
+    padding-inline-start: 26px;
+    &.chinese {
+        list-style: cjk-ideographic;
+    }
+    >li {
+        color: lighten($black, 10%);
+        line-height: 170%;
+        letter-spacing: 1px;
+        @include rem(font-size, 1.6rem);
+        padding: 15px 0;
+        p {
+            color: lighten($black, 10%);
+            font-weight: 300;
+        }
+        >ol {
+            color: lighten($black, 10%);
+            font-weight: 300;
+            padding-inline-start: 20px;
+        }
+    }
+
+    .stage_tit {
+        color: $black;
+        @include rem(font-size, 2.0rem);
+        font-weight: 400;
+    }
+
+    .sec_stage {
+        list-style-type: decimal;
+        padding: 10px 0 10px 20px;
+        li {
+            color: lighten($black, 10%);
+            font-weight: 300;
+            >ul {
+            		list-style-type: upper-alpha;
+            		padding: 10px 0 10px 20px;
+            }
+        }
+    }
+
+    .textedit {
+        letter-spacing: 1px;
+    }
+}
+
+//------------------------------------------------------ 404 & verify
+.page404 {
+    text-align: center;
+    @include table-up-width {
+        width: 500px;
+    }
+    @include table-width {
+        width: 100%;
+    }
+    h3 {
+        
+        @include table-up-width {
+            @include rem(font-size, 18rem);
+        }
+        @include table-width {
+            @include rem(font-size, 4.2rem);
+        }
+        span {
+        		@include table-up-width {
+		            @include rem(font-size, 20rem);
+		        }
+		        @include table-width {
+		            @include rem(font-size, 5.2rem);
+		        }
+        }
+    }
+    p {
+        @include table-up-width {
+            line-height: 220%;
+            @include rem(font-size, 1.8rem);
+        }
+        @include table-width {
+            line-height: 170%;
+        }
+    }
+}
+.page_verify {
+    text-align: center;
+    @include table-up-width {
+        width: 700px;
+    }
+    @include table-width {
+        width: 100%;
+    }
+    h3 {
+        // @include fluid-type(20px,26px,320px,1024px);
+        @include fluid-type(18px,24px);
+        font-weight: 400;
+        line-height: 1.5;
+        margin-top: 5vh;
+        a {
+        		color:$blue;
+        		box-shadow: 0 1px;
+						padding-bottom: 1px;
+        }
+    }
+		.textedit {
+				@extend %clearfix;
+				p {
+		        @include table-up-width {
+		            line-height: 220%;
+		            @include rem(font-size, 1.8rem);
+		        }
+		        @include table-width {
+		            line-height: 170%;
+		        }
+		    }
+		}
+		.list-style {
+				text-align: left;
+				li{
+						@include fluid-type(16px,18px,320px,1024px);
+						font-weight: 400;
+						letter-spacing: 1px;
+				}
+				
+		}
+}
+
+//------------------------------------------------------textedit
+.textedit {
+    line-height: 26px;
+    color: $black;
+    p {
+        margin: 0 0 10px;
+        letter-spacing: 1px;
+        @include rem(font-size, 1.5rem);
+        word-break: break-all;
+    }
+    img {
+        margin: 10px auto;
+    }
+}
+
+.small_font{
+		font-size: 12px !important;
+		line-height: 140%;
+		letter-spacing: 1px;
+}
+
+//------------------------------------------------------margin
+.mt5 {
+    margin-top: 5px !important;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.mt20 {
+    margin-top: 20px !important;
+}
+
+.mt30 {
+    margin-top: 30px !important;
+}
+
+.mt40 {
+    margin-top: 40px !important;
+}
+
+.mt50 {
+    margin-top: 50px !important;
+}
+
+.mt60 {
+    margin-top: 60px !important;
+}
+
+.mt113 {
+    margin-top: 113px !important;
+    @include phone-width {
+    		margin-top: 20px !important;
+    }
+}
+
+.mb10 {
+    margin-bottom: 10px !important;
+}
+
+.mb20 {
+    margin-bottom: 20px !important;
+}
+
+.mb30 {
+    margin-bottom: 30px !important;
+}
+
+.mb40 {
+    margin-bottom: 40px !important;
+}
+
+.mb60 {
+    margin-bottom: 60px !important;
+}
+
+//------------------------------------------------------page
+.pagebox {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    li {
+        line-height: 36px;
+        margin-right: 10px;
+        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        &:last-child {
+            margin-right: 0;
+        }
+		    a {
+		        color: $footerbg;
+		        display: block;
+		        border-radius: 5px;
+		        text-align: center;
+		        font-weight: bold;
+		        position: relative;
+		        &:hover:after {
+		            background: $footerbg;
+		            content: '';
+		            display: inline-block;
+		            width: 50%;
+		            height: 2px;
+		            position: absolute;
+		            bottom: 0;
+		            left: 0;
+		            transform: translate(50%, 0);
+		        }
+		    }
+		    > .arrow {
+		        background: $footerbg;
+		        color: $white;
+		        transition: all 0.3s ease-in-out;
+		        @include sphone-width {
+								flex:0 0 36px;
+		        }
+		        &:hover {
+		            background: $red;
+		            &:after {
+				            content: '';
+				            display: none;
+				        }
+		        }
+		    }
+    }
+    .on {
+        position: relative;
+        a:after {
+            background: $footerbg;
+            content: '';
+            display: inline-block;
+            width: 50%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translate(50%, 0);
+        }
+    }
+}
+
+//------------------------------------------------------gotop
+#gotop {
+    display: none;
+    width: 65px;
+    height: 65px;
+    background: $footerbg;
+    border-radius: 15px;
+    position: fixed;
+    right: 20px;
+    bottom: 4%;
+    z-index: 100;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all .5s ease;
+    &:after {
+        content: '\f077';
+        @extend %icons-f;
+        display: block;
+        font-size: $font-size * 1.5;
+        font-weight: normal;
+        text-align: center;
+        color: $white;
+        line-height: 58px;
+    }
+    &:hover {
+        background: $red;
+    }
+    &.foo_top {
+        bottom: 48%;
+        @include table-width {
+            bottom: 500px;
+        }
+        @include phone-width {
+            bottom: 800px;
+        }
+    }
+}

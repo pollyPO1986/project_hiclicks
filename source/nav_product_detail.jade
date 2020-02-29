@@ -1,0 +1,426 @@
+extend layout/_layout.jade
+
+block header_content
+	.container.hidden-xs
+		// 這邊背景圖有限制寬高，必須為1170*250
+		.store_header(style="background-image:url(images/banner/store.png);")
+		ul.salers
+			li
+				.store_sales
+					.sales_img
+						a(href="nav_product_saler.html",style="background-image:url(images/sale_photo.jpg);")
+					.sales_header_info 
+						a(href="nav_product_saler.html") 噹噹代購小叮噹小舖
+						a.uesr_email(href="mailto:uesremail@hotmail.com") uesremail@hotmail.com
+						.store_star
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star-o",aria-hidden="true")
+							a.star_num(href="nav_product_rating.html") (1,008個評價)
+			li
+				p 代購國家
+				ul.state
+					li
+						img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+					li
+						img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+					li
+						img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+			li
+				p 加入時間
+				span.red 4個月前
+			li
+				p 粉絲數
+				span.red 428
+			li
+				p 回覆速度
+				span.red 1天內
+			li
+				p 最後上站
+				span.red 09/26
+			li
+				p 成交筆數
+				span.red 180000
+			li
+				p.hidden-xs 訂單
+					br
+					|未完成率
+				p.hidden-sm.hidden-md.hidden-lg 訂單未完成率
+				span.red 0%
+			li
+				a(href="javascript:;", data-toggle="modal", data-target=".helpbuy_forms")
+					i(class='fi flaticon-bag')
+					p 幫我代購
+			li
+				a(href="javascript:;")
+					i(class='fi flaticon-heart')
+					p 收藏賣家
+
+block content
+	.col-xs-12.col-lg-5
+		.gallery.thumbnail(itemprop='image')
+			#photo-viewer
+		ul#thumbnails.gallery_thumb
+			li(itemprop='image')
+				a.thumb.active(href='images/products/productPic_450x450.png', title='商品名稱', style="background-image: url('images/products/productPic_450x450.png');")
+			li(itemprop='image')
+				a.thumb(href='images/products/productPic_450x450_2.png', title='商品名稱', style="background-image: url('images/products/productPic_450x450_2.png');")
+			li(itemprop='image')
+				a.thumb(href='images/products/productPic_450x450_3.png', title='商品名稱', style="background-image: url('images/products/productPic_450x450_3.png');")
+			li(itemprop='image')
+				a.thumb(href='images/products/productPic_450x450_4.png', title='商品名稱', style="background-image: url('images/products/productPic_450x450_4.png');")
+			li(itemprop='image')
+				a.thumb(href='images/products/productPic_450x450_5.png', title='商品名稱', style="background-image: url('images/products/productPic_450x450_5.png');")
+
+	.col-xs-12.col-lg-7
+		.store_detail
+			span.cate_one_mark 該分類暢銷第一名
+			h1.store_protitle.now
+				| XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+			//- h1.store_protitle.wait
+			//- 	| XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+			//- p.pro_price.have(data-mark="NT$") 2,048
+			p.pro_price(data-mark="NT$") 2,048
+			hr
+			ul.store_proinfo
+				li(data-tit='商品品牌')
+					| 皮克斯公仔工廠
+				li(data-tit='代購國家')
+					| 美國
+				li(data-tit='等待天數')
+					| 7天
+				li(data-tit='顏　　色')
+					.store_color
+						span.radio-inline(for='color01')
+							input#color01(type='radio', name='color', value='')
+							label(for='color01') 金黃色
+						span.radio-inline(for='color02')
+							input#color02(type='radio', name='color', value='')
+							label(for='color02') 藍色
+						span.radio-inline(for='color03')
+							input#color03(type='radio', name='color', value='')
+							label(for='color03') 土耳其藍色
+						span.radio-inline(for='color04')
+							input#color04(type='radio', name='color', value='')
+							label(for='color04') 黑色
+						span.radio-inline(for='color04')
+							input#color04(type='radio', name='color', value='')
+							label(for='color04') 黑色
+						span.radio-inline(for='color04')
+							input#color04(type='radio', name='color', value='')
+							label(for='color04') 黑色
+						span.radio-inline(for='color04')
+							input#color04(type='radio', name='color', value='')
+							label(for='color04') 黑色
+						span.radio-inline(for='color04')
+							input#color04(type='radio', name='color', value='')
+							label(for='color04') 黑色
+						span.radio-inline(for='color04')
+							input#color04(type='radio', name='color', value='')
+							label(for='color04') 黑色
+						span.radio-inline(for='color04')
+							input#color04(type='radio', name='color', value='')
+							label(for='color04') 黑色
+				li(data-tit='尺　　寸')
+					.store_size
+						span.radio-inline(for='size_m')
+							input#size_m(type='radio', name='size', value='')
+							label(for='size_m') M
+						span.radio-inline(for='size_l')
+							input#size_l(type='radio', name='size', value='')
+							label(for='size_l') L
+						span.radio-inline(for='size_xl')
+							input#size_xl(type='radio', name='size', value='')
+							label(for='size_xl') XL
+				li(data-tit='庫存數量')
+					| 3 
+					// 只有現貨才需顯示庫存量
+				li(data-tit='數　　量')
+					.wan-spinner.store_num
+						a.minus(href='javascript:void(0)') -
+						input(type='text', value='1')
+						a.plus(href='javascript:void(0)') +
+				li(data-tit='付款方式')
+					span ATM
+					span 信用卡
+				li(data-tit='取貨方式')
+					span 宅配
+					span 店到店
+			.row.mt20
+				.col-xs-4.col-sm-3
+					// 已加入收藏的class=>like
+					button.btn.btn_store.btn-lg.btn-block.like(type='button') 
+						i(class='fi flaticon-heart') 
+						span 加入收藏
+				.col-xs-4.col-sm-6
+					// 庫存不足的class=>low
+					button.btn.btn_store.btn-lg.btn-block.low(type='button') 
+						i(class='fi flaticon-cart') 
+						span 加入購物車
+				.col-xs-4.col-sm-3
+					button.btn.btn_store.btn-lg.btn-block(type='button', data-toggle="modal", data-target=".serial_number") 
+						i(class='fi flaticon-talk') 
+						span 聯絡賣家
+	.col-xs-12
+		.store_tabs
+			//-Nav tabs
+			ul.nav.nav-tabs(role='tablist')
+				li.active(role='presentation')
+					a(href='#pro_info', aria-controls='pro_info', role='tab', data-toggle='tab') 
+						i.fa.fa-comment
+						|  商品描述
+				li(role='presentation')
+					a(href='#other_info', aria-controls='other_info', role='tab', data-toggle='tab')
+						i.fa.fa-exclamation-circle
+						|  注意事項
+			//-Tab panes
+			.tab-content
+				#pro_info.tab-pane.active(role='tabpanel') 
+					img.img-responsive(src='images/products/insideimg.jpg',alt='')
+				#other_info.tab-pane(role='tabpanel') 
+	
+	.col-xs-12.visible-xs.mt20
+		// 這邊背景圖有限制寬高，必須為1170*250
+		.store_header(style="background-image:url(images/banner/store.png);")
+		ul.salers
+			li
+				.store_sales
+					.sales_img
+						a(href="nav_product_saler.html",style="background-image:url(images/sale_photo.jpg);")
+					.sales_header_info 
+						a(href="nav_product_saler.html") 噹噹代購小叮噹小舖
+						.store_star
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star-o",aria-hidden="true")
+							a.star_num(href="nav_product_rating.html") (1,008個評價)
+			li
+				p 代購國家
+				ul.state
+					li
+						img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+					li
+						img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+					li
+						img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+			li
+				p 加入時間
+				span.red 4個月前
+			li
+				p 粉絲數
+				span.red 428
+			li
+				p 回覆速度
+				span.red 1天內
+			li
+				p 最後上站
+				span.red 09/26
+			li
+				p 成交筆數
+				span.red 180000
+			li
+				p.hidden-xs 訂單
+					br
+					|未完成率
+				p.hidden-sm.hidden-md.hidden-lg 訂單未完成率
+				span.red 0%
+			li
+				a(href="javascript:;", data-toggle="modal", data-target=".helpbuy_forms")
+					i(class='fi flaticon-bag')
+					p 幫我代購
+			li
+				a(href="javascript:;")
+					i(class='fi flaticon-heart')
+					p 收藏賣家
+
+block lightbox				
+	// lightbox區塊
+	.modal.fade.serial_number(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal-sm.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.blue 聯絡賣家
+				.modal-body
+					form.contact_form.saler_form
+						.form-group
+							label(for='')
+								| 問題類型：
+							select.form-control
+								option(value='buyer_product') 商品問題
+								option(value='buyer_trans') 派送問題
+								option(value='buyer_cancel') 取消訂單
+								option(value='buyer_returns') 退貨與退款
+								option(value='buyer_other') 其他問題		
+						.form-group
+							label(for='')
+								| 商品網址：
+							input.form-control(type='text', id='', name='', placeholder='請貼上商品網址 (單一網址)')
+						.form-group.has-error
+							label(for='')
+								| 訂單編號：
+							input.form-control(type='number', id='', name='', placeholder='請填寫訂單編號，讓我們更快為您處理')
+							p.help-block 編號格式錯誤
+						.form-group
+							label(for='') 
+								span.red *
+								| 問題說明：
+							textarea.form-control(rows='3', placeholder='請務必詳細說明您詢問及反應的問題')
+						.form-group
+							button.btn.btn-block.btn_black(type='submit') 送出
+
+	//- lightbox區塊
+	.modal.fade.helpbuy_forms(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title 填寫代購單
+				.modal-body
+					.helpbuy_tip
+						p 請填寫代購需求，賣家會幫您確認代購金額。
+							br
+							small.mi.red 賣家報價完成後，您可再決定是否委託代購。
+					.helpbuy_salerinfo
+						span.grey 賣家：
+						|噹噹代購小叮噹小舖
+					form.form-horizontal.contact_form.helpbuy_form
+						ul.helpbuy_needs
+							li(data-tit="商品一")
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|代購國家：
+									.col-sm-9
+										select.form-control
+											option(value='helpbuy_jp') 日本
+											option(value='helpbuy_kr') 韓國	
+								.form-group
+									label.col-sm-3.control-label(for='') 
+										span.red *
+										|商品名稱：
+									.col-sm-9
+										input.form-control(type='text', id='', name='', placeholder='')
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|參考連結：
+									.col-sm-9
+										input.form-control(type='text', id='', name='', placeholder='請填入網址')
+								.form-group
+									label.col-sm-3.control-label(for='file_up') 
+										|商品圖片：
+									.col-sm-9
+										.file-loading
+											input#file_up.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png"]')
+										ul.contact_list.mt10.list-unstyled
+											li.red *檔案大小：2MB以下
+											li.red *檔案格式：jpg、jpeg、png
+											li.red *最多可上傳3張圖片
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|規格：
+									.col-sm-9
+										textarea.form-control(rows='1', placeholder='顏色、尺寸、型號...等')
+								.form-group
+									label.col-sm-3.control-label(for='') 
+										span.red *
+										|數量：
+									.col-sm-9
+										input.form-control(type='number', id='', name='', placeholder='')
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|參考價格：
+									.col-sm-9
+										.input-group
+											span.input-group-addon NT$
+											input.form-control(type='number', id='', name='', placeholder='')
+
+						p.text-center.mb30
+							button#addhelplist.btn.btn_store(type='button') 
+								i(class='fa fa-plus')  
+								|  再增加一項商品
+						.form-group
+							label.col-sm-3.control-label(for='')
+								|寄送方式：
+							.col-sm-9
+								select.form-control
+									option(value='') 郵寄
+									option(value='') 宅配
+									option(value='') 店到店
+						.form-group
+							label.col-sm-3.control-label(for='')
+								|備註：
+							.col-sm-9
+								textarea.form-control(rows='3', placeholder='')
+						.form-group
+							.col-sm-offset-3.col-sm-6
+								button.btn.btn-block.btn_black(type='submit') 送出代購單
+
+	//- 代購單
+	.help_li_form
+		li(data-tit="商品二")
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|代購國家：
+				.col-sm-9
+					select.form-control
+						option(value='helpbuy_jp') 日本
+						option(value='helpbuy_kr') 韓國	
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					span.red *
+					|商品名稱：
+				.col-sm-9
+					input.form-control(type='text', id='', name='', placeholder='')
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|參考連結：
+				.col-sm-9
+					input.form-control(type='text', id='', name='', placeholder='請填入網址')
+			.form-group
+				label.col-sm-3.control-label(for='file_up') 
+					|商品圖片：
+				.col-sm-9
+					.file-loading
+						input#file_up.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png"]')
+					ul.contact_list.mt10.list-unstyled
+						li.red *檔案大小：2MB以下
+						li.red *檔案格式：jpg、jpeg、png
+						li.red *最多可上傳3張圖片
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|規格：
+				.col-sm-9
+					textarea.form-control(rows='1', placeholder='顏色、尺寸、型號...等')
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					span.red *
+					|數量：
+				.col-sm-9
+					input.form-control(type='number', id='', name='', placeholder='')
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|參考價格：
+				.col-sm-9
+					.input-group
+						span.input-group-addon NT$
+						input.form-control(type='number', id='', name='', placeholder='')
+			button.helplist_del.btn.btn-link(type='button') 
+				i(class='fa fa-times')  
+				|  刪除
+			

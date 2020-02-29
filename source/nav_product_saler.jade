@@ -1,0 +1,364 @@
+extend layout/_layout_products_sale.jade
+
+mixin probox(img,url,name,price,href,store)
+	li.col-xs-6.col-sm-3
+		.probox
+			a.imgbox(href="javascript:;", style=img)
+				.overlay
+					.overlay_icons
+						span.fi.flaticon-heart
+						| 我要收藏
+			h3
+				a(href=url)=name
+			p.pro_price(data-mark="NT$")=price
+			ul.pro_storeinfo.w_bg
+				li
+					block
+				li
+					a(href=href)=store
+
+mixin goga(name,country)
+	label.checkbox-inline(for=name)
+		input(type='checkbox',id=name, name=name, value='')
+		i.fa.fa-check(aria-hidden='true')
+		span=country
+
+block header_content
+	.container
+		//- 這邊背景圖有限制寬高，必須為1170*250 .visible-lg
+		.store_header(style="background-image:url(images/banner/store.png);")
+		ul.salers
+			li
+				.store_sales
+					.sales_img
+						a(href="nav_product_saler.html",style="background-image:url(images/saler_smaple.jpg);")
+					.sales_header_info 
+						a(href="nav_product_saler.html") 17瘋團購
+						a.uesr_email(href="mailto:elaina19891231@hotmail.com") elaina19891231@hotmail.com
+						.store_star
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star",aria-hidden="true")
+							span.icon_star
+								i(class="fa fa-star-o",aria-hidden="true")
+							a.star_num(href="nav_product_rating.html") (1,008個評價)
+						
+			li
+				p 代購國家
+				ul.state
+					li
+						img(src='images/flag/ame_brazil.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+					li
+						img(src='images/flag/eu_germany.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+					li
+						img(src='images/flag/earth.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/eu_netherlands.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/ame_brazil.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/ame_brazil.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+					li
+						img(src='images/flag/eu_germany.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+					li
+						img(src='images/flag/earth.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/eu_netherlands.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/ame_brazil.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/ame_brazil.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+					li
+						img(src='images/flag/eu_germany.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+					li
+						img(src='images/flag/earth.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/eu_netherlands.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+					li
+						img(src='images/flag/ame_brazil.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+			li
+				p 加入時間
+				span.red 4個月前
+			li
+				p 粉絲數
+				span.red 428
+			li
+				p 回覆速度
+				span.red 1天內
+			li
+				p 最後上站
+				span.red 09/26
+			li
+				p 成交筆數
+				span.red 180000
+			li
+				p.hidden-xs 訂單
+					br
+					|未完成率
+				p.hidden-sm.hidden-md.hidden-lg 訂單未完成率
+				span.red 0%
+			li
+				a(href="javascript:;", data-toggle="modal", data-target=".helpbuy_forms")
+					i(class='fi flaticon-bag')
+					p 幫我代購
+			li.active
+				a(href="javascript:;")
+					i(class='fi flaticon-heart')
+					p 收藏賣家
+		.salerspace
+			.textedit
+				p 🌸🌸🌸總是受不了團購的誘惑  因為實在是太划算了🌸🌸🌸
+				p 💜我們提供最優質最熱賣的商品 祝福各位開心購物💜
+				p ⭕全商品為日韓美空運快遞進口
+				p ⭕本賣場全為正品全為正品全為正品
+				p ⭕絕不賣平行輸入/淘寶網/仿冒品，請放心購買
+				p 🌸現貨③天內寄出 不含假日
+				p 🚫預購商品需等待7~30天 下標後不接受任何理由取消訂單 請謹慎購
+
+block content
+	.col-lg-3.pro_gird.mt30.visible-lg
+		include include/_saler_sidebar.jade
+
+	.col-xs-12.col-lg-9.pro_gird
+		ul.row.mt30
+			+probox('background-image: url(images/saler_products/pro_001.jpg);','nav_product_detail.html',"日本 Chocola BB collagen 俏正美 BB 膠原蛋白碇 美顏碇 120粒","450","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+			+probox('background-image: url(images/saler_products/pro_002.jpg);','nav_product_detail.html',"現貨 日本製🇯🇵 日本 Ipokea EX 抗疣 肉芽 脂肪粒 角質 美容液 18ml","439","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+			+probox('background-image: url(images/saler_products/pro_003.jpg);','nav_product_detail.html',"現貨 日本🇯🇵 Dr.pro 駝背矯正帶 駝背 矯正 保證正品","269","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+			+probox('background-image: url(images/saler_products/pro_008.jpg);','nav_product_detail.html',"現貨 APIEU 美妝蛋 / 椅子型 吸盤式 美妝蛋架 / 迷你美妝蛋 3入組","169","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+			+probox('background-image: url(images/saler_products/pro_007.jpg);','nav_product_detail.html',"現貨 第二支半價! VDL&PANTONE聯名限量-方形漸變色唇膏(2016新款)","520","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+			+probox('background-image: url(images/saler_products/pro_004.jpg);','nav_product_detail.html',"日本🇯🇵 加強版Pink Body Super Boin 美胸錠 美胸丸 再春館 YUWA 葛根精華 150錠","450","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+			+probox('background-image: url(images/saler_products/pro_009.jpg);','nav_product_detail.html',"現貨 韓國 VDL 完美持妝粉底液 30ml / 真膚裸妝粉底液 30ml  VDL 粉底液","1,048","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+			+probox('background-image: url(images/saler_products/pro_005.jpg);','nav_product_detail.html',"現貨 日本 120顆 Gold酵素黃金酵素/爽快酵素/Diet酵素/夜間酵素/美妃酵素 ISDG醫食同源 Kevin推薦","529","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+
+			+probox('background-image: url(images/saler_products/pro_006.jpg);','nav_product_detail.html',"現貨 日本製🇯🇵  日本 skin vape 預防小黑蚊 噴液 200ml  三倍效用 防蚊液 kitty防蚊液","160","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+					
+			+probox('background-image: url(images/saler_products/pro_010.jpg);','nav_product_detail.html',"現貨 VDL粉底用pantone馬卡龍粉撲蛋、桃花型粉撲 三色可選","59","nav_product_saler.html","17瘋團購")
+				img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')
+					
+block lightbox
+	//- lightbox 篩選國家
+	#state_check.state_check(style='display: none;max-width:600px;')
+		h2(data-selectable='true') 國家篩選
+		.helpbuy_country
+			ul.store_proinfo
+				li(data-tit='美　洲')
+					+goga('all01','美洲全部')
+					+goga('01','美國')
+					+goga('04','巴西')
+					+goga('02','加拿大')
+					+goga('03','阿根廷')
+					+goga('30','墨西哥')
+				li(data-tit='歐　洲')
+					+goga('all02','歐洲全部')
+					+goga('05','英國')
+					+goga('07','荷蘭')
+					+goga('08','法國')
+					+goga('09','希臘')
+					+goga('10','捷克')
+					+goga('06','義大利')
+					+goga('12','比利時')
+					+goga('14','西班牙')
+					+goga('15','葡萄牙')
+					+goga('11','德國')
+					+goga('13','波蘭')
+					+goga('16','丹麥')
+					+goga('31','瑞士')
+				li(data-tit='亞　洲')
+					+goga('all03','亞洲全部')
+					+goga('17','日本')
+					+goga('18','韓國')
+					+goga('19','泰國')
+					+goga('20','中國')
+					+goga('21','香港')
+					+goga('22','新加坡')
+					+goga('23','印尼')
+					+goga('24','越南')
+					+goga('25','馬來西亞')
+					+goga('26','台灣')
+				li(data-tit='大洋洲')
+					+goga('all04','大洋洲全部')
+					+goga('27','澳洲')
+					+goga('28','紐西蘭')
+				li(data-tit='其　他')
+					+goga('29','其他')
+	//- lightbox區塊
+	.modal.fade.helpbuy_forms(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title 填寫代購單
+				.modal-body
+					.helpbuy_tip
+						p 請填寫代購需求，賣家會幫您確認代購金額。
+							br
+							small.mi.red 賣家報價完成後，您可再決定是否委託代購。
+					.helpbuy_salerinfo
+						span.grey 賣家：
+						|噹噹代購小叮噹小舖
+					form.form-horizontal.contact_form.helpbuy_form
+						ul.helpbuy_needs
+							li(data-tit="商品一")
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|代購國家：
+									.col-sm-9
+										select.form-control
+											option(value='helpbuy_jp') 日本
+											option(value='helpbuy_kr') 韓國	
+								.form-group
+									label.col-sm-3.control-label(for='') 
+										span.red *
+										|商品名稱：
+									.col-sm-9
+										input.form-control(type='text', id='', name='', placeholder='')
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|參考連結：
+									.col-sm-9
+										input.form-control(type='text', id='', name='', placeholder='請填入網址')
+								.form-group
+									label.col-sm-3.control-label(for='file_up') 
+										|商品圖片：
+									.col-sm-9
+										.file-loading
+											input#file_up.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png"]')
+										ul.contact_list.mt10.list-unstyled
+											li.red *檔案大小：2MB以下
+											li.red *檔案格式：jpg、jpeg、png
+											li.red *最多可上傳3張圖片
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|規格：
+									.col-sm-9
+										textarea.form-control(rows='1', placeholder='顏色、尺寸、型號...等')
+								.form-group
+									label.col-sm-3.control-label(for='') 
+										span.red *
+										|數量：
+									.col-sm-9
+										input.form-control(type='number', id='', name='', placeholder='')
+								.form-group
+									label.col-sm-3.control-label(for='')
+										|參考價格：
+									.col-sm-9
+										.input-group
+											span.input-group-addon NT$
+											input.form-control(type='number', id='', name='', placeholder='')
+
+						p.text-center.mb30
+							button#addhelplist.btn.btn_store(type='button') 
+								i(class='fa fa-plus')  
+								|  再增加一項商品
+						.form-group
+							label.col-sm-3.control-label(for='')
+								|寄送方式：
+							.col-sm-9
+								select.form-control
+									option(value='') 郵寄
+									option(value='') 宅配
+									option(value='') 店到店
+						.form-group
+							label.col-sm-3.control-label(for='')
+								|備註：
+							.col-sm-9
+								textarea.form-control(rows='3', placeholder='')
+						.form-group
+							.col-sm-offset-3.col-sm-6
+								button.btn.btn-block.btn_black(type='submit') 送出代購單
+
+	//- 代購單
+	.help_li_form
+		li(data-tit="商品二")
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|代購國家：
+				.col-sm-9
+					select.form-control
+						option(value='helpbuy_jp') 日本
+						option(value='helpbuy_kr') 韓國	
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					span.red *
+					|商品名稱：
+				.col-sm-9
+					input.form-control(type='text', id='', name='', placeholder='')
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|參考連結：
+				.col-sm-9
+					input.form-control(type='text', id='', name='', placeholder='請填入網址')
+			.form-group
+				label.col-sm-3.control-label(for='file_up') 
+					|商品圖片：
+				.col-sm-9
+					.file-loading
+						input#file_up.file(name='file_up[]', multiple='', type='file', data-language="zh-TW", data-show-preview="false", data-allowed-file-extensions='["jpg", "jpeg", "png"]')
+					ul.contact_list.mt10.list-unstyled
+						li.red *檔案大小：2MB以下
+						li.red *檔案格式：jpg、jpeg、png
+						li.red *最多可上傳3張圖片
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|規格：
+				.col-sm-9
+					textarea.form-control(rows='1', placeholder='顏色、尺寸、型號...等')
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					span.red *
+					|數量：
+				.col-sm-9
+					input.form-control(type='number', id='', name='', placeholder='')
+			.form-group
+				label.col-sm-3.control-label(for='')
+					|參考價格：
+				.col-sm-9
+					.input-group
+						span.input-group-addon NT$
+						input.form-control(type='number', id='', name='', placeholder='')

@@ -1,0 +1,133 @@
+extend layout/_layout_side_l.jade
+
+mixin goga(name,country)
+	label.checkbox-inline(for=name)
+		input(type='checkbox',id=name, name=name, value='')
+		i.fa.fa-check(aria-hidden='true')
+		span=country
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 店家資料管理
+			li.active 關於賣場
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 關於賣場
+		hr
+		.members_content
+			form.contact_form.saler_form.about_shop.mt20
+				.form-group
+					label(for='') 
+						| 開啟賣場：
+					button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+						.handle
+				.divider-hr
+				.form-group
+					label(for='')
+						span.red *
+						| 賣場封面：
+					.store_header(style="background-image:url(images/banner/store.png);")
+						button.btn.btn_op_bk.headerimgup(type='button')
+							i.fa.fa-picture-o(aria-hidden="true")
+							|修改賣場封面
+					p.help-block.gery 檔案大小：2MB以下、檔案格式：jpg,jpeg、圖片尺寸：1170px * 250px
+				.divider-hr
+				.form-group
+					label(for='')
+						| 賣場詳細：
+					table.mobile_datatb.package_infotb
+						thead
+							tr
+								th 商品數量
+								th 回覆速度
+								th 最後上站
+								th 成交筆數
+								th 賣場評價
+								th 訂單未完成率
+						tbody
+							tr
+								td(data-th='商品數量') 
+									a.order_link(href="nav_product_saler.html") 12
+									span.toolbub 前往賣場
+								td(data-th='回覆速度') 1天內
+								td(data-th='最後上站') 2017-10-18 18:32:44
+								td(data-th='成交筆數') 1800000
+								td(data-th='賣場評價') 
+									a.order_link(href="nav_product_rating.html") 5顆星
+								td(data-th='訂單未完成率') 
+									a.order_link(href="members_store_order.html") 0%
+				.divider-hr
+				.form-group
+					label(for='') 
+						span.red *
+						| 賣場名稱：
+					input.form-control(type='text', id='', name='', placeholder='')
+				.form-group
+					label(for='') 
+						span.red *
+						| 綠界驗證Email：
+					input.form-control(type='text', id='', name='', placeholder='請輸入您註冊綠界時所填之Email')
+				.divider-hr
+				.form-group
+					label(for='') 
+						span.red *
+						| 代購國家：
+					.helpbuy_country
+						ul.store_proinfo
+							li(data-tit='美　洲')
+								+goga('01','美國')
+								+goga('04','巴西')
+								+goga('02','加拿大')
+								+goga('03','阿根廷')
+								+goga('30','墨西哥')
+							li(data-tit='歐　洲')
+								+goga('05','英國')
+								+goga('07','荷蘭')
+								+goga('08','法國')
+								+goga('09','希臘')
+								+goga('10','捷克')
+								+goga('06','義大利')
+								+goga('12','比利時')
+								+goga('14','西班牙')
+								+goga('15','葡萄牙')
+								+goga('11','德國')
+								+goga('13','波蘭')
+								+goga('16','丹麥')
+								+goga('31','瑞士')
+							li(data-tit='亞　洲')
+								+goga('17','日本')
+								+goga('18','韓國')
+								+goga('19','泰國')
+								+goga('20','中國')
+								+goga('21','香港')
+								+goga('22','新加坡')
+								+goga('23','印尼')
+								+goga('24','越南')
+								+goga('25','馬來西亞')
+								+goga('26','台灣')
+							li(data-tit='大洋洲')
+								+goga('27','澳洲')
+								+goga('28','紐西蘭')
+							li(data-tit='其　他')
+								+goga('29','其他')
+				.divider-hr
+				.form-group
+					label(for='') 
+						span.red *
+						| 賣場介紹：
+					textarea.form-control(rows='5', placeholder='賣場介紹最多可輸入500個中文字數')
+				.form-group
+					button.btn.btn-block.btn_black(type='submit') 確認修改
+		

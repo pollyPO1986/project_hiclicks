@@ -1,0 +1,210 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(img,name,price)
+	tr
+		td
+			form
+				.checkbox
+					label
+						input(type='checkbox',name='all',value='car')
+						i.fa.fa-check(aria-hidden='true')
+		td
+			.doing_choicelist
+				a.imgbox(href="nav_product_detail.html", style=img)
+				p
+					a(href="nav_product_detail.html")=name
+					span.any_price(data-mark="NT$")=price
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 行銷專區
+			li.active 活動標題名稱
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 活動標題名稱
+		hr
+		.row.doing_singlebox
+			.col-xs-12.col-sm-6.col-sm-offset-3
+				.imgbox.sin
+					p(style="background-image:url(images/blog/3.jpg);")
+			.col-xs-12.col-sm-6
+				h4.red 活動期間
+				p 2018年1月1日 00:00 ~ 2018年1月31日 23:59
+			.col-xs-12.col-sm-4
+				h4.red 報名截止時間
+				p 2017年12月20日
+			.col-xs-12.col-sm-2
+				h4.red 折扣
+				p 8折
+		.row.doing_singlebox.mt30
+			.divider-hr
+			.col-xs-12.mt30.mb30
+				h4 活動細節
+				//- 文字編輯器
+				p 一外調後形心來懷、人衣分上象單動處速覺我我分心是好告覺術轉家新自。充們有。更二害長樣境腳字信自易節技一醫兒受母：的眾每著廣我，愛共用玩中，多眼照的叫二張非日他處票可列生子成品知、夫切然那奇由然於不，益大子注學相將林數獲性覺史平少就心比時上雜費唱謝知來北。
+				p 升示息由：當的是學，為著年？為代程其作量最是早，了地年路世對管人外反半，了興聲光所石著著一生界高易？
+			.divider-hr
+			.col-xs-12.mt30.mb30
+				h4 可報名的分類
+				ul.doing_cate
+					li 美妝保養：全品項
+					li 飾品配件：手鍊/手環、項鍊/墜子、鑰匙圈/鑰匙包
+			.divider-hr
+			.col-xs-12.mt30.mb30
+				h4 活動注意事項
+				ol
+					li 報名成功，皆由站內信通知，請自行於[訊息通知]查閱
+					li 活動開始前，皆可以新增、刪除選擇的商品；活動開始後，則無法編輯與更動商品
+					li 折扣金額皆由賣家自行吸收
+					li 有任何問題請致[聯絡我們]填寫表單與海克力斯聯繫
+		hr
+		h3.nopoint_title.mt10 報名商品
+		p.grey.mi.mt10 每位賣家只能提交
+			span.red 5
+			|樣商品，快快來報名吧!
+		.text-right
+			button.btn.btn_store(type="button", data-toggle="modal", data-target=".doing_from") 新增報名商品
+		.bonus
+			p.mi.red.mt10.visible-xs 表格可以左右滑動觀看資料
+			.table-responsive
+				table.table.mobile_datatb.doing_tb
+					thead
+						tr
+							th(colspan='2') 商品名稱
+							th 商品規格
+							th 原價
+								small (NT$)
+							th 活動價
+								small (NT$)
+							th 狀態
+					tbody
+						tr
+							td 1
+							td(data-th='商品名稱')
+								ul.blog_nav
+									li
+										a.imgbox(href="nav_product_detail.html", style="background-image: url(images/index/1.jpg);")
+										p
+											a(href="nav_product_detail.html") XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+							td(data-th='商品規格') 
+								ul.doing_tb_sizelist
+									li 金黃色,M
+									li 金黃色,L
+									li 金黃色,XL
+									li 藍色,L
+									li 藍色,XL
+									li 土耳其藍色(限量),M
+									li 土耳其藍色(限量),XL
+							td(data-th='原價(NT$)')
+								ul.doing_tb_pricelist
+									li 150
+									li 150
+									li 150
+									li 150
+									li 150
+									li 180
+									li 18,055
+							td(data-th='活動價(NT$)')
+								ul.doing_tb_pricelist
+									li 120
+									li 120
+									li 120
+									li 120
+									li 120
+									li 144
+									li 14,444
+							td(data-th='狀態')
+								p.state_wait 等待審核中
+						tr
+							td 2
+							td(data-th='商品名稱')
+								ul.blog_nav
+									li
+										a.imgbox(href="nav_product_detail.html", style="background-image: url(images/index/2.jpg);")
+										p
+											a(href="nav_product_detail.html") XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+							td(data-th='商品規格') 
+								ul.doing_tb_sizelist
+									li 金黃色,M
+									li 金黃色,L
+									li 金黃色,XL
+							td(data-th='原價(NT$)')
+								ul.doing_tb_pricelist
+									li 150
+									li 150
+									li 180
+							td(data-th='活動價(NT$)')
+								ul.doing_tb_pricelist
+									li 120
+									li 120
+									li 144
+							td(data-th='狀態')
+								p.state_wait 等待審核中
+						tr
+							td 3
+							td(data-th='商品名稱')
+								ul.blog_nav
+									li
+										a.imgbox(href="nav_product_detail.html", style="background-image: url(images/index/3.jpg);")
+										p
+											a(href="nav_product_detail.html") XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了，約40個字數
+							td(data-th='商品規格') 
+								ul.doing_tb_sizelist
+									li 金黃色,M
+							td(data-th='原價(NT$)')
+								ul.doing_tb_pricelist
+									li 18,055
+							td(data-th='活動價(NT$)')
+								ul.doing_tb_pricelist
+									li 14,444
+							td(data-th='狀態')
+								p.state_wait 等待審核中
+								
+block lightbox
+	//- lightbox區塊
+	.modal.fade.doing_from(tabindex='-1', role='dialog', aria-labelledby='abc')
+		.modal-dialog.modal_center(role='document')
+			.modal-content
+				.modal-header
+					button.close(type='button', data-dismiss='modal', aria-label='Close')
+						span(aria-hidden='true') ×
+					h5#abc.modal-title.black 新增報名商品
+					small.text-center.mt10 你已選擇了
+						span.red 0
+						|個商品，最多可選
+						b 5
+						|個商品報名， 僅有適合分類的商品才會出現
+				.modal-body
+					.searchbox
+						form.navbar-form
+							.form-group
+								input.form-control(type='text', placeholder='搜尋商品')
+							button.btn_icon(type='submit')
+								i.fa.fa-search(aria-hidden='true')
+					.doing_pro_choice
+						p.mi.red.mt10.visible-xs 表格可以左右滑動對照資料
+						.table-responsive
+							table.table.keep_tb
+								tbody
+									+keeptb('background-image: url(images/blog/poster01.png);','XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了','150')
+									+keeptb('background-image: url(images/blog/poster03.jpg);','2018 新春福袋大放送，優惠 免收代購費','180')
+									+keeptb('background-image: url(images/blog/poster02.jpg);','22017 冬季必買大衣','180')
+									+keeptb('background-image: url(images/blog/6.jpg);','XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了','150')
+									+keeptb('background-image: url(images/blog/8.jpg);','2018 新春福袋大放送，優惠 免收代購費','180')
+									+keeptb('background-image: url(images/blog/9.jpg);','22017 冬季必買大衣','180')
+									+keeptb('background-image: url(images/blog/10.jpg);','XiAO AC-01 小小兵，四隻來自美國的小小兵，然後字很多就會變成兩行了','150')
+				.modal-footer
+					button.btn.btn_cafe(type="button",data-dismiss="modal") 取消
+					button.btn.btn_cafe(type="button") 提交商品

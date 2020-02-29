@@ -1,0 +1,72 @@
+extend layout/_layout_side_r.jade
+
+mixin blogbox(url,img,name)
+	li.col-xs-12.col-sm-4
+		.blog(class!=attributes.class)
+			a.blogimg(href=url)
+				.imgbox(style=img)
+			a.blogtit(href=url)
+				h3=name
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li.active 開箱文
+
+block sidenav
+	include include/_blog_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 開箱文
+	.sidebox.blogs.mb30.hidden-md.hidden-lg
+		.side_title
+			h4.blog_newstit 活動公告
+		hr
+		.side_content
+			//-列表樣式同代運公告列表；這裡自動顯示最新的三則活動公告
+			ul.blog_news
+				+side_news('nav_trans_news.html','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+				+side_news('nav_trans_news.html','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+				+side_news('nav_trans_news.html','【搬遷公告】美國倉庫搬遷更新地址！大升級！')
+			p.text-right
+				span.btn_more.mb10
+						a(href="javascript:;") more 
+							i.fa.fa-angle-double-right(aria-hidden='true')
+	ul.row.blogbox
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/1.jpg);',"2017冬 美國OLD氣質加分 人人都愛有氣質")(class="gettop")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/2.jpg);',"2017冬 日本布，繩子花樣花樣")(class="gettop")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/3.jpg);',"2017冬 韓國鮮蔬，味美實在還是很好吃，人生一定要買一次這個超級好吃的人蔘貂皮烏拉茶")(class="gettop")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/4.jpg);',"夏天管理體重好困難！用這些app幫助你回復魔鬼身材")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/5.jpg);',"立即啟動30天變身計劃！每天10分鐘美尻、平坦肚、細腿通通練起來，開學美到同學下巴掉下來")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/6.jpg);',"想要瘦又不想餓得有一頓沒一頓，就靠這些小Tips打造成「易瘦體質」，輕鬆解決宿便、高體脂！")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/7.jpg);',"一輩子不在眼皮上畫妝也沒關係，看看她，零眼妝的空靈容顏也能飄出不凡氣息！")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/8.jpg);',"新竹有這麼美的地方，我居然不知道！編輯一日遊行程大公開，快跟上最火熱打卡景點～")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/9.jpg);',"黏黏怪物入侵松菸！海外首發SMLEXPO暑假絕對必去〜決定讓IG和房間也一起被小怪物攻佔")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/10.jpg);',"用這些app幫助你回復魔鬼身材")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/1.jpg);',"繩子花樣花樣")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/2.jpg);',"2017 冬季必買大衣")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/3.jpg);',"一輩子不在眼皮上畫妝也沒關係")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/4.jpg);',"想要瘦又不想餓得有一頓沒一頓，就靠這些小Tips打造成「易瘦體質」，輕鬆解決宿便、高體脂！")
+		+blogbox('nav_blog_detail.html','background-image: url(images/blog/5.jpg);',"新竹有這麼美的地方，我居然不知道！編輯一日遊行程大公開，快跟上最火熱打卡景點～")
+
+	ul.pagebox
+		li(class="arrow")
+			i.fa.fa-angle-double-left(aria-hidden='true')
+		li(class="arrow")
+			i.fa.fa-angle-left(aria-hidden='true')
+		li.on
+			a(href='javascript:;') 1
+		li
+			a(href='javascript:;') 2
+		li
+			a(href='javascript:;') 3
+		li
+			a(href='javascript:;') 4
+		li
+			a(href='javascript:;') 5
+		li(class="arrow")
+			i.fa.fa-angle-right(aria-hidden='true')
+		li(class="arrow")
+			i.fa.fa-angle-double-right(aria-hidden='true')

@@ -1,0 +1,416 @@
+extend layout/_layout.jade
+
+block header_content
+	.slider
+		#slider_full.carousel.slide(data-ride='carousel')
+			ol.carousel-indicators
+				li.active(data-target='#slider_full', data-slide-to='0')
+				li(data-target='#slider_full', data-slide-to='1')
+			.carousel-inner(role='listbox')
+				a.item.active(href="javascript:;", style="background-image:url('images/banner/slider_1170x500_02.jpg');")
+				a.item(href="javascript:;", style="background-image:url('images/banner/slider_1170x500_01.jpg');")
+			a.left.carousel-control(href='#slider_full', role='button', data-slide='prev')
+				span.fa.fa-angle-left
+				span.sr-only Prev
+			a.right.carousel-control(href='#slider_full', role='button', data-slide='next')
+				span.fa.fa-angle-right
+				span.sr-only Next
+block content
+	.col-xs-12
+		.fourbox
+			.indextitlebar
+				h2.text-center.title_index.green 最新上架
+				span.btn_more
+					a(href="javascript:;") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+			ul.row
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='nav_product_detail.html', style='background-image: url(images/index/1.jpg);')
+							.overlay
+								.overlay_icons.active
+									span.fi.flaticon-heart
+									| 已收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-green
+							li
+								img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+								
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/2.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣
+						p.pro_price(data-mark="NT$") 20,483
+						ul.pro_storeinfo.bg-green
+							li
+								img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+			
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/3.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 70,111
+						ul.pro_storeinfo.bg-green
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/4.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-green
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+
+		.fourbox
+			.indextitlebar
+				h2.text-center.title_index.pink 熱門代購商品
+				span.btn_more
+					a(href="javascript:;") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+			ul.row
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/5.png);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-pink
+							li
+								img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+								
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/7.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-pink
+							li
+								img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+			
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/9.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-pink
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/8.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-pink
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+
+		.fourbox
+			.indextitlebar
+				h2.text-center.title_index.beige 現貨在台
+				span.btn_more
+					a(href="javascript:;") more 
+						i.fa.fa-angle-double-right(aria-hidden='true')
+			ul.row
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/10.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+								
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/11.png);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+			
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/12.gif);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/13.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/14.jpg);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/ame_america.svg',alt="美國代購",data-toggle='tooltip', data-placement='top', title='美國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+								
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/15.png);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/asia_korea.svg',alt="韓國代購",data-toggle='tooltip', data-placement='top', title='韓國')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+			
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/16.gif);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+
+				li.col-xs-6.col-sm-3
+					.probox
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/11.png);')
+							.overlay
+								.overlay_icons
+									span.fi.flaticon-heart
+									| 我要收藏
+						h3
+							a(href="nav_product_detail.html") 2017 冬季必買大衣
+						p.pro_price(data-mark="NT$") 2048
+						ul.pro_storeinfo.bg-beige
+							li
+								img(src='images/flag/asia_japan.svg',alt="日本代購",data-toggle='tooltip', data-placement='top', title='日本')
+							li: a(href="nav_product_saler.html") 噹噹愛佩佩代購
+
+		.fourbox
+			.indextitlebar
+				h2.text-center.title_index.plant 各國代運
+					a( href="images/index/cal001.png", data-type='image', data-fancybox='calendarimg', data-thumb="images/index/cal001.png")
+						p.bub
+							img(src="images/plant-talk.png", alt="")
+						p.cal
+							img(src="images/plant.png", alt="")
+					div(style='display: none;')
+						a(href='images/index/cal002.jpg', data-type='image', data-fancybox='calendarimg', data-thumb="images/index/cal002.jpg")
+
+			ul.row.mb60
+				li.col-xs-6.col-sm-3
+					.statebox
+						a.moveimg(href='javascript:;')
+							.imgbox(style='background-image: url(images/index/trans_280x280_usa.jpg);')
+								
+				li.col-xs-6.col-sm-3
+					.statebox
+						a.moveimg(href='javascript:;')
+							.imgbox(style='background-image: url(images/index/trans_280x280_jp.jpg);')
+			
+				li.col-xs-6.col-sm-3
+					.statebox
+						a.moveimg(href='javascript:;')
+							.imgbox(style='background-image: url(images/index/trans_280x280_kr.jpg);')
+
+				li.col-xs-6.col-sm-3
+					.statebox
+						a.moveimg(href='javascript:;')
+							.imgbox(style='background-image: url(images/default_280x280.jpg);')
+
+		.row
+			.col-lg-6
+				.indextitlebar
+					h2.text-center.title_index_s.grey 最新收藏
+				ul.list_index
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_004.jpg);')
+						p
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							span.sub.pink
+								i.fi.flaticon-heart 
+								| 被收藏了
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_002.jpg);')
+						p
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							span.sub.pink
+								i.fi.flaticon-heart 
+								| 被收藏了
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_007.jpg);')
+						p
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							span.sub.pink
+								i.fi.flaticon-heart 
+								| 被收藏了
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_004.jpg);')
+						p
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							span.sub.pink
+								i.fi.flaticon-heart 
+								| 被收藏了
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_002.jpg);')
+						p
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							span.sub.pink
+								i.fi.flaticon-heart 
+								| 被收藏了
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_007.jpg);')
+						p
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							span.sub.pink
+								i.fi.flaticon-heart 
+								| 被收藏了
+
+			.col-lg-6
+				.indextitlebar
+					h2.text-center.title_index_s.grey 最新交易
+				ul.list_index
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_006.jpg);')
+						p
+							span.sub.checkgreen
+								i.fi.flaticon-signs
+								| 交易成功
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							small 店名這是一間小小店
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_003.jpg);')
+						p
+							span.sub.checkgreen
+								i.fi.flaticon-signs 
+								| 交易成功
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							small 店名這是一間小小店
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_001.jpg);')
+						p
+							span.sub.checkgreen
+								i.fi.flaticon-signs 
+								| 交易成功
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							small 店名這是一間小小店
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_006.jpg);')
+						p
+							span.sub.checkgreen
+								i.fi.flaticon-signs 
+								| 交易成功
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							small 店名這是一間小小店
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_003.jpg);')
+						p
+							span.sub.checkgreen
+								i.fi.flaticon-signs 
+								| 交易成功
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							small 店名這是一間小小店
+					li
+						a.imgbox(href='javascript:;', style='background-image: url(images/index/products_001.jpg);')
+						p
+							span.sub.checkgreen
+								i.fi.flaticon-signs 
+								| 交易成功
+							a(href="javascript:;") 夏日比基尼人氣王！女生都在瘋狂代購的★澳洲品牌TRIANGL★
+							small 店名這是一間小小店
+
+	//- lightbox 日曆
+	//- #state_check.state_check(style='display: none;max-width:600px;')
+	//- 	#calendar
+		

@@ -1,0 +1,70 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 賣場商品管理
+			li.active 物流設定
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 物流設定
+		hr
+		h3.nopoint_title 賣場物流設定 - 選擇店到店物流超商
+		p.grey.mi.mt10 物流介接(店到店)可依需求自行自綠界申請後填入
+			a.bluelink(href="members_store_ecpay.html")
+				i.fa.fa-angle-double-left
+				|&nbsp;前往設定&nbsp;
+				i.fa.fa-angle-double-right
+		form.form-horizontal.contact_form.saler_form.ecpay.mt20
+			.form-group
+				label.col-xs-12.col-sm-3.control-label(for='') 
+					| 7-11：
+				.col-xs-12.col-sm-9
+					button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+						.handle
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					| 7-11 運費費用：
+				.col-sm-9
+					.input-group
+						.input-group-addon NT$
+						input.form-control(type='text', id='', name='', placeholder='')
+			.form-group
+				label.col-xs-12.col-sm-3.control-label(for='') 
+					| 全家：
+				.col-xs-12.col-sm-9
+					button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+						.handle
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					| 全家 運費費用：
+				.col-sm-9
+					.input-group
+						.input-group-addon NT$
+						input.form-control(type='text', id='', name='', placeholder='')
+			.form-group
+				label.col-xs-12.col-sm-3.control-label(for='') 
+					| 萊爾富：
+				.col-xs-12.col-sm-9
+					button.btn.btn-toggle.active(type='button', data-toggle='button', aria-pressed='true', autocomplete='off')
+						.handle
+			.form-group
+				label.col-sm-3.control-label(for='') 
+					| 萊爾富 運費費用：
+				.col-sm-9
+					.input-group
+						.input-group-addon NT$
+						input.form-control(type='text', id='', name='', placeholder='')
+			.form-group.text-center
+				button.btn.btn_black(type='submit') 確認送岀

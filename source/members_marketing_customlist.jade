@@ -1,0 +1,133 @@
+extend layout/_layout_side_l.jade
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 行銷專區
+			li.active 已報名的活動
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 已報名的活動
+		.bonus
+			ul.marketing_list
+				li
+					.imgbox
+						p(style="background-image:url(images/blog/3.jpg);")
+					.doinginfo
+						h3 
+							a(href="javascript:;") 活動標題 (例：11/1~11/9 毛孩嘉年華)
+						.infotext
+							p 防多外但有本獎文巴深上，把是價一研。的可會種！動了性模容觀是；安石人總面獨配開緊但運、分我靈持也賣首手自以車實子知戰土型當進服了太隊過著的感成像倒的因異因時美甚共斯石日年詩次外不，子通一，病話國升說一細樂大行地。體教中黨話……為知兩國夜。
+						ul.list-unstyled.infobar
+							li(data-tit="活動報名期間") 2018-01-01 00:00 ~ 2018-01-15 23:59
+							li(data-tit="提交的商品數")
+								b 3
+								|個商品
+							li
+								a.btn.btn_black(type='button', href="members_marketing_single.html") 編輯商品
+									i.fa.fa-caret-right
+				li.stop
+					.imgbox
+						p(style="background-image:url(images/blog/1.jpg);")
+					.doinginfo
+						h3 
+							a(href="javascript:;") 活動標題 (例：11/1~11/9 毛孩嘉年華)
+						.infotext
+							p 防多外但有本獎文巴深上，把是價一研。的可會種！動了性模容觀是；安石人總面獨配開緊但運、分我靈持也賣首手自以車實子知戰土型當進服了太隊過著的感成像倒的因異因時美甚共斯石日年詩次外不，子通一，病話國升說一細樂大行地。體教中黨話……為知兩國夜。
+						ul.list-unstyled.infobar
+							li(data-tit="活動報名期間") 已截止
+							li(data-tit="等待審核中")
+								b.red 4
+								span.red 個商品
+							li
+								a.btn.btn_black(type='button', href="members_marketing_single_stop.html") 查看內容
+									i.fa.fa-caret-right
+				li.stop
+					.imgbox
+						p(style="background-image:url(images/blog/7.jpg);")
+					.doinginfo
+						h3 
+							a(href="javascript:;") 活動標題 (例：11/1~11/9 毛孩嘉年華)
+						.infotext
+							p 防多外但有本獎文巴深上，把是價一研。的可會種！動了性模容觀是；安石人總面獨配開緊但運、分我靈持也賣首手自以車實子知戰土型當進服了太隊過著的感成像倒的因異因時美甚共斯石日年詩次外不，子通一，病話國升說一細樂大行地。體教中黨話……為知兩國夜。
+						ul.list-unstyled.infobar
+							li(data-tit="活動報名期間") 已截止
+							li(data-tit="已通過審核")
+								b 3
+								|個商品
+							li(data-tit="未通過審核")
+								b 1
+								|個商品
+							li
+								a.btn.btn_black(type='button', href="members_marketing_single_stop.html") 查看內容
+									i.fa.fa-caret-right
+				li.active
+					.imgbox
+						p(style="background-image:url(images/blog/2.jpg);")
+					.doinginfo
+						h3 
+							a(href="javascript:;") 活動標題 (例：11/1~11/9 毛孩嘉年華)
+						.infotext
+							p 防多外但有本獎文巴深上，把是價一研。的可會種！動了性模容觀是；安石人總面獨配開緊但運、分我靈持也賣首手自以車實子知戰土型當進服了太隊過著的感成像倒的因異因時美甚共斯石日年詩次外不，子通一，病話國升說一細樂大行地。體教中黨話……為知兩國夜。
+						ul.list-unstyled.infobar
+							li(data-tit="活動執行期間") 2017-11-1 ~ 2017-11-9
+							li(data-tit="已通過審核")
+								b 3
+								|個商品
+							li(data-tit="未通過審核")
+								b 2
+								|個商品
+							li
+								a.btn.btn_black(type='button', href="members_marketing_single_stop.html") 查看內容
+									i.fa.fa-caret-right
+				li.over
+					.imgbox
+						p(style="background-image:url(images/blog/5.jpg);")
+					.doinginfo
+						h3 
+							a(href="javascript:;") 活動標題 (例：11/1~11/9 毛孩嘉年華)
+						.infotext
+							p 防多外但有本獎文巴深上，把是價一研。的可會種！動了性模容觀是；安石人總面獨配開緊但運、分我靈持也賣首手自以車實子知戰土型當進服了太隊過著的感成像倒的因異因時美甚共斯石日年詩次外不，子通一，病話國升說一細樂大行地。體教中黨話……為知兩國夜。
+						ul.list-unstyled.infobar
+							li(data-tit="活動結束日期") 2017-10-31
+							li(data-tit="已通過審核")
+								b 4
+								|個商品
+							li
+			
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')
+
+		

@@ -1,0 +1,146 @@
+mixin side_nav(url,name)
+	li
+		a(class!=attributes.class,href=url)=name
+
+mixin side_navs(url,name)
+	li.tipsbox
+		a(href=url)=name
+		span.tips
+			| 1
+
+h3(style='display:none;') HiClicks 會員專區側選單
+.sidebox.trans
+	.side_title
+		h4 
+			i.fa.fa-user-circle
+			| 我的會員資料
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_info.html','基本資料')
+			+side_nav('members_verify.html','身分驗證')(class='on')
+			+side_nav('members_forget.html','修改密碼')
+			+side_nav('javascript:;','登出')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-envelope-open
+			| 訊息信件匣
+	hr
+	.side_content
+		ul.side_animenav
+			li 
+				b 站方系統公告
+			+side_navs('members_email_hiclicks_all.html','平台公告')
+			+side_navs('members_email_hiclicks_helpbuy.html','代購公告')
+			+side_navs('members_email_hiclicks_trans.html','代運公告')
+			+side_navs('members_email_trans.html','代運訊息通知')
+			li 
+				b 代購詢價回覆
+			+side_navs('members_email_helpbuy.html','我的詢價')
+			+side_navs('members_email_helpbuy.html','我的報價')
+			+side_navs('members_email.html','訊息通知')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-shopping-cart
+			| 我的訂單
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_order_history.html','購買清單')
+			+side_nav('members_order_rating.html','評價系統')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-plane
+			| 代運地址
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_trans_add_jp.html','日本倉庫')
+			+side_nav('members_trans_add_kr.html','韓國倉庫')
+			+side_nav('members_trans_add_us.html','美國倉庫')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-calendar-check-o
+			| 代運包裹管理
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_trans_package.html','我的代運包裹')
+			+side_nav('members_trans_package_history.html','歷史代運單')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-home
+			| 店家資料管理
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_store_edit.html','關於賣場')
+			+side_nav('members_store_ecpay.html','金流設定')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-tags
+			| 賣場商品管理
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_store_product_list.html','商品上架')
+			+side_nav('members_store_ship_list.html','物流設定')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-shopping-cart
+			| 賣場訂單管理
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_store_order.html','訂單管理')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-volume-up
+			| 行銷專區
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_marketing_list.html','站方行銷活動')
+			+side_nav('members_marketing_customlist.html','已報名的活動')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-diamond
+			| 我的Hi 幣
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_bonus_list.html','Hi 幣紀錄')
+			+side_nav('members_bonus_gift.html','Hi 幣兌換區')
+			+side_nav('members_bonus_history.html','兌換紀錄')
+			+side_nav('members_textedit.html','使用規則')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-thumbs-up
+			| 我的開箱文
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_blog_edit.html','新增開箱文')
+			+side_nav('members_blog_list.html','管理開箱文')
+	hr
+	.side_title
+		h4 
+			i.fa.fa-heart
+			| 我的收藏管理
+	hr
+	.side_content
+		ul.side_animenav
+			+side_nav('members_keep_store.html','收藏店家')
+			+side_nav('members_keep_products.html','收藏商品')
+			+side_nav('members_keep_writer.html','收藏作者')
+			+side_nav('members_keep_blog.html','收藏開箱文')

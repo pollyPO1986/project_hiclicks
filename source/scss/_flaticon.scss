@@ -1,0 +1,159 @@
+// Flaticon icon font: Flaticon  Creation date: 13/10/2017 04:56
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.eot");
+    src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/Flaticon.woff") format("woff"),
+    url("../fonts/Flaticon.ttf") format("truetype"),
+    url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: "Flaticon";
+        src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    }
+}
+
+.fi:before {
+    display: inline-block;
+    font-family: "Flaticon";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+.flaticon-note:before {
+    content: "\f100";
+}
+
+.flaticon-chocolate-box:before {
+    content: "\f101";
+}
+
+.flaticon-business:before {
+    content: "\f102";
+}
+
+.flaticon-speakers:before {
+    content: "\f103";
+}
+
+.flaticon-talk:before {
+    content: "\f104";
+}
+
+.flaticon-eye:before {
+    content: "\f105";
+}
+
+.flaticon-signs:before {
+    content: "\f106";
+}
+
+.flaticon-heart:before {
+    content: "\f107";
+}
+
+.flaticon-arrows:before {
+    content: "\f108";
+}
+
+.flaticon-bag:before {
+    content: "\f109";
+}
+
+.flaticon-gift:before {
+    content: "\f10a";
+}
+
+.flaticon-line2:before {
+    content: "\f10b";
+}
+
+.flaticon-tel:before {
+    content: "\f10c";
+}
+
+.flaticon-paper-plane:before {
+    content: "\f10d";
+}
+
+.flaticon-new:before {
+    content: "\f10e";
+}
+
+.flaticon-gift-card:before {
+    content: "\f10f";
+}
+
+.flaticon-cart:before {
+    content: "\f110";
+}
+
+.flaticon-line:before {
+    content: "\f111";
+}
+
+.flaticon-choice:before {
+    content: "\f112";
+}
+
+.flaticon-letter:before {
+    content: "\f113";
+}
+
+.flaticon-commbo:before {
+    content: "\f114";
+}
+
+.flaticon-edit:before {
+    content: "\f115";
+}
+
+.flaticon-delivery-man:before {
+    content: "\f116";
+}
+
+.flaticon-cardboard:before {
+    content: "\f117";
+}
+
+.flaticon-draw:before {
+    content: "\f118";
+}
+
+$font-Flaticon-note: "\f100";
+$font-Flaticon-chocolate-box: "\f101";
+$font-Flaticon-business: "\f102";
+$font-Flaticon-speakers: "\f103";
+$font-Flaticon-talk: "\f104";
+$font-Flaticon-eye: "\f105";
+$font-Flaticon-signs: "\f106";
+$font-Flaticon-heart: "\f107";
+$font-Flaticon-arrows: "\f108";
+$font-Flaticon-bag: "\f109";
+$font-Flaticon-gift: "\f10a";
+$font-Flaticon-line2: "\f10b";
+$font-Flaticon-tel: "\f10c";
+$font-Flaticon-paper-plane: "\f10d";
+$font-Flaticon-new: "\f10e";
+$font-Flaticon-gift-card: "\f10f";
+$font-Flaticon-cart: "\f110";
+$font-Flaticon-line: "\f111";
+$font-Flaticon-choice: "\f112";
+$font-Flaticon-letter: "\f113";
+$font-Flaticon-commbo: "\f114";
+$font-Flaticon-edit: "\f115";
+$font-Flaticon-delivery-man: "\f116";
+$font-Flaticon-cardboard: "\f117";
+$font-Flaticon-draw: "\f118";

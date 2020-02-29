@@ -1,0 +1,140 @@
+//checkout
+.blockstyle {
+    background: $white;
+    border-radius: 5px;
+    border: 1px solid lighten($grey, 25%);
+    padding: 20px 0;
+}
+
+.check_titlebar {
+    text-align: center;
+    margin-top: 7vh;
+    margin-bottom: 15px;
+    h3 {
+        @include rem(font-size, 2.4rem);
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    p {
+        color: $grey;
+        font-weight: 400;
+    }
+}
+
+.flex_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include phone-width() {
+        flex-wrap: wrap;
+    }
+    li {
+        margin-right: 20px;
+        @include phone-width {
+        		margin-right: 7px;
+        }
+        @include sphone-width {
+        		margin-right: 24px;
+        }
+    }
+}
+
+.checkout_form {
+    label {
+        color: $black;
+        font-weight: 400;
+    }
+    .checkoutto {
+        margin-top: 15px;
+        tbody>tr>td {
+            text-align: center; 
+            // @include pc-width {
+            //     &:nth-child(1) {
+            //         width: 140px;
+            //     }
+            //     &:nth-child(2) {
+            //         width: auto;
+            //         text-align: left;
+            //         font-weight: 400;
+            //         position: relative;
+            //     }
+            //     &:nth-child(3) {
+            //         width: 120px;
+            //     }
+            //     &:nth-child(4) {
+            //         width: 100px;
+            //     }
+            //     &:nth-child(5) {
+            //         width: 120px;
+            //     }
+            // }
+        }
+        &:not(.footable-detail-row) {
+            >tbody {
+                border-right: 1px solid lighten($grey, 25%);
+                >tr>td {
+                    &:nth-child(1) {
+                        @include phone-width() {
+                            width: 40px;
+                        }
+                    }
+                    &:nth-last-child(5) {
+                        @include table-up-width() {
+                            width: 140px;
+                        }
+                    }
+                    &:nth-last-child(4) {
+                        @include table-up-width() {
+                            width: auto;
+                            text-align: left;
+                            font-weight: 400;
+                            position: relative;
+                        }
+                    }
+                    &:nth-last-child(3) {
+                        @include table-up-width() {
+                            width: 120px;
+                        }
+                    }
+                    &:nth-last-child(2) {
+                        @include table-up-width() {
+                            width: 60px;
+                        }
+                    }
+                    &:last-child {
+                        @include rem(font-size, 1.6rem);
+                        @include table-up-width() {
+                            width: 120px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footable-detail-row {
+    		.checkoutto {
+    				margin-top: 0;
+    		}
+    }
+    .cart_pirce {
+        @include table-up-width {
+        		width: 120px;
+        }
+        &:before {
+            color: $black;
+        }
+    }
+    .all {
+        font-size: $font-size;
+        &:before {
+            color: $red;
+        }
+    }
+    .btn_cafe {
+        line-height: 140%;
+    }
+}
+
+.checkout_msg:before {
+		content: attr(data-tit)'：';
+}

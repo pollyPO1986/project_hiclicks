@@ -1,0 +1,87 @@
+extend layout/_layout_side_l.jade
+
+mixin keeptb(number,img,title,name)
+	tr
+		td
+			.checkbox
+				label
+					input(type='checkbox')
+					i.fa.fa-check(aria-hidden='true')
+		td.hidden-xs=number
+		td
+			.keep_img
+				a(href="nav_blog_detail.html",style=img)
+		td
+			a(href="nav_blog_detail.html")=title
+		td.hidden-xs
+			a(href="nav_blog.html")=name
+
+block breadcrumb
+	.col-xs-12
+		ol.breadcrumb.text-right
+			li
+				a(href='index.html') HiClicks
+			li
+				a(href='javascript:;') 會員專區
+			li
+				a(href='javascript:;') 我的收藏管理
+			li.active 收藏開箱文
+
+block sidenav
+	include include/_mem_sidebar.jade
+
+block content
+	h2(style='display:none;') HiClicks 會員專區
+	.trans_content
+		.trans_titlebar
+			h1 收藏開箱文
+		.bonus.keep
+			button.btn.btn_cafe(type='submit')
+				i.fa.fa-times
+				|  取消收藏
+			table.table.tablestyle.keep_tb.store(data-toggle-column="first")
+				thead
+					tr
+						th
+							.checkbox
+								label
+									input(type='checkbox')
+									i.fa.fa-check(aria-hidden='true')
+						th.hidden-xs NO
+						th 文章封面
+						th 文章標題
+						th.hidden-xs 作者名稱
+				tbody
+					+keeptb('1','background-image:url(images/blog/1.jpg);','2017冬 美國OLD氣質加分 人人都愛有氣質','春天的阿黛絲')
+					+keeptb('2','background-image:url(images/blog/2.jpg);','2017冬 日本布，繩子花樣花樣','春天的阿黛絲')
+					+keeptb('3','background-image:url(images/blog/3.jpg);','2017冬 韓國鮮蔬，味美實在還是很好吃，人生一定要買一次這個超級好吃的人蔘貂皮烏拉茶','春天的阿黛絲')
+					+keeptb('4','background-image:url(images/blog/4.jpg);','夏天管理體重好困難！用這些app幫助你回復魔鬼身材','春天的阿黛絲')
+					+keeptb('5','background-image:url(images/blog/5.jpg);','立即啟動30天變身計劃！每天10分鐘美尻、平坦肚、細腿通通練起來，開學美到同學下巴掉下來','春天的阿黛絲')
+					+keeptb('6','background-image:url(images/blog/6.jpg);','想要瘦又不想餓得有一頓沒一頓，就靠這些小Tips打造成「易瘦體質」，輕鬆解決宿便、高體脂！','春天的阿黛絲')
+					+keeptb('7','background-image:url(images/blog/7.jpg);','一輩子不在眼皮上畫妝也沒關係，看看她，零眼妝的空靈容顏也能飄出不凡氣息！','春天的阿黛絲')
+					+keeptb('8','background-image:url(images/blog/8.jpg);','用這些app幫助你回復魔鬼身材','春天的阿黛絲')
+					+keeptb('9','background-image:url(images/blog/9.jpg);','繩子花樣花樣','春天的阿黛絲')
+					+keeptb('10','background-image:url(images/blog/10.jpg);','背影殺手手癢養','春天的阿黛絲')
+		ul.pagebox
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-left(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-left(aria-hidden='true')
+			li.on
+				a(href='javascript:;') 1
+			li
+				a(href='javascript:;') 2
+			li
+				a(href='javascript:;') 3
+			li
+				a(href='javascript:;') 4
+			li
+				a(href='javascript:;') 5
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-right(aria-hidden='true')
+			li
+				a.arrow(href='javascript:;')
+					i.fa.fa-angle-double-right(aria-hidden='true')
